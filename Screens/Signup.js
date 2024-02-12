@@ -1,8 +1,17 @@
 import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native'
-import React from 'react';
+import React, { useState } from 'react';
 import tw from 'twrnc';
+import * as WebBrowser from "expo-web-browser";
+import * as Google from "expo-auth-session/providers/google";
+import AsyncStorage from "@react-native-async-storage/async-storage"
 
 export function Signup({navigation}) {
+  const [userInfo,setUserInfo]=useState(null);
+  const [request,response,propmptAsync] = Google.useAuthRequest({
+    androidClientId:"534817386575-j8b4rapsg709o772gdgdquj7gic59sfj.apps.googleusercontent.com",
+    webClientId:"534817386575-h5n0e44v2sue2q71clqalht59gkkdl19.apps.googleusercontent.com"
+  })
+
   return (
     <View style={tw`flex-1 justify-center items-center bg-teal-600`}>
 
@@ -41,6 +50,12 @@ export function Signup({navigation}) {
           <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={()=>navigation.navigate('Login')}>
             <View style={tw`my-auto items-center`}>
               <Text>Login</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={propmptAsync}>
+            <View style={tw`my-auto items-center`}>
+              <Text>Sign with google play</Text>
             </View>
           </TouchableOpacity>
         </View>

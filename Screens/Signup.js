@@ -98,7 +98,7 @@ export function Signup({ navigation }) {
 
           <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={propmptAsync}>
             <View style={tw`my-auto items-center`}>
-              <Text>Sign with google play dsfksdffsdffdssofsodfsdpksdfkö</Text>
+              <Text>Sign with google dsfplDSOFDSDOdfkö</Text>
             </View>
           </TouchableOpacity>
 

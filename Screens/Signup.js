@@ -92,7 +92,7 @@ export function Signup({ navigation }) {
 
           <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={() => navigation.navigate('Login')}>
             <View style={tw`my-auto items-center`}>
-              <Text>Login++++++++++++</Text>
+              <Text>Login zart zurt</Text>
             </View>
           </TouchableOpacity>
 
@@ -101,6 +101,7 @@ export function Signup({ navigation }) {
               <Text>Sign with google play</Text>
             </View>
           </TouchableOpacity>
+
         </View>
         <Text>{JSON.stringify(userInfo)}</Text>
       </View>

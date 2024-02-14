@@ -133,7 +133,7 @@ export function Signup({ navigation }) {
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={() => navigation.navigate('Login')}>
+          <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={() => navigation.navigate('welcome')}>
             <View style={tw`my-auto items-center`}>
               <Text style={styles.textRegular}>Login</Text>
             </View>

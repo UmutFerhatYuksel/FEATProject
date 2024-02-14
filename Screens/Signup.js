@@ -48,11 +48,12 @@ export function Signup({ navigation }) {
       await getUserInfo()
       if (response?.type === "success") {
         await getUserInfo(response.authentication.accessToken)
-        await sendUserDataToBackend(userData);
-        navigation.navigate('navigate');
+      
+        navigation.navigate('Login');
       }
     } else {
       setUserInfo(JSON.parse(user));
+      await sendUserDataToBackend(user);
     }
   }
 
@@ -70,9 +71,6 @@ export function Signup({ navigation }) {
       const user = await response.json();
       await AsyncStorage.setItem("@user", JSON.stringify(user));
 
-       // Send user data to your Java Spring backend
-      await sendUserDataToBackend(user);
-      
       setUserInfo(user);
     } catch (error) {
 

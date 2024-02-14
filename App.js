@@ -40,4 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  text:{
+    fontFamily:'Cabin_Condensed-Medium'
+  }
 });

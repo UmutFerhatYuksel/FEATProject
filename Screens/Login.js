@@ -1,8 +1,23 @@
-import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native'
+import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native'
 import React from 'react';
 import tw from 'twrnc';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
-import EvilIcons from '@expo/vector-icons/EvilIcons'
+import EvilIcons from '@expo/vector-icons/EvilIcons';
+import {Raleway_400Regular} from "@expo-google-fonts/raleway";
+import { useFonts } from 'expo-font';
+
+
+const styles = StyleSheet.create(
+  {
+    textRegular: {
+      fontFamily:"Raleway_400Regular",
+    },
+    textGoogle:{
+      fontFamily:"Raleway_400Regular",
+      color:"white"
+    }
+  }
+)
 
 export  function Login() {
   return (
@@ -29,13 +44,13 @@ export  function Login() {
         <View style={tw`rounded inline`}>
           <TouchableOpacity style={tw`w-30 h-10 bg-teal-500 rounded-full mx-auto mt-5`}>
             <View style={tw`my-auto items-center`}>
-              <Text>Login</Text>
+              <Text style={styles.textRegular}>Login</Text>
             </View>
           </TouchableOpacity>
 
           <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={()=>navigation.navigate('Login')}>
             <View style={tw`my-auto items-center`}>
-              <Text>Sign Up</Text>
+              <Text style={styles.textRegular}>Sign Up</Text>
             </View>
           </TouchableOpacity>
         </View>

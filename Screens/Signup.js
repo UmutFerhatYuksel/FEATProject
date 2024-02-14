@@ -36,7 +36,7 @@ export function Signup({ navigation }) {
   useEffect(() => {
     handleSingInWithGoogle();
 
-    if (userInfo !== null) {
+    if(userInfo!==null){
       navigation.navigate('Login'); //it directs Login page temporarily but it should redirect main page or like this
     }
   }, [response])
@@ -48,6 +48,7 @@ export function Signup({ navigation }) {
       await getUserInfo()
       if (response?.type === "success") {
         await getUserInfo(response.authentication.accessToken)
+        await sendUserDataToBackend(userData);
         navigation.navigate('navigate');
       }
     } else {
@@ -68,12 +69,37 @@ export function Signup({ navigation }) {
 
       const user = await response.json();
       await AsyncStorage.setItem("@user", JSON.stringify(user));
+
+       // Send user data to your Java Spring backend
+      await sendUserDataToBackend(user);
+      
       setUserInfo(user);
     } catch (error) {
 
     }
   }
 
+  async function sendUserDataToBackend(userData) {
+    try {
+      if (!response.ok) {
+        throw new Error("Failed to register user on the backend");
+      }
+  
+      // Optionally handle response from the backend
+      console.log("User data sent successfully to backend:", userData);
+    } catch (error) {
+      console.error("Error sending user data to backend:", error.message);
+      // Handle error
+    }
+    const response = await fetch("http://localhost:8080/user", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(userData)
+    });
+  }
+  
   return (
     <View style={tw`flex-1 justify-center items-center bg-teal-600`}>
 

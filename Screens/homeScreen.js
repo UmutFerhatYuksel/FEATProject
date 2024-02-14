@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-
+import tw from twrnc;
 const personalInfoScreen = ({navigation, route }) => {
     const {name} = route.params;
     const {surname} = route.params;

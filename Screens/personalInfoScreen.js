@@ -27,7 +27,7 @@ const personalInfoScreen = ({ navigation, route }) => {
         userName: userName,
         userSurname: userSurname,
         userAge: userAge,
-        userDailyActivityLevel: userDailyActivityLevel,
+        ailyActivityLevel: userDailyActivityLevel,
       })}/>
     </SafeAreaView>
   );

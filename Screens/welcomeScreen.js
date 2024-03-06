@@ -8,11 +8,9 @@ const styles = StyleSheet.create(
       fontFamily: "Raleway_400Regular",
       color: "teal",
     },
-  
   }
 )
 const welcomeScreen = ({ navigation }) => {
- 
   return (
     <View style={tw`flex-1 justify-between items-center bg-teal-600 `}>
       <Text style={tw`text-white text-3xl font-bold mt-30`}>Welcome to FEAT!</Text>

@@ -14,33 +14,31 @@ import homeScreen from './Screens/homeScreen';
 
 
 
-const Stack =createNativeStackNavigator();
+const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    // <View style={styles.container}>
-    //   <Text>Open up App.js to start working on your app 31</Text>
-    //   <StatusBar style="auto" />
-    // </View>
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName='Signup'
-      >
-        <Stack.Screen
-          name='Login'
-          component={Login}
-        />
-        <Stack.Screen
-          name='Signup'
-          component={Signup}
-          
-        />
-      <Stack.Screen name = "welcome" component={welcomeScreen}/>
-      <Stack.Screen name = "personalInfo" component={personalInfoScreen}/>
-      <Stack.Screen name = "physicalInfo" component={physicalInfoScreen}/>
-      <Stack.Screen name = "home" component={homeScreen}/>
+    <React.StrictMode>
 
-      </Stack.Navigator>
-    </NavigationContainer>
+      <NavigationContainer >
+        <Stack.Navigator
+          initialRouteName='Signup'
+        >
+          <Stack.Screen
+            name='Login'
+            component={Login}
+          />
+          <Stack.Screen
+            name='Signup'
+            component={Signup}
+          />
+          <Stack.Screen name="welcome" component={welcomeScreen} />
+          <Stack.Screen name="personalInfo" component={personalInfoScreen} />
+          <Stack.Screen name="physicalInfo" component={physicalInfoScreen} />
+          <Stack.Screen name="home" component={homeScreen} />
+
+        </Stack.Navigator>
+      </NavigationContainer>
+    </React.StrictMode>
   );
 }
 
@@ -51,7 +49,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  text:{
-    fontFamily:'Cabin_Condensed-Medium'
+  text: {
+    fontFamily: 'Cabin_Condensed-Medium'
   }
 });

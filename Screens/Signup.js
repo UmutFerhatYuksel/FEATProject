@@ -37,7 +37,7 @@ export function Signup({ navigation }) {
     handleSingInWithGoogle();
 
     if(userInfo!==null){
-      navigation.navigate('Login'); //it directs Login page temporarily but it should redirect main page or like this
+      navigation.navigate('welcome'); //it directs Login page temporarily but it should redirect main page or like this
     }
   }, [response])
 
@@ -49,7 +49,7 @@ export function Signup({ navigation }) {
       if (response?.type === "success") {
         await getUserInfo(response.authentication.accessToken)
       
-        navigation.navigate('Login');
+        navigation.navigate('welcome');
       }
     } else {
       setUserInfo(JSON.parse(user));

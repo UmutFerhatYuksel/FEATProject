@@ -24,8 +24,8 @@ const styles = StyleSheet.create(
 
 export function Login({ navigation }) {
 
-  const [email, setEmail] = useState("sd");
-  const [password, setPassword] = useState("dsfs");
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
   return (
 
     <View style={tw`h-full`}>

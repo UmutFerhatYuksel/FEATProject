@@ -26,6 +26,7 @@ const physicalInfoScreen = ({ navigation, route }) => {
   const [userHeight, setUserHeight] = useState("");
   const [userWeight, setUserWeight] = useState("");
   const [userGender, setUserGender] = useState("");
+  const [userExperienceLevel,setuserExperienceLevel]=useState();
 
 
   return (
@@ -44,12 +45,12 @@ const physicalInfoScreen = ({ navigation, route }) => {
         <TextInput
           label={"Weight(Kg)"}
           value={userWeight}
-          onChangeText={weight => setUserSurname(weight)}
+          onChangeText={weight => setUserWeight(weight)}
           mode='outlined'
           style={tw`w-80 h-15 mt-8`}
         />
 
-        {/* 
+        {/*
 <TextInput
   label={"Gender"}
   value={userGender}
@@ -70,12 +71,31 @@ const physicalInfoScreen = ({ navigation, route }) => {
             </View>
           </View>
         </RadioButton.Group>
+
+        <RadioButton.Group onValueChange={level => setuserExperienceLevel(level)} value={userExperienceLevel}>
+          <View style={tw`flex flex-row mt-3 mx-auto`}>
+            <View style={tw`px-3`}>
+              <Text style={tw`text-center`}>Beginner</Text>
+              <RadioButton value={"beginner"} />
+            </View>
+            <View style={tw`px-3`}>
+              <Text style={tw`text-center`}>Intermediate</Text>
+              <RadioButton value={"intermediate"} />
+            </View>
+            <View style={tw`px-3`}>
+              <Text style={tw`text-center`}>Advanced</Text>
+              <RadioButton value={"advanced"} />
+            </View>
+          </View>
+        </RadioButton.Group>
         <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700  font-bold rounded-full mx-auto mt-8`}
           onPress={() => navigation.navigate("CurrentProgress", {
             userName: userName,
             userSurname: userSurname,
             userAge: userAge,
+            userGender:userGender,
             userDailyActivityLevel: userDailyActivityLevel,
+            userExperienceLevel:userExperienceLevel
           })}>
           <View style={tw`ml-3 my-auto items-center mr-3`}>
             <Text style={styles.textRegular}>Next</Text>

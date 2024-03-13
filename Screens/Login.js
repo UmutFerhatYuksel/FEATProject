@@ -1,63 +1,92 @@
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native'
-import React from 'react';
+import { View, TouchableOpacity, StyleSheet, Image } from 'react-native'
+import React, { useState } from 'react';
 import tw from 'twrnc';
 import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
 import EvilIcons from '@expo/vector-icons/EvilIcons';
-import {Raleway_400Regular} from "@expo-google-fonts/raleway";
+import { Raleway_400Regular } from "@expo-google-fonts/raleway";
 import { useFonts } from 'expo-font';
+import { Button, Text, TextInput } from 'react-native-paper';
+
+
 
 
 const styles = StyleSheet.create(
   {
     textRegular: {
-      fontFamily:"Raleway_400Regular",
+      fontFamily: "Raleway_400Regular",
     },
-    textGoogle:{
-      fontFamily:"Raleway_400Regular",
-      color:"white"
+    textGoogle: {
+      fontFamily: "Raleway_400Regular",
+      color: "white"
     }
   }
 )
 
-export  function Login() {
-  return (
-    <View style={tw`flex-1 justify-center items-center bg-teal-600`}>
+export function Login({ navigation }) {
 
-      <View style={tw`w-80 h-100 border-black border-2 rounded-2xl bg-white mx-auto`}>
-        <View style={tw`mx-auto mt-20 `}>
+  const [email, setEmail] = useState("sd");
+  const [password, setPassword] = useState("dsfs");
+  return (
+
+    <View style={tw`h-full`}>
+      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Login</Text>
+
+      <View style={tw`w-full h-100 mx-auto mt-8`}>
+        <View style={tw`mx-auto mt-20 w-content`}>
           <TextInput
-            style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-            placeholder='Email'
-            keyboardType='email-address'
+            label={"Email"}
+            value={email}
+            onChangeText={email => setEmail(email)}
+            mode='outlined'
+            style={tw`w-80 h-15`}
           />
         </View>
         <View style={tw`mx-auto mt-8`}>
 
           <TextInput
-            style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-            placeholder='Password'
+            label={"Password"}
+            value={password}
+            onChangeText={password => setPassword(password)}
+            mode='outlined'
             secureTextEntry
+            style={tw`w-80 h-15`}
           />
-          
+
         </View>
-      
+
         <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-30 h-10 bg-teal-500 rounded-full mx-auto mt-5`}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`}>
             <View style={tw`my-auto items-center`}>
-              <Text style={styles.textRegular}>Login</Text>
+              <Text style={tw`text-center text-white font-bold`}>Login with Email</Text>
             </View>
           </TouchableOpacity>
 
-          <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={()=>navigation.navigate('Login')}>
-            <View style={tw`my-auto items-center`}>
-              <Text style={styles.textRegular}>Sign Up</Text>
-            </View>
-          </TouchableOpacity>
         </View>
-        
+
+        <View style={{ flexDirection: 'row', alignItems: 'center', width: "auto", marginTop: 40 }}>
+          <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+          <View>
+            <Text style={{ width: "auto", textAlign: 'center' }}>Or Continue With</Text>
+          </View>
+          <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
+        </View>
+
+        <View style={tw`rounded inline`}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-white rounded-full mx-auto mt-8 flex flex-row`}>
+            <View style={tw`my-5 mx-8 items-center`}>
+              <Text style={tw`text-center font-bold`}>Login with Google</Text>
+            </View>
+            <View style={tw`my-5 mx-8 items-center`}>
+              <Image style={{ width: 20, height: 20 }} source={require('../assets/google.png')} />
+            </View>
+          </TouchableOpacity>
+
+          <Text onPress={()=>navigation.navigate("Signup")} style={tw`text-sm  text-indigo-700 text-center leading-loose`}>Don't have account yet? Register</Text>
+
+        </View>
+
       </View>
-
-
     </View>
+
   );
 }

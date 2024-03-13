@@ -24,6 +24,16 @@ const personalInfoScreen = ({ navigation, route }) => {
   const [userAge, setUserAge] = useState();
   const [userDailyActivityLevel, setUserDailyActivityLevel] = useState(0);
 
+  const handleComplete=()=>{
+    navigation.navigate("physicalInfo", {
+      userName: userName,
+      userSurname: userSurname,
+      userAge: userAge,
+      userDailyActivityLevel: userDailyActivityLevel,
+    })
+
+  }
+
 
   return (
     <SafeAreaView style={tw`flex-1 justify-center items-center`}>
@@ -80,14 +90,9 @@ const personalInfoScreen = ({ navigation, route }) => {
       </Picker> */}
 
       <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700  font-bold rounded-full mx-auto mt-8`}
-        onPress={() => navigation.navigate("physicalInfo", {
-          userName: userName,
-          userSurname: userSurname,
-          userAge: userAge,
-          userDailyActivityLevel: userDailyActivityLevel,
-        })}>
+        onPress={() => handleComplete}>
         <View style={tw`ml-3 my-auto items-center mr-3`}>
-          <Text style={styles.textRegular}>Next</Text>
+          <Text style={styles.textRegular}>Complete</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>

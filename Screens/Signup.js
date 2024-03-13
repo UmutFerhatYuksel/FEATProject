@@ -1,4 +1,4 @@
-import { View, Text, TextInput, Button, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
 import React, { useEffect, useState } from 'react';
 import tw from 'twrnc';
 import * as WebBrowser from "expo-web-browser";
@@ -6,7 +6,8 @@ import * as Google from "expo-auth-session/providers/google";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Raleway_400Regular } from "@expo-google-fonts/raleway";
 import { useFonts } from 'expo-font';
-import Ionicons from '@expo/vector-icons/Ionicons'
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { Button,TextInput } from 'react-native-paper';
 
 
 WebBrowser.maybeCompleteAuthSession();
@@ -36,7 +37,7 @@ export function Signup({ navigation }) {
   useEffect(() => {
     handleSingInWithGoogle();
 
-    if(userInfo!==null){
+    if (userInfo !== null) {
       navigation.navigate('welcome'); //it directs Login page temporarily but it should redirect main page or like this
     }
   }, [response])
@@ -48,7 +49,7 @@ export function Signup({ navigation }) {
       await getUserInfo()
       if (response?.type === "success") {
         await getUserInfo(response.authentication.accessToken)
-      
+
         navigation.navigate('welcome');
       }
     } else {
@@ -82,7 +83,7 @@ export function Signup({ navigation }) {
       if (!response.ok) {
         throw new Error("Failed to register user on the backend");
       }
-  
+
       // Optionally handle response from the backend
       console.log("User data sent successfully to backend:", userData);
     } catch (error) {
@@ -97,62 +98,71 @@ export function Signup({ navigation }) {
       body: JSON.stringify(userData)
     });
   }
-  
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const[name,setName]=useState();
+
+  const registerHandle=()=>{
+    console.log("Register Pressed") 
+    // Bu kısımda register işlemleri yapılcak ve eğer register işlemi başarılı olursa kullanıcı information kısmına yönlendirilecek
+    navigation.navigate("personalInfo");
+  }
+
   return (
-    <View style={tw`flex-1 justify-center items-center bg-teal-600`}>
 
-      <View style={tw`w-80 h-130 border-black border-2 rounded-2xl bg-white mx-auto`}>
-        <View style={tw`mx-auto mt-20 `}>
+
+    <View style={tw`h-full`}>
+      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Login</Text>
+
+      <View style={tw`w-full h-100 mx-auto mt-8`}>
+        <View style={tw`mx-auto mt-8 w-content`}>
           <TextInput
-            style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-            placeholder='Email'
-            keyboardType='email-address'
+            label={"Email"}
+            value={email}
+            onChangeText={email => setEmail(email)}
+            mode='outlined'
+            style={tw`w-80 h-15`}
           />
         </View>
+
         <View style={tw`mx-auto mt-8`}>
 
           <TextInput
-            style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-            placeholder='Password'
+            label={"Password"}
+            value={password}
+            onChangeText={password => setPassword(password)}
+            mode='outlined'
             secureTextEntry
+            style={tw`w-80 h-15`}
           />
+
         </View>
+
         <View style={tw`mx-auto mt-8`}>
 
           <TextInput
-            style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-            placeholder='Password Again'
+            label={"Password again"}
+            value={password}
+            onChangeText={password => setPassword(password)}
+            mode='outlined'
             secureTextEntry
+            style={tw`w-80 h-15`}
           />
+
         </View>
 
         <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-30 h-10 bg-teal-500 rounded-full mx-auto mt-5`}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={registerHandle}>
             <View style={tw`my-auto items-center`}>
-              <Text style={styles.textRegular}>Sign Up</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={tw`w-30 h-10 bg-white border-2 border-teal-500 rounded-full mx-auto mt-3`} onPress={() => navigation.navigate('welcome')}>
-            <View style={tw`my-auto items-center`}>
-              <Text style={styles.textRegular}>Login</Text>
-            </View>
-          </TouchableOpacity>
-
-          <TouchableOpacity style={tw`w-fit h-10 bg-red-700 rounded-full mx-auto mt-3 flex flex-row`} onPress={propmptAsync}>
-            <View style={tw`ml-3 my-auto items-center`}>
-              <Text style={styles.textGoogle}>Sign with Google</Text>
-            </View>
-            <View style={tw`ml-3 mr-3 my-auto items-center`}>
-              <Ionicons name='logo-google'></Ionicons>
+              <Text style={tw`text-center text-white font-bold`}>Register</Text>
             </View>
           </TouchableOpacity>
 
         </View>
-        <Text>{JSON.stringify(userInfo)}</Text>
+
+
       </View>
-
-
     </View>
+
   );
 }

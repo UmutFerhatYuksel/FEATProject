@@ -1,15 +1,17 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, StatusBar, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native-web';
 import tw from 'twrnc';
 import { Picker } from '@react-native-picker/picker';
+import { RadioButton, Button, TextInput } from 'react-native-paper';
+// import DynamicallySelectedPicker from 'react-native-dynamically-selected-picker';
 
 const styles = StyleSheet.create(
   {
     textRegular: {
       fontFamily: "Raleway_400Regular",
-      color: "teal",
+      color: "white",
     },
 
   }
@@ -27,40 +29,59 @@ const physicalInfoScreen = ({ navigation, route }) => {
 
 
   return (
-    <SafeAreaView style={tw`flex-1 justify-center items-center bg-teal-600`}>
-      <Text>Physical Info</Text>
+    <SafeAreaView >
+      <View style={tw`mx-auto h-fit mt-20`}>
+        <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Physical Information</Text>
 
-      <TextInput style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-        value={userHeight} onChangeText={setUserHeight}
-        placeholder='Height with CM' />
+        <TextInput
+          label={"Height(Cm)"}
+          value={userHeight}
+          onChangeText={height => setUserHeight(height)}
+          mode='outlined'
+          style={tw`w-80 h-15 mt-8`}
+        />
 
-      <TextInput style={tw`w-60 h-10 bg-slate-50 rounded-full border-2 border-teal-500`}
-        value={userWeight} onChangeText={setUserWeight}
-        placeholder='Weight with KG' />
+        <TextInput
+          label={"Weight(Kg)"}
+          value={userWeight}
+          onChangeText={weight => setUserSurname(weight)}
+          mode='outlined'
+          style={tw`w-80 h-15 mt-8`}
+        />
 
-      <Picker selectedValue={userGender} style={tw`mt-10`}
-        onValueChange={(itemValue, itemIndex) => setUserGender(itemValue)}
-      >
-        <Picker.Item label='Male' value={"male"} />
-        <Picker.Item label='Female' value={"female"} />
+        {/* 
+<TextInput
+  label={"Gender"}
+  value={userGender}
+  onChangeText={gender => setUserGender(gender)}
+  mode='outlined'
+  style={tw`w-80 h-15`}
+/> */}
 
-      </Picker>
-
-      <TouchableOpacity style={tw`w-fit h-10 bg-white rounded-full mx-auto mt-3 flex flex-row`}
-        onPress={() => navigation.navigate("home", {
-          name: userName,
-          surname: userSurname,
-          age: userAge,
-          userDailyActivityLevel: userDailyActivityLevel,
-          weight: userHeight,
-          height: userWeight,
-          gender: userGender,
-        })}>
-        <View style={tw`ml-3 my-auto items-center mr-3`}>
-          <Text style={styles.textRegular}>Next</Text>
-        </View>
-      </TouchableOpacity>
-
+        <RadioButton.Group onValueChange={gender => setUserGender(gender)} value={userGender}>
+          <View style={tw`flex flex-row mt-3 mx-auto`}>
+            <View style={tw`px-3`}>
+              <Text style={tw`text-center`}>Male</Text>
+              <RadioButton value={"male"} />
+            </View>
+            <View style={tw`px-3`}>
+              <Text style={tw`text-center`}>Female</Text>
+              <RadioButton value={"female"} />
+            </View>
+          </View>
+        </RadioButton.Group>
+        <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700  font-bold rounded-full mx-auto mt-8`}
+          onPress={() => navigation.navigate("CurrentProgress", {
+            userName: userName,
+            userSurname: userSurname,
+            userAge: userAge,
+            userDailyActivityLevel: userDailyActivityLevel,
+          })}>
+          <View style={tw`ml-3 my-auto items-center mr-3`}>
+            <Text style={styles.textRegular}>Next</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
 
     </SafeAreaView>
   );

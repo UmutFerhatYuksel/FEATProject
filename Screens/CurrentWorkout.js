@@ -6,7 +6,9 @@ import { TouchableOpacity } from 'react-native';
 import { ScrollView } from 'react-native-web';
 import ExerciseImage from '../assets/Exercise.png';
 
-const CurrentWorkout = ({ navigation }, route) => {
+const CurrentWorkout = ({ navigation, route }) => {
+
+    const { workoutList } = route.params;
 
     return (
         <View>
@@ -20,7 +22,7 @@ const CurrentWorkout = ({ navigation }, route) => {
                     <Text style={tw`text-sm font-thin px-3 text-justify text-indigo-700`}>Aşağıda senin için hazırlanmış olan egzersiz programını kendine göre özelleştirebilirsin!
                     </Text>
                 </View>
-                    {/* Özelleştirme Butonu */}
+                {/* Özelleştirme Butonu */}
                 <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => console.log("pressed")}>
                     <View style={tw`m-auto`}>
                         <Text style={tw`text-white text-md`}>Özelleştir</Text>
@@ -30,11 +32,18 @@ const CurrentWorkout = ({ navigation }, route) => {
 
             </View>
             <ScrollView>
-                <View style={tw`mx-auto w-80 h-fit bg-slate-200 rounded-lg flex flex-row`}>
-                    <View style={tw`nx-auto my-auto p-3 basis-1/4`}><Image style={{width:45, height:45}} source={require('../assets/Exercise.png')} /></View>
-                    <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>Exercise Name</Text></View>
-                    <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>x6</Text></View>
+                <View style={tw`h-70`}>
+                    {workoutList.map((item) => (
+                        <View style={tw`mx-auto mt-3 w-85 h-fit bg-slate-200 rounded-lg flex flex-row`}>
+                            <View style={tw`nx-auto my-auto p-3 basis-1/4`}><Image style={{ width: 45, height: 45 }} source={require('../assets/Exercise.png')} /></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>x3 Sets</Text></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>6-12 Rep</Text></View>
+                        </View>
+                    ))}
                 </View>
+
+
             </ScrollView>
 
         </View>

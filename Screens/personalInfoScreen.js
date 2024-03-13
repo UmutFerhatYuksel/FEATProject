@@ -60,9 +60,9 @@ const personalInfoScreen = ({ navigation, route }) => {
           value={userDailyActivityLevel}
           onValueChange={value => setUserDailyActivityLevel(value)}
           minimumValue={0}
-          maximumValue={10}
+          maximumValue={5}
           thumbTintColor='purple'
-          step={2}
+          step={1}
         />
       </View>
 

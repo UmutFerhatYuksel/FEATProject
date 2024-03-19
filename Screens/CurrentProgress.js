@@ -617,7 +617,7 @@ const CurrentProgress = ({ navigation, route }) => {
       } else if (currentDate.getDay() % 3 == 1) {
         filterExercises(userExperienceLevel, "pull");
       } else if (currentDate.getDay() % 3 == 2) {
-        filterExercises(userExperienceLevel, "legs");
+        filterExercises(userExperienceLevel, "push");
       }
 
     console.log(currentDay);

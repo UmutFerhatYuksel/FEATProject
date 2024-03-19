@@ -33,11 +33,12 @@ const CurrentWorkout = ({ navigation, route }) => {
 
 
             </View>
-            <TouchableOpacity style={tw`mx-auto my-4  w-50 h-10 bg-indigo-700 rounded`} >
+
+            {/* <TouchableOpacity style={tw`mx-auto my-4  w-50 h-10 bg-indigo-700 rounded`} >
                 <View style={tw`m-auto`}>
                     <Text style={tw`text-white text-md`}>Antrenmana Başla</Text>
                 </View>
-            </TouchableOpacity>
+            </TouchableOpacity> */}
 
             <ScrollView>
                 <View style={tw`h-70`}>

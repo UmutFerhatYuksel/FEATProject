@@ -10,6 +10,8 @@ const CurrentWorkout = ({ navigation, route }) => {
 
     const { workoutList } = route.params;
 
+    const exampleSituation = true;
+
     return (
         <View>
             <ImageBackground source={Banner} style={tw`w-full h-60 rounded-full mx-auto `} imageStyle={tw`opacity-50`}>
@@ -31,15 +33,30 @@ const CurrentWorkout = ({ navigation, route }) => {
 
 
             </View>
+
+            {/* <TouchableOpacity style={tw`mx-auto my-4  w-50 h-10 bg-indigo-700 rounded`} >
+                <View style={tw`m-auto`}>
+                    <Text style={tw`text-white text-md`}>Antrenmana Başla</Text>
+                </View>
+            </TouchableOpacity> */}
+
             <ScrollView>
                 <View style={tw`h-70`}>
                     {workoutList.map((item) => (
-                        <View style={tw`mx-auto mt-3 w-85 h-fit bg-slate-200 rounded-lg flex flex-row`}>
-                            <View style={tw`nx-auto my-auto p-3 basis-1/4`}><Image style={{ width: 45, height: 45 }} source={require('../assets/Exercise.png')} /></View>
+                        <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item: item, workoutList: workoutList })}>
+                            <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
+
+
+                                {/* Burdaki mevcut yapılmamış egzersiz işratei bg-slate-800 burdaki background rengini condintional rendering yapmamız gerek */}
+                                {/* Örnek:// şu şekilde yapıcaz style={[gerekliDeğer==false ? tw`bg-slate-800` : tw`bg-green-800`,tw`w-6 h-6 rounded-full my-auto mr-2`]} */}
+                                <View style={tw`w-6 h-6 bg-slate-800 rounded-full my-auto mr-2`}></View>
+                                <Image style={{ width: 45, height: 45 }} source={require('../assets/Exercise.png')} />
+
+                            </View>
                             <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
                             <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>x3 Sets</Text></View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>6-12 Rep</Text></View>
-                        </View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>6Rep</Text></View>
+                        </TouchableOpacity>
                     ))}
                 </View>
 

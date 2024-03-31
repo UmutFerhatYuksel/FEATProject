@@ -19,6 +19,8 @@ const styles = StyleSheet.create(
 
 const personalInfoScreen = ({ navigation, route }) => {
 
+  const { userId } = route.params; // Extract userId from route.params
+
   const [userName, setUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
   const [userAge, setUserAge] = useState();
@@ -49,7 +51,7 @@ const personalInfoScreen = ({ navigation, route }) => {
       <TextInput
         label={"Age"}
         value={userAge}
-        onChangeText={name => setUserAge(name)}
+        onChangeText={name => setUserAge(parseInt(name))}
         mode='outlined'
         style={tw`w-80 h-15`}
       />
@@ -58,7 +60,7 @@ const personalInfoScreen = ({ navigation, route }) => {
         <Text style={tw`text-center font-bold text-indifo-700`}>Your Activity Level:{userDailyActivityLevel}</Text>
         <Slider
           value={userDailyActivityLevel}
-          onValueChange={value => setUserDailyActivityLevel(value)}
+          onValueChange={value => setUserDailyActivityLevel(parseInt(value))}
           minimumValue={0}
           maximumValue={5}
           thumbTintColor='purple'
@@ -85,14 +87,22 @@ const personalInfoScreen = ({ navigation, route }) => {
           userSurname: userSurname,
           userAge: userAge,
           userDailyActivityLevel: userDailyActivityLevel,
+          userId : userId,
         })}>
         <View style={tw`ml-3 my-auto items-center mr-3`}>
           <Text style={styles.textRegular}>Next</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>
+
+    
   );
+
+  console.log("User ID:", userId); // Log userId to the console
+
 };
+
+
 
 
 

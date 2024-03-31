@@ -24,7 +24,17 @@ const personalInfoScreen = ({ navigation, route }) => {
   const [userName, setUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
   const [userAge, setUserAge] = useState();
-  const [userDailyActivityLevel, setUserDailyActivityLevel] = useState(0);
+  const [userDailyActivityLevel, setUserDailyActivityLevel] = useState("");
+
+  const handleComplete=()=>{
+    navigation.navigate("physicalInfo", {
+      userName: userName,
+      userSurname: userSurname,
+      userAge: userAge,
+      userDailyActivityLevel: userDailyActivityLevel,
+    })
+      console.log(userAge);
+  }
 
 
   return (
@@ -90,7 +100,7 @@ const personalInfoScreen = ({ navigation, route }) => {
           userId : userId,
         })}>
         <View style={tw`ml-3 my-auto items-center mr-3`}>
-          <Text style={styles.textRegular}>Next</Text>
+          <Text style={styles.textRegular}>Complete</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>

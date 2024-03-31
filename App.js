@@ -16,40 +16,57 @@ import { PaperProvider } from "react-native-paper"
 import HomeScreen from './Screens/HomeScreen';
 import CurrentWorkout from './Screens/CurrentWorkout';
 import CurrentProgress from './Screens/CurrentProgress';
+import WorkoutComplete from './Screens/WorkoutComplete';
+import { NativeBaseProvider, extendTheme } from "native-base";
+
+const newColorTheme = {
+  brand: {
+    900: "#8287af",
+    800: "#7c83db",
+    700: "#b3bef6",
+  },
+};
+
+const theme = extendTheme({ colors: newColorTheme });
+
 
 
 
 const Stack = createNativeStackNavigator();
 export default function App() {
   return (
-    <PaperProvider>
-      <React.StrictMode>
+    <NativeBaseProvider theme={theme}>
 
-        <NavigationContainer >
-          <Stack.Navigator
-            initialRouteName='Login'
-          >
-            <Stack.Screen
-              name='Login'
-              component={Login}
-            />
-            <Stack.Screen
-              name='Signup'
-              component={Signup}
-            />
-            <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="personalInfo" component={personalInfoScreen} />
-            <Stack.Screen name="physicalInfo" component={physicalInfoScreen} />
-            <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
-            <Stack.Screen name='ChooseDay' component={ChooseDayScreen} />
-            <Stack.Screen name='Welcome' component={welcomeScreen} />
-            <Stack.Screen name='CurrentProgress' component={CurrentProgress}/>
-            <Stack.Screen name='CurrentWorkout' component={CurrentWorkout}/>
+      <PaperProvider>
+        <React.StrictMode>
 
-          </Stack.Navigator>
-        </NavigationContainer>
-      </React.StrictMode>
-    </PaperProvider>
+          <NavigationContainer >
+            <Stack.Navigator
+              initialRouteName='Login'
+            >
+              <Stack.Screen
+                name='Login'
+                component={Login}
+              />
+              <Stack.Screen
+                name='Signup'
+                component={Signup}
+              />
+              <Stack.Screen name="Home" component={HomeScreen} />
+              <Stack.Screen name="personalInfo" component={personalInfoScreen} />
+              <Stack.Screen name="physicalInfo" component={physicalInfoScreen} />
+              <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
+              <Stack.Screen name='ChooseDay' component={ChooseDayScreen} />
+              <Stack.Screen name='Welcome' component={welcomeScreen} />
+              <Stack.Screen name='CurrentProgress' component={CurrentProgress} />
+              <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
+              <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
+
+            </Stack.Navigator>
+          </NavigationContainer>
+        </React.StrictMode>
+      </PaperProvider>
+    </NativeBaseProvider>
 
   );
 }

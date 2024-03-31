@@ -7,10 +7,13 @@ import { ScrollView } from 'react-native-web';
 import ExerciseImage from '../assets/Exercise.png';
 
 const CurrentWorkout = ({ navigation, route }) => {
-
+    const { stepsCompleted } = route.params;
+    const  receivedItem  = route.params?.receivedItem
     const { workoutList } = route.params;
 
     const exampleSituation = true;
+
+    console.log(receivedItem)
 
     return (
         <View>
@@ -25,7 +28,7 @@ const CurrentWorkout = ({ navigation, route }) => {
                     </Text>
                 </View>
                 {/* Özelleştirme Butonu */}
-                <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => console.log("pressed")}>
+                <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => console.log(workoutList)}>
                     <View style={tw`m-auto`}>
                         <Text style={tw`text-white text-md`}>Özelleştir</Text>
                     </View>
@@ -45,11 +48,17 @@ const CurrentWorkout = ({ navigation, route }) => {
                     {workoutList.map((item) => (
                         <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item: item, workoutList: workoutList })}>
                             <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
-
-
-                                {/* Burdaki mevcut yapılmamış egzersiz işratei bg-slate-800 burdaki background rengini condintional rendering yapmamız gerek */}
-                                {/* Örnek:// şu şekilde yapıcaz style={[gerekliDeğer==false ? tw`bg-slate-800` : tw`bg-green-800`,tw`w-6 h-6 rounded-full my-auto mr-2`]} */}
-                                <View style={tw`w-6 h-6 bg-slate-800 rounded-full my-auto mr-2`}></View>
+                                
+                                {/* receivedItem yerine database'den workoutList.completed kullanılacak. Sadece 1 tane dairenin yeşil olma problemini bu giderecek */}
+                                {receivedItem == item && receivedItem.completed ? (
+                                    <View style={[tw`bg-green-800 w-6 h-6 rounded-full my-auto mr-2`]}>
+                                        {/* Icon or indicator for completed item */}
+                                    </View>
+                                ) : (
+                                    <View style={[tw`bg-slate-800 w-6 h-6 rounded-full my-auto mr-2`]}>
+                                        {/*else if yazılacak (eğer receivedItem.completed false ise) */}
+                                    </View>
+                                )}
                                 <Image style={{ width: 45, height: 45 }} source={require('../assets/Exercise.png')} />
 
                             </View>

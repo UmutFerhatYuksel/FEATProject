@@ -3,12 +3,12 @@ import React from 'react';
 import Banner from '../assets/bannerWorkout.png';
 import tw from "twrnc";
 import { TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-web';
+import { ScrollView } from 'react-native';
 import ExerciseImage from '../assets/Exercise.png';
 
 const CurrentWorkout = ({ navigation, route }) => {
     const { stepsCompleted } = route.params;
-    const  receivedItem  = route.params?.receivedItem
+    const receivedItem = route.params?.receivedItem
     const { workoutList } = route.params;
 
     const exampleSituation = true;
@@ -43,12 +43,12 @@ const CurrentWorkout = ({ navigation, route }) => {
                 </View>
             </TouchableOpacity> */}
 
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={tw`h-70`}>
                     {workoutList.map((item) => (
                         <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item: item, workoutList: workoutList })}>
                             <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
-                                
+
                                 {/* receivedItem yerine database'den workoutList.completed kullanılacak. Sadece 1 tane dairenin yeşil olma problemini bu giderecek */}
                                 {receivedItem == item && receivedItem.completed ? (
                                     <View style={[tw`bg-green-800 w-6 h-6 rounded-full my-auto mr-2`]}>

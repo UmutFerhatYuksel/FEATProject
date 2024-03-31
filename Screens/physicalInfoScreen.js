@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
-import { SafeAreaView } from 'react-native-web';
+import { SafeAreaView } from 'react-native';
 import tw from 'twrnc';
 import { Picker } from '@react-native-picker/picker';
 import { RadioButton, Button, TextInput } from 'react-native-paper';
@@ -17,22 +17,21 @@ const styles = StyleSheet.create(
   }
 )
 
-const physicalInfoScreen = ({ navigation, route }) => {
-  const { userId } = route.params; // Extract userId from route.params
+const PhysicalInfoScreen = ({ navigation, route }) => {
   const { userName } = route.params;
   const { userSurname } = route.params;
   const { userAge } = route.params;
   const { userDailyActivityLevel } = route.params;
 
-  
+
   const [userHeight, setUserHeight] = useState("");
   const [userWeight, setUserWeight] = useState("");
   const [userGender, setUserGender] = useState("");
-  const [userExperienceLevel,setuserExperienceLevel]=useState();
+  const [userExperienceLevel, setuserExperienceLevel] = useState();
 
   // Bursaı db ye kayıt
 
-  const handleComplete=()=>{
+  const handleComplete = () => {
     navigation.navigate("physicalInfo", {
       userName: userName,
       userSurname: userSurname,
@@ -55,7 +54,7 @@ const physicalInfoScreen = ({ navigation, route }) => {
     console.log("USER HEIGHT:" + typeof userHeight);
     console.log("USER GENDER:" + typeof userGender);
     console.log("USER EXPERIENCE LEVEL:" + typeof userExperienceLevel);
-  
+
     try {
       const response = await fetch('http://localhost:8080/api/physical-info', {
         method: 'POST',
@@ -63,24 +62,24 @@ const physicalInfoScreen = ({ navigation, route }) => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: userId, // int 
-          userName: userName, // string 
+          userId: userId, // int
+          userName: userName, // string
           userSurname: userSurname, //string
           userAge: userAge, // int
           userDailyActivityLevel: userDailyActivityLevel, // int
           userHeight: userHeight, // int
           userWeight: userWeight, // float
           userGender: userGender, // string
-          userExperienceLevel: userExperienceLevel, // string but it is 
+          userExperienceLevel: userExperienceLevel, // string but it is
         }),
       });
-  
+
       if (response.ok) {
         // Handle successful response
         console.log("Physical info submitted successfully");
         // Show alert message
         alert("Your personal information is saved to the database");
-  
+
         // Refresh the page
         window.location.reload();
       } else {
@@ -92,7 +91,7 @@ const physicalInfoScreen = ({ navigation, route }) => {
       // Handle error
     }
   };
-  
+
 
   return (
     <SafeAreaView >
@@ -168,4 +167,4 @@ const physicalInfoScreen = ({ navigation, route }) => {
 
 
 
-export default physicalInfoScreen;
+export default PhysicalInfoScreen;

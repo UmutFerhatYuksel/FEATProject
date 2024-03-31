@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-web';
+import { SafeAreaView } from 'react-native';
 import { useState } from 'react';
 import tw from 'twrnc';
 import { Picker } from '@react-native-picker/picker';
@@ -17,7 +17,7 @@ const styles = StyleSheet.create(
   }
 )
 
-const personalInfoScreen = ({ navigation, route }) => {
+const PersonalInfoScreen = ({ navigation, route }) => {
 
   const { userId } = route.params; // Extract userId from route.params
 
@@ -26,14 +26,14 @@ const personalInfoScreen = ({ navigation, route }) => {
   const [userAge, setUserAge] = useState();
   const [userDailyActivityLevel, setUserDailyActivityLevel] = useState("");
 
-  const handleComplete=()=>{
-    navigation.navigate("physicalInfo", {
+  const handleComplete = () => {
+    navigation.navigate("PhysicalInfo", {
       userName: userName,
       userSurname: userSurname,
       userAge: userAge,
       userDailyActivityLevel: userDailyActivityLevel,
     })
-      console.log(userAge);
+    console.log(userAge);
   }
 
 
@@ -97,7 +97,7 @@ const personalInfoScreen = ({ navigation, route }) => {
           userSurname: userSurname,
           userAge: userAge,
           userDailyActivityLevel: userDailyActivityLevel,
-          userId : userId,
+          userId: userId,
         })}>
         <View style={tw`ml-3 my-auto items-center mr-3`}>
           <Text style={styles.textRegular}>Complete</Text>
@@ -105,7 +105,7 @@ const personalInfoScreen = ({ navigation, route }) => {
       </TouchableOpacity>
     </SafeAreaView>
 
-    
+
   );
 
   console.log("User ID:", userId); // Log userId to the console
@@ -114,6 +114,4 @@ const personalInfoScreen = ({ navigation, route }) => {
 
 
 
-
-
-export default personalInfoScreen;
+export default PersonalInfoScreen;

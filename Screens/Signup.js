@@ -54,7 +54,6 @@ export function Signup({ navigation }) {
       }
     } else {
       setUserInfo(JSON.parse(user));
-      await sendUserDataToBackend(user);
     }
   }
 
@@ -78,56 +77,50 @@ export function Signup({ navigation }) {
     }
   }
 
-  async function sendUserDataToBackend(userData) {
+  const [email, setEmail] = useState();
+  const [password, setPassword] = useState();
+  const[name,setName]=useState();
+
+
+  const handleSignUp = async () => {
     try {
-      if (!response.ok) {
-        throw new Error("Failed to register user on the backend");
-      }
+        const response = await fetch('http://localhost:8080/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ email, password }),
+        });
 
-      // Optionally handle response from the backend
-      console.log("User data sent successfully to backend:", userData);
-    } catch (error) {
-      console.error("Error sending user data to backend:", error.message);
-      // Handle error
-    }
-    const response = await fetch("http://localhost:8080/user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify(userData)
-    });
-  }
-  const [email, setEmail] = useState(null);
-  const [password, setPassword] = useState(null);
-  const [name, setName] = useState(null);
-
-  const registerHandle = () => {
-    console.log("Register Pressed")
-    // Bu kısımda register işlemleri yapılcak ve eğer register işlemi başarılı olursa kullanıcı information kısmına yönlendirilecek
+        if (response.ok) {
+          console.log(response.ok);
+          // Show alert message
+          alert("You registered to the system successfully");
     
-
-    if (email == null || password == null) {
-      Alert.alert("Email or Password Empty", "Email or Password cannot be empty", [
-        {
-          text: "Cancel",
-          onPress: () => console.log("Cancel is pressed"),
-          style: 'cancel',
+          // Refresh the page
+          window.location.reload();
+        } else if (response.status === 400) {
+            // User with this email already exists (status code 400)
+            alert('This email already exists');
+        } else {
+            // Handle other errors
+            throw new Error('Registration failed');
         }
-      ])
-
-      
-    }else{
-      navigation.navigate("PersonalInfo");
+    } catch (error) {
+        console.error('Error signing up:', error);
+        // Handle other errors
+        alert('An error occurred during registration. Please try again later.');
     }
+};
 
-  }
+  
 
   return (
 
 
+
     <View style={tw`h-full`}>
-      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Login</Text>
+      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`} >Login</Text>
 
       <View style={tw`w-full h-100 mx-auto mt-8`}>
         <View style={tw`mx-auto mt-8 w-content`}>
@@ -167,7 +160,7 @@ export function Signup({ navigation }) {
         </View>
 
         <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={registerHandle}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={handleSignUp}>
             <View style={tw`my-auto items-center`}>
               <Text style={tw`text-center text-white font-bold`}>Register</Text>
             </View>

@@ -8,34 +8,53 @@ import ProgressBarMultiStep from 'react-native-progress-bar-multi-step';
 import IonIcon from '@expo/vector-icons/Ionicons';
 
 
+
 const WorkoutComplete = ({ navigation, route }) => {
     // Burdaki item CurrentWorkout sayfasındaki üzerine tıklanılan her egzersize denk gelmektedir yani burdaki item bir egzersizi temsil eder
     const { item } = route.params;
     const { workoutList } = route.params;
     const [progress, setProgress] = useState(0);
     const [modalVisible, setModalVisible] = useState(false);
+    
+
+
+
 
     console.log(item);
     // ExampleReps aslında her egzersizin sepesifik rep sayısını belirtir burda örnek olsun diye kendim constant girdim her egzersize ayrı rep atamamız gerek
     const exampleReps = 4;
     const steps = Array.from({ length: exampleReps }, (_, index) => index + 1);
 
+    // bütün steplerin tamamlanması %100 tamamlanmış bir egzersiz verir (şu an max 4)
+    // sonrasında current workout a yollanacak ve % oranı gösterilecek
+
     const handleStepPress = (step) => {
         setProgress(step);
+        if (step - 1 === 4) {
+            workoutList.map(exercise => ({
+                if (exercise = item){
+                    workoutList.completed = true
+                }
+            }))
+            
+            //bu item yerine workout.exercise.completed = true yapılacak
+            item.completed = true
+            console.log(item)
+        }
     };
 
     const handleComplete = () => {
 
-
+        stepsCompleted = true;
         // Burda Kullanıcı complete butonuna bastığı zaman (52. satır) istediğimiz rep sayısına ulaşıp ulaşmadığımız kontrol edilir ve ona göre işlemler yapılır
         if (progress - 1 == exampleReps) {
             console.log("Completed Workout");
             // Kullanıcının sahip olduğu egzersiz listesinde her bir ezgersiz elemanı için tamamlanıp tamamlanmadığına dair bir değer bulunması gerek ve bu değer trueya çekilip
             // geri CurrentWorkout Ekranına dönülmelidir
-
+            
 
             // gerekli işlemler yapıldıktan sonra CurrentWorkout Ekreanına geri dönülür
-            navigation.navigate("CurrentWorkout", { workoutList: workoutList });
+            navigation.navigate("CurrentWorkout", { workoutList: workoutList, receivedItem: item});
         }
     }
 

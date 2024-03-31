@@ -19,19 +19,21 @@ const styles = StyleSheet.create(
 
 const PersonalInfoScreen = ({ navigation, route }) => {
 
+  const { userId } = route.params; // Extract userId from route.params
+
   const [userName, setUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
   const [userAge, setUserAge] = useState();
   const [userDailyActivityLevel, setUserDailyActivityLevel] = useState("");
 
-  const handleComplete=()=>{
+  const handleComplete = () => {
     navigation.navigate("PhysicalInfo", {
       userName: userName,
       userSurname: userSurname,
       userAge: userAge,
       userDailyActivityLevel: userDailyActivityLevel,
     })
-      console.log(userAge);
+    console.log(userAge);
   }
 
 
@@ -68,7 +70,7 @@ const PersonalInfoScreen = ({ navigation, route }) => {
         <Text style={tw`text-center font-bold text-indifo-700`}>Your Activity Level:{userDailyActivityLevel}</Text>
         <Slider
           value={userDailyActivityLevel}
-          onValueChange={value => setUserDailyActivityLevel(value)}
+          onValueChange={value => setUserDailyActivityLevel(parseInt(value))}
           minimumValue={0}
           maximumValue={5}
           thumbTintColor='purple'
@@ -90,13 +92,24 @@ const PersonalInfoScreen = ({ navigation, route }) => {
       </Picker> */}
 
       <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700  font-bold rounded-full mx-auto mt-8`}
-        onPress={() => handleComplete()}>
+        onPress={() => navigation.navigate("physicalInfo", {
+          userName: userName,
+          userSurname: userSurname,
+          userAge: userAge,
+          userDailyActivityLevel: userDailyActivityLevel,
+          userId: userId,
+        })}>
         <View style={tw`ml-3 my-auto items-center mr-3`}>
           <Text style={styles.textRegular}>Complete</Text>
         </View>
       </TouchableOpacity>
     </SafeAreaView>
+
+
   );
+
+  console.log("User ID:", userId); // Log userId to the console
+
 };
 
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity } from 'react-native';
-import { SafeAreaView } from 'react-native-web';
+import { SafeAreaView } from 'react-native';
 import { useState } from 'react';
 import tw from 'twrnc';
 import { Picker } from '@react-native-picker/picker';
@@ -17,7 +17,7 @@ const styles = StyleSheet.create(
   }
 )
 
-const personalInfoScreen = ({ navigation, route }) => {
+const PersonalInfoScreen = ({ navigation, route }) => {
 
   const [userName, setUserName] = useState("");
   const [userSurname, setUserSurname] = useState("");
@@ -25,7 +25,7 @@ const personalInfoScreen = ({ navigation, route }) => {
   const [userDailyActivityLevel, setUserDailyActivityLevel] = useState("");
 
   const handleComplete=()=>{
-    navigation.navigate("physicalInfo", {
+    navigation.navigate("PhysicalInfo", {
       userName: userName,
       userSurname: userSurname,
       userAge: userAge,
@@ -101,4 +101,4 @@ const personalInfoScreen = ({ navigation, route }) => {
 
 
 
-export default personalInfoScreen;
+export default PersonalInfoScreen;

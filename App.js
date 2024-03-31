@@ -8,8 +8,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Login } from './Screens/Login';
 import { Signup } from './Screens/Signup';
 import welcomeScreen from './Screens/welcomeScreen';
-import personalInfoScreen from './Screens/personalInfoScreen';
-import physicalInfoScreen from './Screens/physicalInfoScreen';
+import PersonalInfoScreen from './Screens/personalInfoScreen';
+import PhysicalInfoScreen from './Screens/physicalInfoScreen';
 import CreateWorkoutScreen from './Screens/CreateWorkoutScreen';
 import ChooseDayScreen from './Screens/ChooseDayScreen';
 import { PaperProvider } from "react-native-paper"
@@ -18,6 +18,7 @@ import CurrentWorkout from './Screens/CurrentWorkout';
 import CurrentProgress from './Screens/CurrentProgress';
 import WorkoutComplete from './Screens/WorkoutComplete';
 import { NativeBaseProvider, extendTheme } from "native-base";
+import CustomizeScreen from './Screens/CustomizeScreen';
 
 const newColorTheme = {
   brand: {
@@ -53,14 +54,15 @@ export default function App() {
                 component={Signup}
               />
               <Stack.Screen name="Home" component={HomeScreen} />
-              <Stack.Screen name="personalInfo" component={personalInfoScreen} />
-              <Stack.Screen name="physicalInfo" component={physicalInfoScreen} />
+              <Stack.Screen name="PersonalInfo" component={PersonalInfoScreen} />
+              <Stack.Screen name="PhysicalInfo" component={PhysicalInfoScreen} />
               <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
               <Stack.Screen name='ChooseDay' component={ChooseDayScreen} />
               <Stack.Screen name='Welcome' component={welcomeScreen} />
               <Stack.Screen name='CurrentProgress' component={CurrentProgress} />
               <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
               <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
+              <Stack.Screen name ="CustomizeScreen" component={CustomizeScreen}/>
 
             </Stack.Navigator>
           </NavigationContainer>

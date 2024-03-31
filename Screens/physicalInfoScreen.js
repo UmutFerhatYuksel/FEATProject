@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, StatusBar, TouchableOpacity } from 'react-native';
 import { useState } from 'react';
-import { SafeAreaView } from 'react-native-web';
+import { SafeAreaView } from 'react-native';
 import tw from 'twrnc';
 import { Picker } from '@react-native-picker/picker';
 import { RadioButton, Button, TextInput } from 'react-native-paper';
@@ -17,7 +17,7 @@ const styles = StyleSheet.create(
   }
 )
 
-const physicalInfoScreen = ({ navigation, route }) => {
+const PhysicalInfoScreen = ({ navigation, route }) => {
   const { userName } = route.params;
   const { userSurname } = route.params;
   const { userAge } = route.params;
@@ -110,4 +110,4 @@ const physicalInfoScreen = ({ navigation, route }) => {
 
 
 
-export default physicalInfoScreen;
+export default PhysicalInfoScreen;

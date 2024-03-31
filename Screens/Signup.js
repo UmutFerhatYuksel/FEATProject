@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, Alert } from 'react-native'
 import React, { useEffect, useState } from 'react';
 import tw from 'twrnc';
 import * as WebBrowser from "expo-web-browser";
@@ -7,7 +7,7 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Raleway_400Regular } from "@expo-google-fonts/raleway";
 import { useFonts } from 'expo-font';
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { Button,TextInput } from 'react-native-paper';
+import { Button, TextInput } from 'react-native-paper';
 
 
 WebBrowser.maybeCompleteAuthSession();
@@ -98,14 +98,29 @@ export function Signup({ navigation }) {
       body: JSON.stringify(userData)
     });
   }
-  const [email, setEmail] = useState();
-  const [password, setPassword] = useState();
-  const[name,setName]=useState();
+  const [email, setEmail] = useState(null);
+  const [password, setPassword] = useState(null);
+  const [name, setName] = useState(null);
 
-  const registerHandle=()=>{
-    console.log("Register Pressed") 
+  const registerHandle = () => {
+    console.log("Register Pressed")
     // Bu kısımda register işlemleri yapılcak ve eğer register işlemi başarılı olursa kullanıcı information kısmına yönlendirilecek
-    navigation.navigate("personalInfo");
+    
+
+    if (email == null || password == null) {
+      Alert.alert("Email or Password Empty", "Email or Password cannot be empty", [
+        {
+          text: "Cancel",
+          onPress: () => console.log("Cancel is pressed"),
+          style: 'cancel',
+        }
+      ])
+
+      
+    }else{
+      navigation.navigate("PersonalInfo");
+    }
+
   }
 
   return (

@@ -15,6 +15,7 @@ const WorkoutComplete = ({ navigation, route }) => {
     const [progress, setProgress] = useState(0);
     const [modalVisible, setModalVisible] = useState(false);
 
+    console.log(item);
     // ExampleReps aslında her egzersizin sepesifik rep sayısını belirtir burda örnek olsun diye kendim constant girdim her egzersize ayrı rep atamamız gerek
     const exampleReps = 4;
     const steps = Array.from({ length: exampleReps }, (_, index) => index + 1);

@@ -3,7 +3,7 @@ import React from 'react';
 import Banner from '../assets/bannerWorkout.png';
 import tw from "twrnc";
 import { TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native-web';
+import { ScrollView } from 'react-native';
 import ExerciseImage from '../assets/Exercise.png';
 
 const CurrentWorkout = ({ navigation, route }) => {
@@ -25,7 +25,7 @@ const CurrentWorkout = ({ navigation, route }) => {
                     </Text>
                 </View>
                 {/* Özelleştirme Butonu */}
-                <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => console.log("pressed")}>
+                <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => navigation.navigate("CustomizeScreen",{workoutList:workoutList})}>
                     <View style={tw`m-auto`}>
                         <Text style={tw`text-white text-md`}>Özelleştir</Text>
                     </View>
@@ -40,7 +40,7 @@ const CurrentWorkout = ({ navigation, route }) => {
                 </View>
             </TouchableOpacity> */}
 
-            <ScrollView>
+            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={tw`h-70`}>
                     {workoutList.map((item) => (
                         <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item: item, workoutList: workoutList })}>

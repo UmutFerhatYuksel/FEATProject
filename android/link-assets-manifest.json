@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/Cabin_Condensed-Medium.ttf",
+      "sha1": "7fce2b1322ea5389c1b339c12ade883c45d7c191"
+    },
+    {
+      "path": "assets/fonts/Lobster-Regular.ttf",
+      "sha1": "120c751cd7a77174037c2409ab883ef7efc5edbb"
+    }
+  ]
+}

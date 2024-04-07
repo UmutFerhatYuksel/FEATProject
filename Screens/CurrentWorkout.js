@@ -7,13 +7,11 @@ import { ScrollView } from 'react-native';
 import ExerciseImage from '../assets/Exercise.png';
 
 const CurrentWorkout = ({ navigation, route }) => {
-    const { stepsCompleted } = route.params;
-    const receivedItem = route.params?.receivedItem
-    const { workoutList } = route.params;
+    const { Exercises } = route.params;
 
-    const exampleSituation = true;
+    
 
-    console.log(receivedItem)
+    console.log(Exercises);
 
     return (
         <View>
@@ -45,17 +43,16 @@ const CurrentWorkout = ({ navigation, route }) => {
 
             <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
                 <View style={tw`h-70`}>
-                    {workoutList.map((item) => (
-                        <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item: item, workoutList: workoutList })}>
+                    {Exercises.map((item) => (
+                        <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => navigation.navigate("WorkoutComplete", { item:item })}>
                             <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
 
-                                {/* receivedItem yerine database'den workoutList.completed kullanılacak. Sadece 1 tane dairenin yeşil olma problemini bu giderecek */}
-                                {receivedItem == item && receivedItem.completed ? (
-                                    <View style={[tw`bg-green-800 w-6 h-6 rounded-full my-auto mr-2`]}>
+                            {item.isComplete ? (
+                                    <View style={[tw`bg-green-400 w-6 h-6 rounded-full my-auto mr-2`]}>
                                         {/* Icon or indicator for completed item */}
                                     </View>
                                 ) : (
-                                    <View style={[tw`bg-slate-800 w-6 h-6 rounded-full my-auto mr-2`]}>
+                                    <View style={[tw`bg-slate-400 w-6 h-6 rounded-full my-auto mr-2`]}>
                                         {/*else if yazılacak (eğer receivedItem.completed false ise) */}
                                     </View>
                                 )}
@@ -63,8 +60,8 @@ const CurrentWorkout = ({ navigation, route }) => {
 
                             </View>
                             <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>x3 Sets</Text></View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>6Rep</Text></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.set}Set</Text></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.rep}Rep</Text></View>
                         </TouchableOpacity>
                     ))}
                 </View>

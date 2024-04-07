@@ -116,10 +116,6 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
   ])
 
 
-  useEffect(() => {
-    calculateExerciseLevel();
-
-  }, [])
 
   const calculateExerciseLevel = () => {
     let BMR;

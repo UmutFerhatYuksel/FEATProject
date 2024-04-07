@@ -1,8 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Login } from './Screens/Login';
@@ -13,12 +10,12 @@ import PhysicalInfoScreen from './Screens/physicalInfoScreen';
 import CreateWorkoutScreen from './Screens/CreateWorkoutScreen';
 import ChooseDayScreen from './Screens/ChooseDayScreen';
 import { PaperProvider } from "react-native-paper"
-import HomeScreen from './Screens/HomeScreen';
 import CurrentWorkout from './Screens/CurrentWorkout';
 import CurrentProgress from './Screens/CurrentProgress';
 import WorkoutComplete from './Screens/WorkoutComplete';
 import { NativeBaseProvider, extendTheme } from "native-base";
 import CustomizeScreen from './Screens/CustomizeScreen';
+import example from './Screens/example';
 
 const newColorTheme = {
   brand: {
@@ -32,9 +29,9 @@ const theme = extendTheme({ colors: newColorTheme });
 
 
 
-
 const Stack = createNativeStackNavigator();
 export default function App() {
+
   return (
     <NativeBaseProvider theme={theme}>
 
@@ -53,7 +50,6 @@ export default function App() {
                 name='Signup'
                 component={Signup}
               />
-              <Stack.Screen name="Home" component={HomeScreen} />
               <Stack.Screen name="PersonalInfo" component={PersonalInfoScreen} />
               <Stack.Screen name="PhysicalInfo" component={PhysicalInfoScreen} />
               <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
@@ -63,6 +59,8 @@ export default function App() {
               <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
               <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
               <Stack.Screen name ="CustomizeScreen" component={CustomizeScreen}/>
+              <Stack.Screen name ="example" component={example}/>
+              
 
             </Stack.Navigator>
           </NavigationContainer>

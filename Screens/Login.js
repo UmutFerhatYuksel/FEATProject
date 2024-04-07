@@ -6,6 +6,8 @@ import EvilIcons from '@expo/vector-icons/EvilIcons';
 import { Raleway_400Regular } from "@expo-google-fonts/raleway";
 import { useFonts } from 'expo-font';
 import { Button, Text, TextInput } from 'react-native-paper';
+import { FIREBASE_AUTH } from '../firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 
 
 
@@ -28,50 +30,23 @@ export function Login({ navigation }) {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const auth = FIREBASE_AUTH;
 
   const handleLogin = async () => {
+
     try {
-      const response = await fetch('http://localhost:8080/api/login', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ email, password }),
-      });
-  
-      if (response.ok) {
-        const responseData = await response.json(); // Parse the response body as JSON
-        console.log('Response Data:', responseData);
-  
-        const userId = responseData.userId;
-        const personalInfoExists = responseData.personalInfoExists;
-  
-        console.log('User ID:', userId);
-        console.log('Personal Info Exists:', personalInfoExists);
-  
-        if (userId !== null) {
-          if (personalInfoExists) {
-            // Personal info exists, navigate to the CurrentWorkout page
-            navigation.navigate('CurrentWorkout', { userId });
-          } else {
-            // Personal info does not exist, navigate to the personal info page
-            navigation.navigate('personalInfo', { userId });
-          }
-        } else {
-          // Handle error
-          throw new Error('Invalid user ID received');
-        }
-      } else if (response.status === 401) {
-        // Unauthorized: Incorrect email or password
-        alert('Incorrect email or password');
-      } else {
-        // Other errors
-        throw new Error('Login failed');
+      let response = await signInWithEmailAndPassword(auth, email, password);
+
+      if (response) {
+
+        navigation.navigate("CurrentProgress", { email: email, password: password });
+
+        console.log(response)
+
       }
     } catch (error) {
-      console.error('Error logging in:', error);
-      // Handle other errors
-      alert('An error occurred during login. Please try again later.');
+      console.error("Error")
+      alert(error);
     }
   };
 
@@ -103,11 +78,17 @@ export function Login({ navigation }) {
 
         </View>
 
-        
+
         <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={handleLogin}>
             <View style={tw`my-auto items-center`}>
-              <Text style={tw`text-center text-white font-bold`} onPress={handleLogin}>Login with Email</Text>
+              <Text style={tw`text-center text-white font-bold`} >Login with Email</Text>
+            </View>
+          </TouchableOpacity>
+
+          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={()=>{navigation.navigate("example")}}>
+            <View style={tw`my-auto items-center`}>
+              <Text style={tw`text-center text-white font-bold`} >Login with Email</Text>
             </View>
           </TouchableOpacity>
 
@@ -131,7 +112,7 @@ export function Login({ navigation }) {
             </View>
           </TouchableOpacity>
 
-          <Text onPress={()=>navigation.navigate("Signup")} style={tw`text-sm  text-indigo-700 text-center leading-loose`}>Don't have account yet? Register</Text>
+          <Text onPress={() => navigation.navigate("Signup")} style={tw`text-sm  text-indigo-700 text-center leading-loose`}>Don't have account yet? Register</Text>
 
         </View>
 

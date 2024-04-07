@@ -8,9 +8,16 @@ import { Raleway_400Regular } from "@expo-google-fonts/raleway";
 import { useFonts } from 'expo-font';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { Button, TextInput } from 'react-native-paper';
+import { FIREBASE_AUTH } from '../firebase';
+import { db } from '../firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { doc, setDoc } from 'firebase/firestore';
+
 
 
 WebBrowser.maybeCompleteAuthSession();
+
+const auth = FIREBASE_AUTH;
 
 const styles = StyleSheet.create(
   {
@@ -25,102 +32,48 @@ const styles = StyleSheet.create(
 )
 export function Signup({ navigation }) {
   const [userInfo, setUserInfo] = useState(null); //It contains username when login with your google account
-  const [request, response, propmptAsync] = Google.useAuthRequest({
-    androidClientId: "534817386575-j8b4rapsg709o772gdgdquj7gic59sfj.apps.googleusercontent.com",
-    webClientId: "534817386575-h5n0e44v2sue2q71clqalht59gkkdl19.apps.googleusercontent.com"
-  });
 
   const [fontsLoaded] = useFonts({
     Raleway_400Regular
   })
 
-  useEffect(() => {
-    handleSingInWithGoogle();
-
-    if (userInfo !== null) {
-      navigation.navigate('welcome'); //it directs Login page temporarily but it should redirect main page or like this
-    }
-  }, [response])
-
-  async function handleSingInWithGoogle() {
-    const user = await AsyncStorage.getItem("@user");
-
-    if (!user) {
-      await getUserInfo()
-      if (response?.type === "success") {
-        await getUserInfo(response.authentication.accessToken)
-
-        navigation.navigate('welcome');
-      }
-    } else {
-      setUserInfo(JSON.parse(user));
-    }
-  }
-
-  const getUserInfo = async (token) => {
-    if (!token) return;
-
-    try {
-      const response = await fetch(
-        "https:/www.googleapis.com/userinfo/v2/me",
-        {
-          headers: { Authorization: `Bearer ${token}` }
-        }
-      );
-
-      const user = await response.json();
-      await AsyncStorage.setItem("@user", JSON.stringify(user));
-
-      setUserInfo(user);
-    } catch (error) {
-
-    }
-  }
-
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
-  const[name,setName]=useState();
+
 
 
   const handleSignUp = async () => {
+
     try {
-        const response = await fetch('http://localhost:8080/api/register', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ email, password }),
+      let response = await createUserWithEmailAndPassword(auth, email, password);
+
+      if (response) {
+
+        navigation.navigate("PersonalInfo", { email: email, password: password });
+
+        await setDoc(doc(db,'User',response.user.uid),{
+          email:email
         });
 
-        if (response.ok) {
-          console.log(response.ok);
-          // Show alert message
-          alert("You registered to the system successfully");
-    
-          // Refresh the page
-          window.location.reload();
-        } else if (response.status === 400) {
-            // User with this email already exists (status code 400)
-            alert('This email already exists');
-        } else {
-            // Handle other errors
-            throw new Error('Registration failed');
-        }
-    } catch (error) {
-        console.error('Error signing up:', error);
-        // Handle other errors
-        alert('An error occurred during registration. Please try again later.');
-    }
-};
+        console.log(response)
 
-  
+      }
+    } catch (error) {
+      console.error("Error")
+      alert(error);
+    }
+
+
+
+  };
+
 
   return (
 
 
 
     <View style={tw`h-full`}>
-      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`} >Login</Text>
+      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`} >Sign In</Text>
 
       <View style={tw`w-full h-100 mx-auto mt-8`}>
         <View style={tw`mx-auto mt-8 w-content`}>

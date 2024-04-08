@@ -92,7 +92,7 @@ const PersonalInfoScreen = ({ navigation, route }) => {
       </Picker> */}
 
       <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700  font-bold rounded-full mx-auto mt-8`}
-        onPress={() => navigation.navigate("physicalInfo", {
+        onPress={() => navigation.navigate("PhysicalInfo", {
           userName: userName,
           userSurname: userSurname,
           userAge: userAge,

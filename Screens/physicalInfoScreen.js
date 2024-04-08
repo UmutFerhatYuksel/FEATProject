@@ -18,6 +18,7 @@ const styles = StyleSheet.create(
 )
 
 const PhysicalInfoScreen = ({ navigation, route }) => {
+  const { userId } = route.params;
   const { userName } = route.params;
   const { userSurname } = route.params;
   const { userAge } = route.params;
@@ -32,7 +33,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
   // Bursaı db ye kayıt
 
   const handleComplete = () => {
-    navigation.navigate("physicalInfo", {
+    navigation.navigate("CurrentProgress", {
       userName: userName,
       userSurname: userSurname,
       userAge: userAge,
@@ -56,21 +57,23 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
     console.log("USER EXPERIENCE LEVEL:" + typeof userExperienceLevel);
 
     try {
-      const response = await fetch('http://localhost:8080/api/physical-info', {
+      const response = await fetch('http://localhost:8080/userInfo/saveUserInfo', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          userId: userId, // int
+          id: userId, // int
           userName: userName, // string
+          age: userAge, // int
+          weight: userWeight, // float
+          height: userHeight, // int
+          gender: userGender, // string
+          dayList : ["Monday","Wednesday","Friday"],
           userSurname: userSurname, //string
-          userAge: userAge, // int
-          userDailyActivityLevel: userDailyActivityLevel, // int
-          userHeight: userHeight, // int
-          userWeight: userWeight, // float
-          userGender: userGender, // string
-          userExperienceLevel: userExperienceLevel, // string but it is
+          dailyActivityLevel: userDailyActivityLevel, // int
+          experienceLevel: userExperienceLevel, // string but it is
+    
         }),
       });
 

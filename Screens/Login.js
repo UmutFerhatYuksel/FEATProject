@@ -31,7 +31,7 @@ export function Login({ navigation }) {
 
   const handleLogin = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/login', {
+      const response = await fetch('http://localhost:8080/user/login', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -55,7 +55,7 @@ export function Login({ navigation }) {
             navigation.navigate('CurrentWorkout', { userId });
           } else {
             // Personal info does not exist, navigate to the personal info page
-            navigation.navigate('personalInfo', { userId });
+            navigation.navigate('PersonalInfo', { userId });
           }
         } else {
           // Handle error

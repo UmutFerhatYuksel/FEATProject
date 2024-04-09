@@ -34,6 +34,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
 
     {
       name: "Incline Hammer Curls",
+      image_url: "https://i.pinimg.com/originals/2e/f1/2c/2ef12c69560426956d1240a4972e5e59.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -42,6 +43,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Wide-grip barbell curl",
+      image_url: "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638183377952-LJZ8PDJYO558HFQV31KX/Standing%2BEZ%2BBar%2BCurls.jpeg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -50,6 +52,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "EZ-bar spider curl",
+      image_url: "https://www.lyfta.app/thumbnails/16281201.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -58,6 +61,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Hammer Curls",
+      image_url: "https://i.pinimg.com/originals/2e/f1/2c/2ef12c69560426956d1240a4972e5e59.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -66,6 +70,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "EZ-Bar Curl",
+      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Re4Woqi1JroSCJEcS4Auyzq86n24fnnggPaR4Qn1aw&s",
       type: "strength",
       muscle: "biceps",
       equipment: "e-z_curl_bar",
@@ -74,6 +79,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Zottman Curl",
+      image_url: "https://images.squarespace-cdn.com/content/v1/5e9f8e841520b34d121c63f2/1631682597694-TN6NR4DYVJMWV7KYAMA4/zottman-curl.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "None",
@@ -82,6 +88,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Biceps curl to shoulder press",
+      image_url: "https://ginasiovirtual.com/wp-content/uploads/2021/06/curl-de-bicep-com-press-de-ombros.webp",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -90,6 +97,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Barbell Curl",
+      image_url:  "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638183377952-LJZ8PDJYO558HFQV31KX/Standing%2BEZ%2BBar%2BCurls.jpeg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -98,6 +106,8 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Concentration curl",
+      image_url: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/concentration-curl-benefits.jpg",
+
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -106,6 +116,7 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Flexor Incline Dumbbell Curls",
+      image_url : "https://www.aleanlife.com/wp-content/uploads/2022/12/incline-dumbbell-curl-1.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",

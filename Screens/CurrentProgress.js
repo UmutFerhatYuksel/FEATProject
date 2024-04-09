@@ -12,6 +12,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Incline Hammer Curls",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2023/02/dumbbell-incline-hammer-curl.gif",
+      "image_url": "https://i.pinimg.com/originals/2e/f1/2c/2ef12c69560426956d1240a4972e5e59.jpg",
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_longhead",
@@ -22,6 +23,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Wide-grip barbell curl",
       "gif_url": "https://gymvisual.com/img/p/1/0/0/9/4/10094.gif",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638183377952-LJZ8PDJYO558HFQV31KX/Standing%2BEZ%2BBar%2BCurls.jpeg",
+
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_shorthead",
@@ -32,6 +35,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "EZ-bar spider curl",
       "gif_url": "https://fitliferegime.com/wp-content/uploads/2023/08/How-To-Do-Spider-Curl.gif",
+      "image_url": "https://www.lyfta.app/thumbnails/16281201.jpg",
+
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_shorthead",
@@ -42,6 +47,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Hammer Curls",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif",
+      "image_url": "https://cdn.shopify.com/s/files/1/1876/4703/files/shutterstock_419477203_480x480.jpg?v=1636560233",
+
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_brachialis",
@@ -52,6 +59,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "EZ-Bar Curl",
       "gif_url": "https://static.wixstatic.com/media/00b9a7_10520757ce4145aeb32f5f4d174b3e60~mv2.gif",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Re4Woqi1JroSCJEcS4Auyzq86n24fnnggPaR4Qn1aw&s",
 
       "type": "strength",
       "muscle": "biceps",
@@ -63,6 +71,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Zottman Curl",
       "gif_url": "https://i.pinimg.com/originals/4b/e4/68/4be46841032506b311d43b8d49c6a58a.gif",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/5e9f8e841520b34d121c63f2/1631682597694-TN6NR4DYVJMWV7KYAMA4/zottman-curl.jpg",
+
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_shorthead",
@@ -73,6 +83,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Barbell Curl",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2023/02/barbell-cheat-curl.gif",
+      "image_url": "https://s3.amazonaws.com/prod.skimble/assets/1816221/image_iphone.jpg",
+
 
       "type": "strength",
       "muscle": "biceps",
@@ -84,6 +96,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Concentration curl",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Concentration-Curl.gif",
+      "image_url": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/concentration-curl-benefits.jpg",
+
       "type": "strength",
       "muscle": "biceps",
       "muscle_target": "biceps_shorthead",
@@ -94,6 +108,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Triceps dip",
       "gif_url": "https://gymvisual.com/img/p/2/3/9/8/5/23985.gif",
+      "image_url": "https://cdn.shopify.com/s/files/1/1283/2557/files/Triceps_Dips_Muscles_Worked_1024x1024.jpg?v=1678165383",
+
       "type": "strength",
       "muscle": "triceps",
       "muscle_target": "triceps_lateralhead",
@@ -104,6 +120,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Decline EZ-bar skullcrusher",
       "gif_url": "https://gymvisual.com/img/p/4/7/6/6/4766.gif",
+      "image_url": "https://weighttraining.guide/wp-content/uploads/2018/06/decline-ez-bar-skull-crusher-resized.png",
+
       "type": "strength",
       "muscle": "triceps",
       "muscle_target": "triceps_lateralhead",
@@ -115,6 +133,8 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Cable V-bar push-down",
       "gif_url": "https://gymvisual.com/img/p/4/9/7/4/4974.gif",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638252558515-OSL1DPH49GL4EUKNUZNF/Standing%2BTwo%2BArm%2BOverhead%2BDumbbell%2BTriceps%2BExtensions.png",
+
       "type": "strength",
       "muscle": "triceps",
       "muscle_target": "triceps_shorthead",
@@ -125,6 +145,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Weighted bench dip",
       "gif_url": "https://gymvisual.com/img/p/5/5/5/2/5552.gif",
+      "image_url" : "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638260966540-876TFLNOQLTMNZG5QUGQ/Weighted%2BBench%2BTriceps%2BDips.png",
 
       "type": "strength",
       "muscle": "triceps",
@@ -135,6 +156,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "EZ-Bar Skullcrusher",
       "gif_url": "https://gymvisual.com/img/p/1/8/2/4/3/18243.gif",
+      "image_url": "https://s3.amazonaws.com/prod.skimble/assets/2399221/image_iphone.jpg",
 
       "type": "strength",
       "muscle": "triceps",
@@ -146,6 +168,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Reverse Grip Triceps Pushdown",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Reverse-Grip-Pushdown.gif",
+      "image_url": "https://anabolicaliens.com/cdn/shop/articles/5fb55f667f160c562e9e4172_reverse-grip-tricep-pushdown.png?v=1641751032",
 
       "type": "strength",
       "muscle": "triceps",
@@ -157,6 +180,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Push-Ups - Close Triceps Position",
       "gif_url": "https://gymvisual.com/img/p/1/0/0/8/3/10083.gif",
+      "image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsyjFRRxlL-3-2Qo_z2HAnH6al1uQp13MyXA&s",
 
       "type": "strength",
       "muscle": "triceps",
@@ -169,6 +193,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Kneeling cable triceps extension",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2022/02/Kneeling-Cable-Triceps-Extension.gif",
+      "image_url": "https://gymvisual.com/7711-large_default/cable-kneeling-triceps-extension-version-2.jpg",
 
       "type": "strength",
       "muscle": "triceps",
@@ -180,6 +205,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Single-arm cable triceps extension",
       "gif_url": "https://gymvisual.com/img/p/2/5/6/2/9/25629.gif",
+      "image_url": "https://homegymreview.co.uk/wp-content/uploads/exercises/02311101-Cable-Standing-One-Arm-Triceps-Extension_Upper-Arms_max-scaled.jpg",
 
       "type": "strength",
       "muscle": "triceps",
@@ -192,6 +218,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Military press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/07/Barbell-Standing-Military-Press.gif",
+      "image_url":"https://www.inspireusafoundation.org/wp-content/uploads/2022/04/standing-military-press.png",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -203,6 +230,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Standing palms-in shoulder press",
       "gif_url": "https://i.pinimg.com/originals/63/c1/db/63c1db8aa4a11b1b575c95182b21965b.gif",
+      "image_url": "https://gymvisual.com/1300-large_default/3-4-sit-up.jpg",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -214,6 +242,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Seated barbell shoulder press",
       "gif_url": "https://newlife.com.cy/wp-content/uploads/2019/12/00911301-Barbell-Seated-Overhead-Press_Shoulders_360.gif",
+      "image_url":"https://pump-app.s3.eu-west-2.amazonaws.com/exercise-assets/00911101-Barbell-Seated-Overhead-Press_Shoulders_small.jpg",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -225,6 +254,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Seated Dumbbell Press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Shoulder-Press.gif",
+      "image_url": "https://s3.amazonaws.com/prod.skimble/assets/2416111/image_iphone.jpg",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -236,6 +266,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Standing dumbbell shoulder press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2023/09/Standing-Dumbbell-Overhead-Press.gif",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/55e406fbe4b0b03c5e7543ae/1496868036164-1XVVVXYMG45R483QUWYP/Standing+Dumbbell+Shoulder+Press",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -247,6 +278,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Lateral Raises",
       "gif_url": "https://gymvisual.com/img/p/1/9/1/5/1/19151.gif",
+      "image_url": "https://images.squarespace-cdn.com/content/v1/55e406fbe4b0b03c5e7543ae/1492638807121-H3Q9V0YU7HX1Z9HJ48EQ/Standing+Dumbbell+Lateral+Raises",
 
       "type": "strength",
       "muscle": "shoulders",
@@ -258,6 +290,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Dumbbell Bench Press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Press.gif",
+      "image_url": "https://training.fit/wp-content/uploads/2019/07/bankdruecken-kurzhantel-flachbank.png",
 
       "type": "strength",
       "muscle": "chest",
@@ -269,6 +302,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Pushups",
       "gif_url": "https://gymvisual.com/img/p/2/6/4/5/4/26454.gif",
+      "image_url":"https://static.strengthlevel.com/images/exercises/push-ups/push-ups-800.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -280,6 +314,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Close-grip bench press",
       "gif_url": "https://gymvisual.com/img/p/1/0/0/6/1/10061.gif",
+      "image_url": "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/close-grip-bench-benefits.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -291,6 +326,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Dumbbell Flyes",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Dumbbell-Fly.gif",
+      "image_url":"https://miro.medium.com/v2/resize:fit:617/1*TphKGBzt13KtJ0YqBUCf3g.png",
 
       "type": "strength",
       "muscle": "chest",
@@ -302,6 +338,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Incline dumbbell bench press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Incline-Dumbbell-Press.gif",
+      "image_url":"https://www.shutterstock.com/shutterstock/photos/425575588/display_1500/stock-photo-dumbbell-bench-press-while-lying-on-an-incline-bench-d-illustration-425575588.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -314,6 +351,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Low-cable cross-over",
       "gif_url": "https://gymvisual.com/img/p/4/9/1/2/4912.gif",
+      "image_url": "https://i.pinimg.com/736x/f7/4e/72/f74e72d3c7f2fa78c6a3c82225673a54.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -325,6 +363,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Barbell Bench Press - Medium Grip",
       "gif_url": "https://gymvisual.com/img/p/8/8/0/5/8805.gif",
+      "image_url":"https://dagodsfitness.home.blog/wp-content/uploads/2019/03/1669-1.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -336,6 +375,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Chest dip",
       "gif_url": "https://gymvisual.com/img/p/4/9/8/4/4984.gif",
+      "image_url" : "https://www.hevyapp.com/wp-content/uploads/02511201-Chest-Dip_Chest.jpg",
 
       "type": "strength",
       "muscle": "chest",
@@ -347,6 +387,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Decline Dumbbell Flyes",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Decline-Dumbbell-Fly.gif",
+      "image_url" : "https://i0.wp.com/theinscribermag.com/wp-content/uploads/2024/02/Screenshot-2024-02-16-211459.png?fit=726%2C399&ssl=1",
 
       "type": "strength",
       "muscle": "chest",
@@ -359,6 +400,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Weighted pull-up",
       "gif_url": "https://gymvisual.com/img/p/5/5/6/3/5563.gif",
+      "image_url" : "https://www.inspireusafoundation.org/wp-content/uploads/2023/01/weighted-pull-up-benefits.jpg",
 
       "type": "strength",
       "muscle": "back",
@@ -370,6 +412,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Pullups",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Pull-up.gif",
+      "image_url" : "https://anabolicaliens.com/cdn/shop/articles/199990.png?v=1645089103" ,
 
       "type": "strength",
       "muscle": "back",
@@ -382,6 +425,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Rocky Pull-Ups/Pulldowns",
       "gif_url": "https://gymvisual.com/img/p/5/4/1/2/5412.gif",
+      "image_url" : "https://gymvisual.com/2034-thickbox_default/3-4-sit-up.jpg",
 
       "type": "strength",
       "muscle": "back",
@@ -393,6 +437,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Close-grip pull-down",
       "gif_url": "https://gymvisual.com/img/p/1/4/5/2/2/14522.gif",
+      "image_url" : "https://anabolicaliens.com/cdn/shop/articles/Everything_You_Need_To_Know-12.png?v=1652466345",
 
       "type": "strength",
       "muscle": "back",
@@ -404,6 +449,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Pull-up",
       "gif_url": "https://gymvisual.com/img/p/5/3/8/6/5386.gif",
+      "image_url" : "https://gymvisual.com/1956-large_default/3-4-sit-up.jpg",
 
       "type": "strength",
       "muscle": "back",
@@ -415,6 +461,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Barbell deficit deadlift",
       "gif_url": "https://gymvisual.com/img/p/2/5/2/6/2/25262.gif",
+      "image_url" : "https://gymvisual.com/6780-large_default/barbell-romanian-deadlift-from-deficit.jpg",
 
       "type": "powerlifting",
       "muscle": "lower_back",
@@ -425,6 +472,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Back extension",
       "gif_url": "https://gymvisual.com/img/p/2/0/8/2/5/20825.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/03/hyperextension.png",
 
       "type": "strength",
       "muscle": "back",
@@ -437,6 +485,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Reverse-grip bent-over row",
       "gif_url": "https://gymvisual.com/img/p/1/0/6/1/9/10619.gif",
+      "image_url" : "https://fitnessvolt.com/wp-content/uploads/2023/01/Muscles-Worked-in-Reverse-Grip-Row-750x360.jpg",
 
       "type": "strength",
       "muscle": "back",
@@ -448,6 +497,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "One-Arm Dumbbell Row",
       "gif_url": "https://gymvisual.com/img/p/1/9/7/9/8/19798.gif",
+      "image_url": "https://training.fit/wp-content/uploads/2020/02/rudern-kurzhantel.png",
 
       "type": "strength",
       "muscle": "back",
@@ -459,6 +509,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Bent Over Two-Arm Long Bar Row",
       "gif_url": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhOqvFL85VD4PBDTBWiCBwIDN8tDzYELNn-nfx6GChi8ABs1C3A2UI8A01md44tYbSvTFl9L517jgqVYf9hlZK-jkq_aoF5djbD3mN_8kDfiel0HaR4RWfll9d4CZu49jfgJiNJTVcywIb4ve3rwjqgSiQTOxrQMFUz-Gp2s1H5CwUFeKYvW07NtVF1CA/s360/T-Bar-Row.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/02/rudern-tstange-800x448.png",
 
       "type": "strength",
       "muscle": "middle_back",
@@ -470,6 +521,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Seated Cable Rows",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Seated-Cable-Rope-Row.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/02/rudern-kabelzug-800x448.png",
 
       "type": "strength",
       "muscle": "back",
@@ -481,6 +533,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Romanian Deadlift With Dumbbells",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2021/11/dumbbell-romanian-deadlift.gif",
+      "image_url" : "https://anabolicaliens.com/cdn/shop/articles/5e595712f146e8e14db4ca6f_dumbbell-romanian-deadlift-exercise-anabolic-aliens-p-500.png?v=1644927440",
 
       "type": "strength",
       "muscle": "legs",
@@ -492,7 +545,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Natural Glute Ham Raise",
       "gif_url": "https://static.wixstatic.com/media/00b9a7_e0d6ae5c6e064b8cbb881446249147ea~mv2.gif",
-
+      "image_url" : "https://www.hevyapp.com/wp-content/uploads/31931101-Glute-Ham-Raise_Thighs_small.jpg",
       "type": "strength",
       "muscle": "legs",
       "muscle_target": "hamstrings",
@@ -503,6 +556,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Glute ham raise-",
       "gif_url": "https://gymvisual.com/img/p/2/0/3/4/5/20345.gif",
+      "image_url" : "https://www.inspireusafoundation.org/wp-content/uploads/2022/04/glute-ham-raise-alternatives.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -515,6 +569,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Single-Leg Press",
       "gif_url": "https://gymvisual.com/img/p/1/5/6/9/3/15693.gif",
+      "image_url" : "https://gymvisual.com/6277-large_default/sled-45-degrees-one-leg-press.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -527,7 +582,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Barbell Full Squat",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2022/03/barbell-full-squat.gif",
-
+      "image_url" : "https://www.inspireusafoundation.org/wp-content/uploads/2022/06/the-barbell-squat.jpg",
       "type": "strength",
       "muscle": "legs",
       "muscle_target": "quadriceps",
@@ -538,6 +593,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Jumping rope",
       "gif_url": "https://gymvisual.com/img/p/1/7/1/0/9/17109.gif",
+      "image_url" : "https://www.inspireusafoundation.org/wp-content/uploads/2021/08/jump-rope-alternatives.jpg",
 
       "type": "cardio",
       "muscle": "legs",
@@ -549,6 +605,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Single-leg cable hip extension",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2021/07/band-standing-hip-extension.gif",
+      "image_url" : "https://s3assets.skimble.com/assets/2284672/image_iphone.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -560,6 +617,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Glute bridge",
       "gif_url": "https://newlife.com.cy/wp-content/uploads/2019/11/30141301-Low-Glute-Bridge-on-floor-female_Hips_360.gif",
+      "image_url" : "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638422430370-4HKO5XUY96AQ4ID418WS/Glute%2BBridges.jpeg",
 
       "type": "strength",
       "muscle": "legs",
@@ -571,7 +629,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Single-leg glute bridge",
       "gif_url": "https://gymvisual.com/img/p/1/4/1/5/7/14157.gif",
-
+      "image_url" : "https://vidcdn.123rf.com/450nwm/exerciseanimatic/exerciseanimatic2305/exerciseanimatic230500660.jpg",
       "type": "strength",
       "muscle": "legs",
       "muscle_target": "glutes",
@@ -582,7 +640,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Step-up with knee raise",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/02/Step-up.gif",
-
+      "image_url" : "https://gymvisual.com/3385-thickbox_default/3-4-sit-up.jpg",
       "type": "strength",
       "muscle": "legs",
       "muscle_target": "glutes",
@@ -593,7 +651,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Flutter Kicks",
       "gif_url": "https://gymvisual.com/img/p/1/9/8/5/9/19859.gif",
-
+      "image_url" : "https://gymvisual.com/16742/flutter-kicks-version-3.jpg",
       "type": "strength",
       "muscle": "legs",
       "muscle_target": "glutes",
@@ -605,6 +663,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Glute Kickback",
       "gif_url": "https://gymvisual.com/img/p/2/9/8/3/6/29836.gif",
+      "image_url" : "https://cdn.shopify.com/s/files/1/1497/9682/files/2_5d08fb12-e904-4ed9-9c17-bd2f1ec25395.jpg?v=1646658571",
 
       "type": "strength",
       "muscle": "legs",
@@ -616,6 +675,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Smith Machine Calf Raise",
       "gif_url": "https://www.inspireusafoundation.org/wp-content/uploads/2023/08/negative-calf-raise.gif",
+      "image_url" : "https://i.pinimg.com/564x/e1/8b/50/e18b508a9f088f54d80c5ededf3dbafd.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -627,6 +687,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Standing Calf Raises",
       "gif_url": "https://gymvisual.com/img/p/2/4/1/6/4/24164.gif",
+      "image_url" : "https://apilyfta.com/static/GymvisualPNG/06051101-Lever-Standing-Calf-Raise_Calf_small.png",
 
       "type": "strength",
       "muscle": "legs",
@@ -638,6 +699,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Seated Calf Raise",
       "gif_url": "https://newlife.com.cy/wp-content/uploads/2019/11/26661301-Lever-Seated-Calf-Raise-plate-loaded-VERSION-2_Calves_360-360x200.gif",
+      "image_url" : "https://kinxlearning.com/cdn/shop/files/exercise-3_1000x.jpg?v=1613154659",
 
       "type": "strength",
       "muscle": "legs",
@@ -649,6 +711,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Calf Press On The Leg Press Machine",
       "gif_url": "https://gymvisual.com/img/p/6/6/5/4/6654.gif",
+      "image_url" : "https://www.hevyapp.com/wp-content/uploads/07381201-Sled-45-Calf-Press_Calves.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -660,6 +723,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Rocking Standing Calf Raise",
       "gif_url": "https://ccuuubmtdurkmbeufybi.supabase.co/storage/v1/object/public/animations/0111.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/03/wadenheben-langhantel-stehend-2.png",
 
       "type": "strength",
       "muscle": "legs",
@@ -671,6 +735,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Calf Press",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2021/06/Lever-Seated-Calf-Raise.gif",
+      "image_url" : "https://homegymreview.co.uk/wp-content/uploads/exercises/13851101-Lever-Seated-Squat-Calf-Raise-on-Leg-Press-Machine_Calves_max-scaled.jpg",
 
       "type": "strength",
       "muscle": "legs",
@@ -682,6 +747,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Standing barbell calf raise",
       "gif_url": "https://fitnessprogramer.com/wp-content/uploads/2022/04/Standing-Barbell-Calf-Raise.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/03/wadenheben-langhantel-stehend-2.png",
 
       "type": "strength",
       "muscle": "legs",
@@ -693,6 +759,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Barbell Seated Calf Raise",
       "gif_url": "https://i.pinimg.com/originals/7b/96/51/7b9651f3ad4c05bab422a7fece5e470a.gif",
+      "image_url" : "https://training.fit/wp-content/uploads/2020/03/wadenheben-langhantel-sitzend.png",
 
       "type": "strength",
       "muscle": "legs",
@@ -704,6 +771,7 @@ const CurrentProgress = ({ navigation, route }) => {
     {
       "name": "Balance Board",
       "gif_url": "https://gymvisual.com/img/p/4/7/5/1/4751.gif",
+      "image_url" : "https://gymvisual.com/90-large_default/balance-board.jpg",
 
       "type": "strength",
       "muscle": "legs",

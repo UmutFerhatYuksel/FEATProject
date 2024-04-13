@@ -34,6 +34,8 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
 
     {
       name: "Incline Hammer Curls",
+      gif_url: "https://www.inspireusafoundation.org/wp-content/uploads/2023/02/dumbbell-incline-hammer-curl.gif",
+      image_url: "https://i.pinimg.com/originals/2e/f1/2c/2ef12c69560426956d1240a4972e5e59.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -42,6 +44,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Wide-grip barbell curl",
+      gif_url: "https://gymvisual.com/img/p/1/0/0/9/4/10094.gif",
+
+      image_url: "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638183377952-LJZ8PDJYO558HFQV31KX/Standing%2BEZ%2BBar%2BCurls.jpeg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -50,6 +55,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "EZ-bar spider curl",
+      gif_url: "https://fitliferegime.com/wp-content/uploads/2023/08/How-To-Do-Spider-Curl.gif",
+
+      image_url: "https://www.lyfta.app/thumbnails/16281201.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -58,6 +66,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Hammer Curls",
+      gif_url: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Hammer-Curl.gif",
+
+      image_url: "https://i.pinimg.com/originals/2e/f1/2c/2ef12c69560426956d1240a4972e5e59.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -66,6 +77,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "EZ-Bar Curl",
+      gif_url: "https://static.wixstatic.com/media/00b9a7_10520757ce4145aeb32f5f4d174b3e60~mv2.gif",
+
+      image_url: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Re4Woqi1JroSCJEcS4Auyzq86n24fnnggPaR4Qn1aw&s",
       type: "strength",
       muscle: "biceps",
       equipment: "e-z_curl_bar",
@@ -74,6 +88,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Zottman Curl",
+      gif_url: "https://i.pinimg.com/originals/4b/e4/68/4be46841032506b311d43b8d49c6a58a.gif",
+
+      image_url: "https://images.squarespace-cdn.com/content/v1/5e9f8e841520b34d121c63f2/1631682597694-TN6NR4DYVJMWV7KYAMA4/zottman-curl.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "None",
@@ -82,6 +99,9 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Biceps curl to shoulder press",
+      gif_url: "https://gymvisual.com/img/p/2/0/9/5/4/20954.gif",
+
+      image_url: "https://ginasiovirtual.com/wp-content/uploads/2021/06/curl-de-bicep-com-press-de-ombros.webp",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -90,6 +110,8 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Barbell Curl",
+      gif_url: "https://gymvisual.com/img/p/1/0/0/9/4/10094.gif",
+      image_url:  "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638183377952-LJZ8PDJYO558HFQV31KX/Standing%2BEZ%2BBar%2BCurls.jpeg",
       type: "strength",
       muscle: "biceps",
       equipment: "barbell",
@@ -98,6 +120,8 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Concentration curl",
+      gif_url: "https://fitnessprogramer.com/wp-content/uploads/2021/02/Concentration-Curl.gif",
+      image_url: "https://www.inspireusafoundation.org/wp-content/uploads/2022/01/concentration-curl-benefits.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",
@@ -106,6 +130,8 @@ const CreateWorkoutScreen = ({ navigation, route }) => {
     },
     {
       name: "Flexor Incline Dumbbell Curls",
+      gif_url: "https://i.pinimg.com/originals/b4/30/64/b43064d9ad9f42493dbcf37e653ab87c.gif",
+      image_url : "https://www.aleanlife.com/wp-content/uploads/2022/12/incline-dumbbell-curl-1.jpg",
       type: "strength",
       muscle: "biceps",
       equipment: "dumbbell",

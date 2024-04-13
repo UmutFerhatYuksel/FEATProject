@@ -109,6 +109,7 @@ const WorkoutComplete = ({ navigation, route }) => {
                                         const exerciseDocRef = doc.ref;
 
                                         updateDoc(exerciseDocRef, { isComplete: true });
+                                        navigation.navigate("CurrentWorkout");
                                     });
                                 })
                                 .catch((error) => {
@@ -122,7 +123,7 @@ const WorkoutComplete = ({ navigation, route }) => {
             })
 
             // gerekli işlemler yapıldıktan sonra CurrentWorkout Ekreanına geri dönülür
-            navigation.navigate("CurrentProgress");
+            
         }
     }
 

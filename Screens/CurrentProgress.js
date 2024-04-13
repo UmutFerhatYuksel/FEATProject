@@ -8,72 +8,76 @@ import { TouchableOpacity } from 'react-native';
 import axios from 'axios';
 import { FIREBASE_AUTH, db } from '../firebase';
 import { QuerySnapshot, addDoc, collection, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore';
-import { useIsFocused } from '@react-navigation/native';
 
 
 const CurrentProgress = ({ navigation, route }) => {
 
 
-  let Exercises = [];
-  let Days=[];
-  const currentDate = new Date();
-  const options = { weekday: 'long' }
-  const currentDay = currentDate.toLocaleDateString('en-US', options);
+  // const [Exercises,setExercises] = useState([]);
+  // let Days=[];
+  // const currentDate = new Date();
+  // const options = { weekday: 'long' }
+  // const currentDay = currentDate.toLocaleDateString('en-US', options);
+
+  // useEffect(() => {
+
+    
+  //   const unsubscribe = navigation.addListener('focus',()=>{
+  //       getInitialData().then( );
+
+       
+  //     });
+
+  //     return unsubscribe;
+  // }, [navigation])
+
+  // console.log(Exercises);
+
+  // const getInitialData = async () => {
+
+  //   var tempExercises=[]
+
+  //   const currentUser = FIREBASE_AUTH.currentUser;
+  //   const userInfoRef = doc(db, "User", currentUser.uid);
+  //   const newCollectionRef = collection(userInfoRef, "UserInfo");
+
+  //   getDocs(newCollectionRef).then((querySnapshot) => {
+  //     querySnapshot.forEach((item) => {
+
+  //       const dayCollectionRef = doc(newCollectionRef, item.id);
+  //       const subCollectionRef = collection(dayCollectionRef, "Day");
+
+  //       getDocs(subCollectionRef).then((querySnapshot) => {
+  //         querySnapshot.forEach((day) => {
+  //           console.log(day.id, " => ", day.data());
+
+  //           if (currentDay === day.data().name) {
+  //             const exerciseCollectionRef = doc(subCollectionRef, day.id);
+  //             const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
+
+  //             getDocs(ExercisesubCollectionRef).then((snapshot) => {
+  //               snapshot.forEach((exercise) => {
+  //                 console.log(exercise.id, " => ", exercise.data());
+
+  //                 Days.push(exercise.data().name);
 
 
+  //                 tempExercises.push(exercise.data());
 
-  const ifocused = useIsFocused();
-  useEffect(() => {
-
-    if (ifocused) {
-      getInitialData()
-    }
+  //                 setExercises(tempExercises);
 
 
-
-  }, [ifocused])
-
-  const getInitialData = async () => {
-
-    const currentUser = FIREBASE_AUTH.currentUser;
-    const userInfoRef = doc(db, "User", currentUser.uid);
-    const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-    getDocs(newCollectionRef).then((querySnapshot) => {
-      querySnapshot.forEach((item) => {
-
-        const dayCollectionRef = doc(newCollectionRef, item.id);
-        const subCollectionRef = collection(dayCollectionRef, "Day");
-
-        getDocs(subCollectionRef).then((querySnapshot) => {
-          querySnapshot.forEach((day) => {
-            console.log(day.id, " => ", day.data());
-
-            if (currentDay === day.data().name) {
-              const exerciseCollectionRef = doc(subCollectionRef, day.id);
-              const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
-
-              getDocs(ExercisesubCollectionRef).then((snapshot) => {
-                snapshot.forEach((exercise) => {
-                  console.log(exercise.id, " => ", exercise.data());
-
-                  Days.push(exercise.data().name);
+  //               })
+  //             })
+  //           }
 
 
-                  Exercises.push(exercise.data());
+  //         })
+  //       })
+  //     })
+  //   })
 
-
-                })
-              })
-            }
-
-
-          })
-        })
-      })
-    })
-
-  }
+  // }
 
 
   const startOfWeek = moment().startOf("isoWeek");
@@ -83,7 +87,6 @@ const CurrentProgress = ({ navigation, route }) => {
     startOfWeek.clone().add(index, 'days')
   );
 
-  console.log(Days);
 
   // exerciseList database'den gelecek
   // var exerciseList = Exercises;
@@ -110,7 +113,7 @@ const CurrentProgress = ({ navigation, route }) => {
       <Text style={tw`text-2xl px-3 font-semibold text-indigo-700`}>Today</Text>
       <Text style={tw`text-sm my-2 px-3 text-indigo-700`}>Burası Senin beslenme ve antrenman serüvenin</Text>
 
-      <TouchableOpacity onPress={() => navigation.navigate('CurrentWorkout', { Exercises: Exercises })}>
+      <TouchableOpacity onPress={() => navigation.navigate('CurrentWorkout')}>
         <ImageBackground source={Background} style={[tw`w-80 h-60 rounded-full mx-auto`]} imageStyle={{ borderRadius: 10 }}>
           <View style={tw`my-40`}>
             <Text style={tw`text-3xl text-white text-center`}>Your Daily Activity Plan</Text>

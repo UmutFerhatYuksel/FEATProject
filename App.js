@@ -16,6 +16,8 @@ import WorkoutComplete from './Screens/WorkoutComplete';
 import { NativeBaseProvider, extendTheme } from "native-base";
 import CustomizeScreen from './Screens/CustomizeScreen';
 import example from './Screens/example';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import EditProfile from './Screens/EditProfile';
 
 const newColorTheme = {
   brand: {
@@ -24,6 +26,17 @@ const newColorTheme = {
     700: "#b3bef6",
   },
 };
+
+const Tab=createBottomTabNavigator();
+
+function Home(){
+  return(
+    <Tab.Navigator>
+      <Tab.Screen name='CurrentProgress' component={CurrentProgress}></Tab.Screen>
+      <Tab.Screen name='Edit Profile' component={EditProfile}></Tab.Screen>
+    </Tab.Navigator>
+  )
+}
 
 const theme = extendTheme({ colors: newColorTheme });
 
@@ -41,6 +54,7 @@ export default function App() {
           <NavigationContainer >
             <Stack.Navigator
               initialRouteName='Login'
+              screenOptions={{headerShown:false}}
             >
               <Stack.Screen
                 name='Login'
@@ -55,7 +69,7 @@ export default function App() {
               <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
               <Stack.Screen name='ChooseDay' component={ChooseDayScreen} />
               <Stack.Screen name='Welcome' component={welcomeScreen} />
-              <Stack.Screen name='CurrentProgress' component={CurrentProgress} />
+              <Stack.Screen name='CurrentProgress' component={Home} />
               <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
               <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
               <Stack.Screen name ="CustomizeScreen" component={CustomizeScreen}/>

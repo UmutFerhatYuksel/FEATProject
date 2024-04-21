@@ -85,13 +85,6 @@ export function Login({ navigation }) {
               <Text style={tw`text-center text-white font-bold`} >Login with Email</Text>
             </View>
           </TouchableOpacity>
-
-          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={()=>{navigation.navigate("example")}}>
-            <View style={tw`my-auto items-center`}>
-              <Text style={tw`text-center text-white font-bold`} >Login with Email</Text>
-            </View>
-          </TouchableOpacity>
-
         </View>
 
         <View style={{ flexDirection: 'row', alignItems: 'center', width: "auto", marginTop: 40 }}>

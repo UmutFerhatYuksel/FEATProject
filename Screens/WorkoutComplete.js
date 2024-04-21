@@ -149,7 +149,7 @@ const WorkoutComplete = ({ navigation, route }) => {
             </Modal>
 
 
-            <ImageBackground source={ExerciseImage} style={tw`w-full h-150 flex flex-row justify-between`}>
+            <ImageBackground source={{uri:item.gif_url}} style={tw`w-full h-150 flex flex-row justify-between`}>
                 <TouchableOpacity style={tw`w-10 h-10 bg-white rounded-full ml-5 mt-5`} onPress={() => setModalVisible(true)}>
                     <IonIcon style={tw`mx-auto my-auto`} name='information-outline' size={30} />
                 </TouchableOpacity>

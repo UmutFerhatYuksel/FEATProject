@@ -24,7 +24,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 2.5,
       "Magnesium": 164,
       "Calories_per_100g": 342,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://www.mardinsepet.com/Images/Urun/17022021031859.jpeg"
     },
     {
       "ID": 7,
@@ -37,7 +38,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 2.4,
       "Magnesium": 0,
       "Calories_per_100g": 247,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/9/11/0/HE_whole-wheat-bread_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371609761646.jpeg"
     },
     {
       "ID": 11,
@@ -50,7 +52,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.7,
       "Magnesium": 25,
       "Calories_per_100g": 86,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://www.thespruceeats.com/thmb/bWWEsT1LCjYRnHg9pO-nTxNOYx4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sweetpotatoes_getty2400-56a4975c5f9b58b7d0d7b790.jpg"
     },
     {
       "ID": 8,
@@ -63,7 +66,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.8,
       "Magnesium": 43,
       "Calories_per_100g": 123,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://assets-jpcust.jwpsrv.com/thumbnails/k98gi2ri-720.jpg"
     },
     {
       "ID": 9,
@@ -76,7 +80,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 1.5,
       "Magnesium": 64,
       "Calories_per_100g": 120,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://media-cdn2.greatbritishchefs.com/media/in1o4glq/img23323.whqc_1426x713q80.jpg"
     },
     {
       "ID": 8,
@@ -89,7 +94,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.31,
       "Magnesium": 32,
       "Calories_per_100g": 73.4,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://static.independent.co.uk/2021/05/21/16/iStock-909550520.jpg"
     },
     {
       "ID": 9,
@@ -102,7 +108,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.4,
       "Magnesium": 16,
       "Calories_per_100g": 64,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/6/28/fresh-corn-on-the-cob-partially-shucked-on-dark-background.jpg.rend.hgtvcom.1280.1280.suffix/1687987003387.jpeg"
     },
     {
       "ID": 10,
@@ -115,7 +122,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 1.06,
       "Magnesium": 0,
       "Calories_per_100g": 124,
-      "Tag": "Carbohydrate"
+      "Tag": "Carbohydrate",
+      "img_url":"https://hips.hearstapps.com/hmg-prod/images/whole-wheat-pasta-gettyimages-488392474-64359d6e6fa92.jpg"
     },
     {
       "ID": 11,
@@ -128,7 +136,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 4.0,
       "Magnesium": 279,
       "Calories_per_100g": 598,
-      "Tag": "Snack"
+      "Tag": "Snack",
+      "img_url":"https://www.uraaw.ca/image/cache/catalog/NUTS/organic-almonds-500x500.jpg"
     },
     {
       "ID": 12,
@@ -141,7 +150,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 2.9,
       "Magnesium": 158,
       "Calories_per_100g": 654,
-      "Tag": "Snack"
+      "Tag": "Snack",
+      "img_url":"https://domf5oio6qrcr.cloudfront.net/medialibrary/9531/iStock-481114390.jpg"
     },
     {
       "ID": 13,
@@ -154,7 +164,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 1.9,
       "Magnesium": 154,
       "Calories_per_100g": 588,
-      "Tag": "Fats"
+      "Tag": "Fats",
+      "img_url":"https://pinchofyum.com/wp-content/uploads/Homemade-Peanut-Butter-Square.png"
     },
     {
       "ID": 14,
@@ -167,7 +178,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.6,
       "Magnesium": 0,
       "Calories_per_100g": 884,
-      "Tag": "Fats"
+      "Tag": "Fats",
+      "img_url":"https://domf5oio6qrcr.cloudfront.net/medialibrary/11832/46d9dde1-3d7c-46d4-a05a-206f793afa66.jpg"
     },
     {
       "ID": 15,
@@ -180,7 +192,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.,
       "Magnesium": 2,
       "Calories_per_100g": 716,
-      "Tag": "Fats"
+      "Tag": "Fats",
+      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2020/08/AN451-Butter-732x549-thumb-732x549.jpg"
     },
     {
       "ID": 16,
@@ -193,7 +206,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0,
       "Magnesium": 0,
       "Calories_per_100g": 88,
-      "Tag": "Fruit"
+      "Tag": "Fruit",
+      "img_url":"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/01/30152155/shutterstock_518328943-1.jpg"
     },
     {
       "ID": 17,
@@ -206,7 +220,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.1,
       "Magnesium": 5,
       "Calories_per_100g": 52,
-      "Tag": "Fruit"
+      "Tag": "Fruit",
+      "img_url":"https://subzfresh.com/wp-content/uploads/2022/04/apple_158989157.jpg"
     },
     {
       "ID": 18,
@@ -219,7 +234,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.41,
       "Magnesium": 13,
       "Calories_per_100g": 32,
-      "Tag": "Fruit"
+      "Tag": "Fruit",
+      "img_url":"https://foodal.com/wp-content/uploads/2015/03/Make-Strawberry-Season-Last-All-Year.jpg"
     },
     {
       "ID": 19,
@@ -232,7 +248,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.1,
       "Magnesium": 10,
       "Calories_per_100g": 47,
-      "Tag": "Fruit"
+      "Tag": "Fruit",
+      "img_url":"https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg"
     },
     {
       "ID": 20,
@@ -245,7 +262,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.3,
       "Magnesium": 17,
       "Calories_per_100g": 60,
-      "Tag": "Fruit"
+      "Tag": "Fruit",
+      "img_url":"https://www.health.com/thmb/YjD1m861zN2cGF4q9bbeu6now64=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Kiwi-a2e9888bfab6474f8d12d2ae0287b356.jpg"
     },
     {
       "ID": 1,
@@ -258,7 +276,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.3,
       "Magnesium": 12,
       "Calories_per_100g": 41,
-      "Tag": "Vegetable"
+      "Tag": "Vegetable",
+      "img_url":"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/23175719/shutterstock_440493100-1.jpg"
     },
     {
       "ID": 2,
@@ -271,7 +290,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.7,
       "Magnesium": 21,
       "Calories_per_100g": 34,
-      "Tag": "Vegetable"
+      "Tag": "Vegetable",
+      "img_url":"https://www.southernliving.com/thmb/I1hA4Zpl1bhw_b2tWWnx5UXajvY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Roasted_Broccoli_012-632f5bb05b49406a8d301bd733ff4686.jpg"
     },
     {
       "ID": 3,
@@ -284,7 +304,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 2.7,
       "Magnesium": 79,
       "Calories_per_100g": 23,
-      "Tag": "Vegetable"
+      "Tag": "Vegetable",
+      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2019/05/spinach-732x549-thumbnail.jpg"
     },
     {
       "ID": 4,
@@ -297,7 +318,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.3,
       "Magnesium": 11,
       "Calories_per_100g": 18,
-      "Tag": "Vegetable"
+      "Tag": "Vegetable",
+      "img_url":"https://www.healthifyme.com/blog/wp-content/uploads/2022/01/Benefits-of-Tomatoes.jpeg"
     },
     {
       "ID": 5,
@@ -310,7 +332,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.4,
       "Magnesium": 10,
       "Calories_per_100g": 31,
-      "Tag": "Vegetable"
+      "Tag": "Vegetable",
+      "img_url":"https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg"
     }
   ];
 
@@ -326,7 +349,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 1,
       "Magnesium": 29,
       "Calories_per_100g": 164,
-      "Tag": "Protein"
+      "Tag": "Protein",
+      "img_url":"https://www.licious.in/blog/wp-content/uploads/2022/01/Thinly-Sliced-Chicken-Breast-Fillet-.jpg"
     },
     {
       "ID": 2,
@@ -339,7 +363,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 6,
       "Magnesium": 26,
       "Calories_per_100g": 67,
-      "Tag": "Protein"
+      "Tag": "Protein",
+      "img_url":"https://asset.kompas.com/crops/EeaZLACNP7a8UeNnMCcmXI5DqHM=/0x1501:3648x3933/1200x800/data/photo/2021/05/21/60a7927a0ddb6.jpg"
     },
     {
       "ID": 3,
@@ -352,7 +377,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 0.3,
       "Magnesium": 27,
       "Calories_per_100g": 208,
-      "Tag": "Protein"
+      "Tag": "Protein",
+      "img_url":"https://img.rasset.ie/000ebc3f-500.jpg"
     },
     {
       "ID": 4,
@@ -365,7 +391,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 3.3,
       "Magnesium": 36,
       "Calories_per_100g": 116,
-      "Tag": "Protein"
+      "Tag": "Protein",
+      "img_url":"https://www.hataytadinda.com/wp-content/uploads/2019/12/k%C4%B1rm%C4%B1z%C4%B1-mercimek.jpg"
     },
     {
       "ID": 5,
@@ -378,7 +405,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "Iron": 1.2,
       "Magnesium": 10,
       "Calories_per_100g": 155,
-      "Tag": "Protein"
+      "Tag": "Protein",
+      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2020/09/health-benefits-of-eggs-1200x628-facebook-1200x628.jpg"
     },
   ]
 

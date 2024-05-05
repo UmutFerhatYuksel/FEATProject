@@ -18,6 +18,13 @@ import CustomizeScreen from './Screens/CustomizeScreen';
 import example from './Screens/example';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import EditProfile from './Screens/EditProfile';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import CreateRecipes from './Screens/CreateRecipes';
+import MainNutritionScreen from './Screens/MainNutritionScreen';
+import NutritionList from './Screens/NutritionList';
+import NutritionDetail from './Screens/NutritionDetail';
+import RecipeList from './Screens/RecipeList';
+import MealDetail from './Screens/MealDetail';
 
 const newColorTheme = {
   brand: {
@@ -27,13 +34,13 @@ const newColorTheme = {
   },
 };
 
-const Tab=createBottomTabNavigator();
+const Tab = createBottomTabNavigator();
 
-function Home(){
-  return(
-    <Tab.Navigator>
-      <Tab.Screen name='CurrentProgress' component={CurrentProgress}></Tab.Screen>
-      <Tab.Screen name='Edit Profile' component={EditProfile}></Tab.Screen>
+function Home() {
+  return (
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
+      <Tab.Screen options={{ tabBarIcon: ({ color, size }) => (<Icon name='calendar' color={color} size={size}></Icon>) }} name='Current Progress' component={CurrentProgress}></Tab.Screen>
+      <Tab.Screen  options={{tabBarIcon:({color,size})=>(<Icon name='edit' color={color} size={size}></Icon>)}} name='Edit Profile' component={EditProfile}></Tab.Screen>
     </Tab.Navigator>
   )
 }
@@ -54,7 +61,7 @@ export default function App() {
           <NavigationContainer >
             <Stack.Navigator
               initialRouteName='Login'
-              screenOptions={{headerShown:false}}
+              screenOptions={{ headerShown: false }}
             >
               <Stack.Screen
                 name='Login'
@@ -67,14 +74,18 @@ export default function App() {
               <Stack.Screen name="PersonalInfo" component={PersonalInfoScreen} />
               <Stack.Screen name="PhysicalInfo" component={PhysicalInfoScreen} />
               <Stack.Screen name="CreateWorkout" component={CreateWorkoutScreen} />
-              <Stack.Screen name='ChooseDay' component={ChooseDayScreen} />
-              <Stack.Screen name='Welcome' component={welcomeScreen} />
-              <Stack.Screen name='CurrentProgress' component={Home} />
+              <Stack.Screen  name='CurrentProgress' component={Home} />
               <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
               <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
-              <Stack.Screen name ="CustomizeScreen" component={CustomizeScreen}/>
-              <Stack.Screen name ="example" component={example}/>
-              
+              <Stack.Screen name="CustomizeScreen" component={CustomizeScreen} />
+              <Stack.Screen name="example" component={example} />
+              <Stack.Screen name="Edit Profile" component={EditProfile} />
+              <Stack.Screen name="CreateRecipe" component={CreateRecipes} />
+              <Stack.Screen name='MainNutrition' component={MainNutritionScreen} />
+              <Stack.Screen name='NutritionList' component={NutritionList} />
+              <Stack.Screen name='NutritionDetail' component={NutritionDetail} />
+              <Stack.Screen name='RecipeList' component={RecipeList}/>
+              <Stack.Screen name='MealDetail' component={MealDetail}/>
 
             </Stack.Navigator>
           </NavigationContainer>

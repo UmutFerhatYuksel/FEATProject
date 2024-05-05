@@ -123,7 +123,7 @@ const WorkoutComplete = ({ navigation, route }) => {
             })
 
             // gerekli işlemler yapıldıktan sonra CurrentWorkout Ekreanına geri dönülür
-            
+
         }
     }
 
@@ -135,7 +135,7 @@ const WorkoutComplete = ({ navigation, route }) => {
     return (
 
 
-        <View style={tw`w-105`}>
+        <View style={tw``}>
             <Modal animationType='slide' visible={modalVisible} onRequestClose={() => setModalVisible(!modalVisible)}>
                 <ScrollView style={tw`w-full h-full`}>
                     <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Description of the Exercise</Text>
@@ -149,7 +149,7 @@ const WorkoutComplete = ({ navigation, route }) => {
             </Modal>
 
 
-            <ImageBackground source={{uri:item.gif_url}} style={tw`w-full h-150 flex flex-row justify-between`}>
+            <ImageBackground source={{ uri: item.gif_url }} style={tw`w-full h-130 flex flex-row justify-between`}>
                 <TouchableOpacity style={tw`w-10 h-10 bg-white rounded-full ml-5 mt-5`} onPress={() => setModalVisible(true)}>
                     <IonIcon style={tw`mx-auto my-auto`} name='information-outline' size={30} />
                 </TouchableOpacity>
@@ -164,21 +164,23 @@ const WorkoutComplete = ({ navigation, route }) => {
                 <Text style={tw`text-center text-md`}>{item.set}x10</Text>
             </View>
 
-            <ProgressBarMultiStep
-                progressive={true}
-                page={progress + 1}
-                setPage={setProgress}
-                tabs={transformedArray}
-                inProgressBackgroundColor={'rgb(153,153,216)'}
-                circleStyle={{ width: 40, height: 40 }}
-            />
-            {progress===item.set ? (
-                <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto my-auto`} onPress={handleComplete}>
-                    <View style={tw`my-auto items-center`}>
-                        <Text style={tw`text-center text-white font-bold`}>Complete Workout</Text>
-                    </View>
-                </TouchableOpacity>
-            ) : null}
+            <View style={tw`my-auto mx-auto`}>
+                <ProgressBarMultiStep
+                    progressive={true}
+                    page={progress + 1}
+                    setPage={setProgress}
+                    tabs={transformedArray}
+                    inProgressBackgroundColor={'rgb(153,153,216)'}
+                    circleStyle={{ width: 40, height: 40 }}
+                />
+                {progress === item.set ? (
+                    <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto my-auto`} onPress={handleComplete}>
+                        <View style={tw`my-auto items-center`}>
+                            <Text style={tw`text-center text-white font-bold`}>Complete Workout</Text>
+                        </View>
+                    </TouchableOpacity>
+                ) : null}
+            </View>
 
         </View>
 

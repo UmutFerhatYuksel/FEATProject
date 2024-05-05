@@ -1,14 +1,13 @@
-import { Image, ImageBackground, ScrollView, Text, View } from 'react-native'
+import { ImageBackground, Text, View, Platform } from 'react-native'
 import React, { useEffect, useState } from 'react';
-import { Card } from "react-native-paper";
 import moment from 'moment';
 import tw from "twrnc";
 import Background from '../assets/Image.png';
 import { TouchableOpacity } from 'react-native';
-import axios from 'axios';
 import { FIREBASE_AUTH, db } from '../firebase';
-import { QuerySnapshot, addDoc, collection, doc, getDoc, getDocs, updateDoc } from 'firebase/firestore';
-
+import { collection, doc, getDocs, updateDoc } from 'firebase/firestore';
+import * as Notifications from 'expo-notifications';
+import * as Device from 'expo-device';
 
 const CurrentProgress = ({ navigation, route }) => {
 
@@ -386,12 +385,14 @@ const CurrentProgress = ({ navigation, route }) => {
   const currentDate = new Date();
   const currentDay = days[currentDate.getDay()];
   let Nutritions = [];
-  let Days=[];
-  let CompletedDays=[];
-  let notCompletedDays=[]
-  const [indexes,setIndexes]=useState([]);
-  const [completedIndexes,setCompletedIndexes]=useState([])
-  const [notCompletedIndexes,setNotCompletedIndexes]=useState([])
+  let Days = [];
+  let CompletedDays = [];
+  let notCompletedDays = [];
+  let futureDays = [];
+  const [indexes, setIndexes] = useState([]);
+  const [completedIndexes, setCompletedIndexes] = useState([])
+  const [notCompletedIndexes, setNotCompletedIndexes] = useState([])
+  const [expoPushToken, setExpoPushToken] = useState('');
   const daysMap = {
     "sunday": 6,
     "monday": 0,
@@ -401,65 +402,188 @@ const CurrentProgress = ({ navigation, route }) => {
     "friday": 4,
     "saturday": 5
   };
-  const [selectedNutritions, setSelectedNutritions] = useState([]);
+  const [totalCalorie, setTotalCalorie] = useState();
+
+
+
+  Notifications.setNotificationHandler({
+    handleNotification: async () => ({
+      shouldShowAlert: true,
+      shouldPlaySound: false,
+      shouldSetBadge: false,
+    })
+  })
+
+
 
 
 
   useEffect(() => {
 
-    const currentUser = FIREBASE_AUTH.currentUser;
 
-    const userInfoRef = doc(db, "User", currentUser.uid);
-    const newCollectionRef = collection(userInfoRef, "UserInfo");
 
-    getDocs(newCollectionRef).then((querysnapshot)=>{
-      querysnapshot.forEach((item)=>{
+    const unsubscribe = navigation.addListener('focus', () => {
 
-        const dayCollectionRef=doc(newCollectionRef,item.id);
-        const subCollectionRef =collection(dayCollectionRef,"Day");
+      registerForPushNotificationsAsync()
+        .then((token) => {
+          if (token) {
+            setExpoPushToken(token);
+            console.log("TOKEN", token);
 
-        getDocs(subCollectionRef).then((querysnapshot)=>{
-          querysnapshot.forEach((day)=>{
+            // Now use the token directly instead of relying on the updated state
+            sendPushNotification(token).catch(err => {
+              console.error("Failed to send notification:", err);
+            });
+          } else {
+            console.log("No token received");
+          }
+        })
+        .catch(err => {
+          console.error("Error registering for notifications:", err);
+        });
 
-            if (currentDay === "Monday") {
-              const exerciseCollectionRef = doc(subCollectionRef, day.id);
-              const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
 
-              getDocs(ExercisesubCollectionRef)
+      // sendPushNotification().catch((e)=>{
+      //   console.log(e,"Error")
+      // });
+
+
+
+      const currentUser = FIREBASE_AUTH.currentUser;
+
+      console.log("Useffect Called")
+
+      const userInfoRef = doc(db, "User", currentUser.uid);
+      const newCollectionRef = collection(userInfoRef, "UserInfo");
+
+      getDocs(newCollectionRef).then((querysnapshot) => {
+        querysnapshot.forEach((item) => {
+
+          const dayCollectionRef = doc(newCollectionRef, item.id);
+          const subCollectionRef = collection(dayCollectionRef, "Day");
+
+          CompletedDays = [];
+          notCompletedDays = [];
+          futureDays = [];
+          Days=[];
+
+          getDocs(subCollectionRef).then((querysnapshot) => {
+            querysnapshot.forEach((day) => {
+
+              console.log(currentDay);
+              if (currentDay === "Monday") {
+
+                updateDoc(day.ref, { isComplete: false }); //Değişebilir
+
+                const exerciseCollectionRef = doc(subCollectionRef, day.id);
+                const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
+
+                getDocs(ExercisesubCollectionRef)
                   .then((querySnapshot) => {
-                      querySnapshot.forEach((doc) => {
+                    querySnapshot.forEach((doc) => {
 
-                          const exerciseDocRef = doc.ref;
+                      const exerciseDocRef = doc.ref;
 
-                          updateDoc(exerciseDocRef, { isComplete: false });
-                      });
+                      updateDoc(exerciseDocRef, { isComplete: false });
+                    });
                   })
                   .catch((error) => {
 
                   });
-          }
+              }
 
-            Days.push(day.data().name);
-            setIndexes(daysToIndexes(Days));
-
-            if(day.data().isComplete==true){
-              CompletedDays.push(day.data().name);
-              setCompletedIndexes(daysToIndexes(CompletedDays));
-            }else if(day.data().isComplete==false){
-              notCompletedDays.push(day.data().name);
-              setNotCompletedIndexes(daysToIndexes(notCompletedDays));
-            }
+              Days.push(day.data().name);
+              setIndexes(daysToIndexes(Days));
 
 
+
+
+
+              if (day.data().isComplete == true) {
+                CompletedDays.push(day.data().name);
+                console.log(CompletedDays);
+                setCompletedIndexes(daysToIndexes(CompletedDays));
+              } else if (day.data().isComplete == false) {
+                notCompletedDays.push(day.data().name);
+                setNotCompletedIndexes(daysToIndexes(notCompletedDays));
+              }
+
+
+            })
           })
         })
+
+
       })
-
-
     })
 
-    console.log(currentDay);
-  }, [])
+    return unsubscribe;
+  }, [navigation])
+
+  const registerForPushNotificationsAsync = async () => {
+    if (Platform.OS === 'android') {
+      Notifications.setNotificationChannelAsync('default', {
+        name: 'default',
+        importance: Notifications.AndroidImportance.MAX,
+        vibrationPattern: [0, 250, 250, 250],
+        lightColor: '#FF231F7C',
+      });
+
+      console.log("BAKAMR")
+    }
+
+    if (Device.isDevice) {
+      const { status: existingStatus } =
+        await Notifications.getPermissionsAsync();
+      let finalStatus = existingStatus;
+      if (existingStatus !== 'granted') {
+        const { status } = await Notifications.requestPermissionsAsync();
+        finalStatus = status;
+      }
+      if (finalStatus !== 'granted') {
+        handleRegistrationError('Permission not granted to get push token for push notification!');
+        return;
+      }
+      const projectId = "670b6faa-7373-4b17-96f5-3ac46d87f271"
+      if (!projectId) {
+        handleRegistrationError('Project ID not found');
+      }
+
+      try {
+        const pushTokenString = (
+          await Notifications.getExpoPushTokenAsync({
+            projectId,
+          })
+        ).data;
+        console.log(pushTokenString);
+        return pushTokenString;
+      } catch (e) {
+        handleRegistrationError(`${e}`);
+      }
+    } else {
+      handleRegistrationError('Must use physical device for push notifications');
+    }
+  }
+
+  const sendPushNotification = async () => {
+    const message = {
+      to: expoPushToken,
+      sound: 'default',
+      title: 'Dont forget',
+      body: 'Drink 1.5L water for your health and eat your meals prepared for you or there is some "Nutrition Recommendations :)"!',
+      data: { "someData": 'goes here' },
+    };
+
+    await fetch('https://exp.host/--/api/v2/push/send', {
+      method: 'POST',
+      headers: {
+        Accept: 'application/json',
+        'Accept-encoding': 'gzip, deflate',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+  }
 
 
   const startOfWeek = moment().startOf("isoWeek");
@@ -481,218 +605,8 @@ const CurrentProgress = ({ navigation, route }) => {
       "friday": 4,
       "saturday": 5
     };
-  
+
     return daysArray.map(day => daysMap[day.toLowerCase()]);
-  }
-
-  function handleNutritionCreate() {
-
-    const currentUser = FIREBASE_AUTH.currentUser;
-
-    const userInfoRef = doc(db, "User", currentUser.uid);
-    const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-    const nutritionCollectionRef = collection(userInfoRef, "Nutrition");
-
-    getDocs(newCollectionRef).then((querysnapshot) => {
-      querysnapshot.forEach((item) => {
-
-        const proteinRequirement = item.data().weight * 2.20462262185;
-        const mainProtein = proteinRequirement * 0.8;
-
-        const totalCalorieReq = calculateBMR(item.data());
-        let remainingCalories = totalCalorieReq;
-        let remainingProtein = proteinRequirement * 0.2;
-        let carbFlag = 0;
-        let snackFlag = 0;
-        let fruitFlag = 0;
-        let vegetableFlag = 0;
-
-        // besinler ilk seçildiğinde random seçilmeli
-        // user istediği gibi besinleri değiştirebilmeli
-        // besinler çeşitli verilmeli
-        // userin en son beğendiği liste kaydedilmeli
-
-        // fatler kullanılabilir
-        // user kendi main proteinini seçecek
-
-        allProteins.map((proteinItem) => {
-          if (proteinItem.Name === "Chicken Breast") {
-
-            const grOfMainProtein = (100 * mainProtein) / proteinItem.Protein;
-            const calOfMainProtein = (proteinItem.Calories_per_100g * grOfMainProtein) / 100;
-
-            remainingCalories = totalCalorieReq - calOfMainProtein;
-
-
-            const dataOfProtein = {
-              ID: proteinItem.ID,
-              Name: proteinItem.Name,
-              Carb: proteinItem.Carb,
-              Fat: proteinItem.Fat,
-              Protein: proteinItem.Protein,
-              Vitamin_C: proteinItem.Vitamin_C,
-              Calcium: proteinItem.Calcium,
-              Iron: proteinItem.Iron,
-              Magnesium: proteinItem.Magnesium,
-              Calories_per_100g: proteinItem.Calories_per_100g,
-              Tag: proteinItem.Tag,
-              Gram: grOfMainProtein,
-              Calorie: calOfMainProtein
-            };
-
-            Nutritions.push(dataOfProtein);
-          }
-        })
-
-        allNutritions.sort(() => Math.random() - 0.5);
-
-        console.log(allNutritions);
-
-        allNutritions.map((nutrition) => {
-
-
-
-          const carbCalorie = (remainingCalories * 0.8) / 4;
-
-
-          if (nutrition.Tag === "Carbohydrate" && carbFlag !== 4) {
-            const grOfCarbohydrate = (100 * carbCalorie) / nutrition.Calories_per_100g;
-            remainingProtein -= (grOfCarbohydrate * nutrition.Protein) / 100;
-
-
-            const dataOfCarb = {
-              ID: nutrition.ID,
-              Name: nutrition.Name,
-              Carb: nutrition.Carb,
-              Fat: nutrition.Fat,
-              Protein: nutrition.Protein,
-              Vitamin_C: nutrition.Vitamin_C,
-              Calcium: nutrition.Calcium,
-              Iron: nutrition.Iron,
-              Magnesium: nutrition.Magnesium,
-              Calories_per_100g: nutrition.Calories_per_100g,
-              Tag: nutrition.Tag,
-              Gram: grOfCarbohydrate,
-              Calorie: carbCalorie
-            };
-
-            carbFlag++;
-
-            Nutritions.push(dataOfCarb);
-
-          }
-
-          const snackCalorie = (remainingCalories * 0.06) / 2;
-
-
-          if (nutrition.Tag === "Snack" && snackFlag !== 2) {
-
-            const grOfSnack = (100 * snackCalorie) / nutrition.Calories_per_100g;
-            remainingProtein -= (grOfSnack * nutrition.Protein) / 100;
-
-            const dataOfSnack = {
-              ID: nutrition.ID,
-              Name: nutrition.Name,
-              Carb: nutrition.Carb,
-              Fat: nutrition.Fat,
-              Protein: nutrition.Protein,
-              Vitamin_C: nutrition.Vitamin_C,
-              Calcium: nutrition.Calcium,
-              Iron: nutrition.Iron,
-              Magnesium: nutrition.Magnesium,
-              Calories_per_100g: nutrition.Calories_per_100g,
-              Tag: nutrition.Tag,
-              Gram: grOfSnack,
-              Calorie: snackCalorie
-            };
-
-            Nutritions.push(dataOfSnack);
-
-            snackFlag++;
-          }
-
-
-          const fruitCalorie = remainingCalories * 0.08;
-
-
-          if (nutrition.Tag === "Fruit" && fruitFlag !== 1) {
-
-            const grOfFruit = (100 * fruitCalorie) / nutrition.Calories_per_100g;
-            remainingProtein -= (grOfFruit * nutrition.Protein) / 100;
-
-            const dataOfFruit = {
-              ID: nutrition.ID,
-              Name: nutrition.Name,
-              Carb: nutrition.Carb,
-              Fat: nutrition.Fat,
-              Protein: nutrition.Protein,
-              Vitamin_C: nutrition.Vitamin_C,
-              Calcium: nutrition.Calcium,
-              Iron: nutrition.Iron,
-              Magnesium: nutrition.Magnesium,
-              Calories_per_100g: nutrition.Calories_per_100g,
-              Tag: nutrition.Tag,
-              Gram: grOfFruit,
-              Calorie: fruitCalorie
-            };
-
-            Nutritions.push(dataOfFruit);
-
-            fruitFlag++;
-          }
-
-          const vegetableCalorie = remainingCalories * 0.06;
-
-
-          if (nutrition.Tag === "Vegetable" && vegetableFlag !== 1) {
-
-            const grOfVegetable = (100 * vegetableCalorie) / nutrition.Calories_per_100g;
-            remainingProtein -= (grOfVegetable * nutrition.Protein) / 100;
-
-            const dataOfVegetable = {
-              ID: nutrition.ID,
-              Name: nutrition.Name,
-              Carb: nutrition.Carb,
-              Fat: nutrition.Fat,
-              Protein: nutrition.Protein,
-              Vitamin_C: nutrition.Vitamin_C,
-              Calcium: nutrition.Calcium,
-              Iron: nutrition.Iron,
-              Magnesium: nutrition.Magnesium,
-              Calories_per_100g: nutrition.Calories_per_100g,
-              Tag: nutrition.Tag,
-              Gram: grOfVegetable,
-              Calorie: vegetableCalorie
-            };
-
-            Nutritions.push(dataOfVegetable);
-
-            vegetableFlag++;
-          }
-
-
-        });
-
-
-      })
-    }).then((a) => {
-      Nutritions.map((nutritionItem) => {
-        addDoc(nutritionCollectionRef, nutritionItem);
-      })
-    })
-
-
-
-  }
-
-  const calculateBMR = (userInfo) => {
-
-    if (userInfo.gender == "male") {
-      return 88.362 + (13.397 * userInfo.weight) + (4.799 * userInfo.height) - (5.677 * userInfo.age);
-    } else {
-      return 447.593 + (9.247 * userInfo.weight) + (3.098 * userInfo.height) - (4.330 * userInfo.age);
-    }
   }
 
   return (
@@ -700,24 +614,22 @@ const CurrentProgress = ({ navigation, route }) => {
     <View>
 
       <View style={tw`w-fit flex flex-row mx-auto my-5`}>
-          {daysOfWeek.map((day, index) => (
-            <View style={[tw`px-2 mx-2 rounded-lg`, indexes.includes(index) ? tw`border border-slate-600` : null, day.isSame(today, 'day') ? tw`border border-indigo-700` : null
-            , completedIndexes.includes(index) ? tw`bg-green-400` : null,notCompletedIndexes.includes(index) ? tw`bg-red-600` : null]}>
-              <Text style={tw`text-center text-2xl`}>{day.format('DD')}</Text>
-              <Text style={tw`text-sm`}>{day.format('ddd')}</Text>
-            </View>
-          ))}
+        {daysOfWeek.map((day, index) => (
+          <View style={[tw`px-2 mx-1 `, indexes.includes(index) ? tw`border border-slate-600 rounded-lg` : null, day.isSame(today, 'day') ? tw`border border-indigo-700 rounded-lg` : null
+            , completedIndexes.includes(index) ? tw`bg-green-400 ` : null, notCompletedIndexes.includes(index) && index < days.indexOf(currentDay) ? tw`bg-red-400` : null, notCompletedIndexes.includes(index) && index >= days.indexOf(currentDay) ? tw`bg-slate-400` : null]}>
+            <Text style={tw`text-center text-2xl`}>{day.format('DD')}</Text>
+            <Text style={tw`text-sm`}>{day.format('ddd')}</Text>
+          </View>
+        ))}
 
       </View>
       <Text style={tw`text-2xl px-3 font-semibold text-indigo-700`}>Today</Text>
-      <Text style={tw`text-sm my-2 px-3 text-indigo-700`}>Burası Senin beslenme ve antrenman serüvenin</Text>
+      <Text style={tw`text-sm my-2 px-3 text-indigo-700`}>Your training and training adventure is here</Text>
 
       <TouchableOpacity onPress={() => navigation.navigate('CurrentWorkout')}>
         <ImageBackground source={Background} style={[tw`w-80 h-60 rounded-full mx-auto`]} imageStyle={{ borderRadius: 10 }}>
-          <View style={tw`my-40`}>
-            <Text style={tw`text-3xl text-white text-center`}>Your Daily Activity Plan</Text>
-            <Text style={tw`tex-sm font-thin text-white text-center`}>500kcal</Text>
-          </View>
+          <Text style={tw`text-3xl text-white text-center`}>Your Daily Activity Plan</Text>
+          <Text style={tw`tex-sm font-thin text-white text-center`}>500kcal</Text>
 
         </ImageBackground>
 
@@ -727,12 +639,25 @@ const CurrentProgress = ({ navigation, route }) => {
       <View style={tw`w-80 h-20 border border-black rounded-full my-10 mx-auto`}></View> */}
 
       <View style={tw`rounded inline`}>
-        <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={handleNutritionCreate}>
+        <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} >
           <View style={tw`my-auto items-center`}>
             <Text style={tw`text-center text-white font-bold`} >Create Your Nutritions</Text>
           </View>
         </TouchableOpacity>
       </View>
+
+      <View style={tw`rounded inline`}>
+        <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={async () => {
+          navigation.navigate("MainNutrition");
+          await sendPushNotification(expoPushToken);
+        }}>
+          <View style={tw`my-auto items-center`}>
+            <Text style={tw`text-center text-white font-bold`} >Go to Nutritions</Text>
+          </View>
+        </TouchableOpacity>
+      </View>
+
+
 
     </View>
   );

@@ -53,9 +53,10 @@ export function Login({ navigation }) {
   return (
 
     <View style={tw`h-full`}>
-      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Login</Text>
+      
 
       <View style={tw`w-full h-100 mx-auto mt-8`}>
+      <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Login</Text>
         <View style={tw`mx-auto mt-20 w-content`}>
           <TextInput
             label={"Email"}

@@ -748,42 +748,13 @@ const CurrentWorkout = ({ navigation, route }) => {
 
         const unsubscribe = navigation.addListener('focus', () => {
             getInitialData().then(() => {
-                if (Exercises.every(item => item.isComplete === true)) {
-
-                    const currentUser = FIREBASE_AUTH.currentUser;
-                    const userInfoRef = doc(db, "User", currentUser.uid);
-                    const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-                    getDocs(newCollectionRef).then((querySnapshot) => {
-                        querySnapshot.forEach((i) => {
-
-                            const dayCollectionRef = doc(newCollectionRef, i.id);
-                            const daySubCollectionRef = collection(dayCollectionRef, "Day");
-
-                            const dayQuery = query(daySubCollectionRef, where("name", "==", currentDay));
 
 
-                            getDocs(dayQuery).then((querySnapshot) => {
-                                querySnapshot.forEach((doc) => {
-
-                                    const dayDocRef = doc.ref;
-
-                                    updateDoc(dayDocRef, { isComplete: true }).catch((error)=>{
-                                        console.log(error);
-                                    });
-                                })
-                            }).catch((error)=>{
-                                console.log(error);
-                            })
-
-                        })
-                    })
-                }
             });
         });
 
         return unsubscribe;
-    }, [navigation])
+    }, [navigation, modalVisible])
 
     console.log(Exercises);
 
@@ -829,20 +800,23 @@ const CurrentWorkout = ({ navigation, route }) => {
                             const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
 
 
-                            if (currentIndex % 3 == 0) {
-                                let alternativeExercises = filterExercises(item.difficulty, "push");
-                                setAlternativeExercises(alternativeExercises);
-                            } else if (currentIndex % 3 == 1) {
-                                let alternativeExercises = filterExercises(item.difficulty, "pull");
-                                setAlternativeExercises(alternativeExercises);
-                            } else if (currentIndex % 3 == 2) {
-                                let alternativeExercises = filterExercises(item.difficulty, "push");
-                                setAlternativeExercises(alternativeExercises);
-                            }
+                            // if (currentIndex % 3 == 0) {
+                            //     let alternativeExercises = filterExercises(item.difficulty, "push");
+                            //     setAlternativeExercises(alternativeExercises);
+                            // } else if (currentIndex % 3 == 1) {
+                            //     let alternativeExercises = filterExercises(item.difficulty, "pull");
+                            //     setAlternativeExercises(alternativeExercises);
+                            // } else if (currentIndex % 3 == 2) {
+                            //     let alternativeExercises = filterExercises(item.difficulty, "push");
+                            //     setAlternativeExercises(alternativeExercises);
+                            // }
+
+
 
                             getDocs(ExercisesubCollectionRef).then((snapshot) => {
                                 snapshot.forEach((exercise) => {
                                     console.log(exercise.id, " => ", exercise.data());
+
 
 
                                     tempExercises.push(exercise.data());
@@ -850,7 +824,46 @@ const CurrentWorkout = ({ navigation, route }) => {
                                     setExercises(tempExercises);
 
 
+                                    console.log("EXERCISE DATA", exercise.data());
+
+
                                 })
+
+                                if (tempExercises.every(item => item.isComplete === true)) {
+
+
+                                    const currentUser = FIREBASE_AUTH.currentUser;
+                                    const userInfoRef = doc(db, "User", currentUser.uid);
+                                    const newCollectionRef = collection(userInfoRef, "UserInfo");
+
+                                    getDocs(newCollectionRef).then((querySnapshot) => {
+                                        querySnapshot.forEach((i) => {
+
+                                            const dayCollectionRef = doc(newCollectionRef, i.id);
+                                            const daySubCollectionRef = collection(dayCollectionRef, "Day");
+
+                                            const dayQuery = query(daySubCollectionRef, where("name", "==", currentDay));
+
+                                            getDocs(dayQuery).then((querySnapshot) => {
+                                                querySnapshot.forEach((doc) => {
+
+                                                    const dayDocRef = doc.ref;
+
+                                                    updateDoc(dayDocRef, { isComplete: true }).catch((error) => {
+                                                        console.log(error);
+                                                    });
+
+
+                                                })
+                                            }).catch((error) => {
+                                                console.log(error);
+                                            })
+
+                                        })
+                                    })
+                                }
+
+
                             })
                         }
 
@@ -862,31 +875,14 @@ const CurrentWorkout = ({ navigation, route }) => {
 
     }
 
-    const filterExercises = (difficulty, exerciseDay) => {
+    const filterExercises = (difficulty, exercise, name) => {
         mockExercises.filter(exercise => exercise.difficulty === difficulty);
-        let muscleGroups = []
-
-        switch (exerciseDay) {
-            case 'push':
-                muscleGroups = ['chest', 'triceps', 'shoulders'];
-                break;
-            case 'pull':
-                muscleGroups = ['back', 'biceps', 'shoulders'];
-                break;
-            case 'legs':
-                muscleGroups = ['quadriceps', 'hamstrings', 'glutes', 'calves'];
-                break;
-            default:
-                muscleGroups = [];
-        }
 
 
         mockExercises.map((item) => {
-            muscleGroups.map((muscle) => {
-                if (item.muscle === muscle) {
-                    selectedExercises.push(item);
-                }
-            })
+            if (item.muscle === exercise && name !== item.name) {
+                selectedExercises.push(item);
+            }
         })
 
         return selectedExercises;
@@ -898,6 +894,11 @@ const CurrentWorkout = ({ navigation, route }) => {
         setOldItem(item);
 
         console.log(item);
+
+        let alternativeExercises = filterExercises(item.difficulty, item.muscle, item.name);
+        setAlternativeExercises(alternativeExercises);
+
+
     }
 
     const handleExerciseEdit = (newItem) => {
@@ -920,10 +921,15 @@ const CurrentWorkout = ({ navigation, route }) => {
                         getDocs(subCollectionRef).then((querySnapshot) => {
                             querySnapshot.forEach((day) => {
 
+
+
+
                                 const exerciseCollectionRef = doc(subCollectionRef, day.id);
                                 const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
 
                                 const ExerciseQuery = query(ExercisesubCollectionRef, where("name", "==", oldItem.name));
+
+
 
                                 getDocs(ExerciseQuery).then((querySnapshot) => {
                                     querySnapshot.forEach((doc) => {
@@ -932,7 +938,7 @@ const CurrentWorkout = ({ navigation, route }) => {
 
                                         updateDoc(exerciseDocRef, newItem);
 
-                                        navigation.navigate("CurrentWorkout");
+                                        setModalVisible(false);
                                     })
                                 })
                             })
@@ -951,19 +957,19 @@ const CurrentWorkout = ({ navigation, route }) => {
     return (
         <View>
             <ImageBackground source={Banner} style={tw`w-full h-60 rounded-full mx-auto `} imageStyle={tw`opacity-50`}>
-                <View style={tw`my-40 p-3`}><Text style={tw`text-2xl  font-bold text-left text-indigo-700`}>Senin İçin Hazırlanan Program Burada</Text></View>
+                <View style={tw`my-40 p-3`}><Text style={tw`text-2xl  font-bold text-left text-indigo-700`}>The Program Prepared for You is Here</Text></View>
 
             </ImageBackground>
             <View style={tw`w-90 h-50 bg-green-400 rounded mx-auto my-5`}>
-                <Text style={tw`text-3xl px-3 font-semibold text-indigo-700 `}>Dilediğin Gibi Özelleştir</Text>
+                <Text style={tw`text-3xl px-3 font-semibold text-indigo-700 `}>Customize as You Wish</Text>
                 <View style={tw`my-auto`}>
-                    <Text style={tw`text-sm font-thin px-3 text-justify text-indigo-700`}>Aşağıda senin için hazırlanmış olan egzersiz programını kendine göre özelleştirebilirsin!
+                    <Text style={tw`text-sm font-thin px-3 text-justify text-indigo-700`}>You can customize the exercise program prepared for you below!
                     </Text>
                 </View>
                 {/* Özelleştirme Butonu */}
                 <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => setIsEdit(!isEdit)}>
                     <View style={tw`m-auto`}>
-                        <Text style={tw`text-white text-md`}>Özelleştir</Text>
+                        <Text style={tw`text-white text-md`}>Customize</Text>
                     </View>
                 </TouchableOpacity>
 
@@ -974,30 +980,29 @@ const CurrentWorkout = ({ navigation, route }) => {
                 animationType="slide"
                 visible={modalVisible}
             >
-                <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                    <View style={tw`h-70`}>
-                        {alternativeExercises.map((item) => (
-                            <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => handleExerciseEdit(item)}>
-                                <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
-                                    <Image style={{ width: 45, height: 45 }} source={{ uri: item.image_url }} />
-                                </View>
-                                <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
-                                <View></View>
-                                <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.set}Set</Text></View>
-                                <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.rep}Rep</Text></View>
-                            </TouchableOpacity>
-                        ))}
-                    </View>
-
+                <ScrollView style={tw`w-full h-full`}>
+                    {alternativeExercises.map((item) => (
+                        <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => handleExerciseEdit(item)}>
+                            <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
+                                <Image style={{ width: 45, height: 45 }} source={{ uri: item.image_url }} />
+                            </View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
+                            <View></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.set}Set</Text></View>
+                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.rep}Rep</Text></View>
+                        </TouchableOpacity>
+                    ))}
 
                 </ScrollView>
 
 
             </Modal>
 
-            <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-                <View style={tw`h-70`}>
-                    {Exercises.map((item) => (
+            <ScrollView style={tw`h-70`}>
+
+                <Text>dsfdsjıodjfdıor</Text>
+                {Exercises.map((item) => (
+                    <>
                         <TouchableOpacity activeOpacity={1} disabled={item.isComplete ? true : false} style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => isEdit ? null : navigation.navigate("WorkoutComplete", { item: item })}>
                             <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
 
@@ -1028,8 +1033,10 @@ const CurrentWorkout = ({ navigation, route }) => {
                             )}
 
                         </TouchableOpacity>
-                    ))}
-                </View>
+                    </>
+
+                ))}
+
 
 
             </ScrollView>

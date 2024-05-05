@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Feat",
-    "slug": "Feat",
+    "slug": "feat-notifications",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -29,11 +29,12 @@
     },
     "extra": {
       "eas": {
-        "projectId": "d719fdff-3cc1-4a20-8005-99a28d82eb61"
+        "projectId": "670b6faa-7373-4b17-96f5-3ac46d87f271"
       }
     },
     "plugins": [
       "expo-font"
-    ]
+    ],
+    "owner": "givirbash"
   }
 }

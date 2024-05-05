@@ -4,14 +4,13 @@ import {getAuth} from 'firebase/auth';
 
 
 const firebaseConfig={
-    apiKey: "AIzaSyDDuH3V7vNrCwCVL2rGvRRBehF_SfJQHCg",
-    authDomain: "feat-18527.firebaseapp.com",
-    databaseURL: "https://feat-18527-default-rtdb.firebaseio.com",
-    projectId: "feat-18527",
-    storageBucket: "feat-18527.appspot.com",
-    messagingSenderId: "1012805698328",
-    appId: "1:1012805698328:web:b58bd338522229dc39d46d",
-    measurementId: "G-FT1MQT0TN4"
+    apiKey: "AIzaSyCDf20CG_tsdwdvDopOsECRnBo5QkQxlO4",
+    authDomain: "feat-17f7c.firebaseapp.com",
+    projectId: "feat-17f7c",
+    storageBucket: "feat-17f7c.appspot.com",
+    messagingSenderId: "643343899657",
+    appId: "1:643343899657:web:ef0c0eadb64b052f186cd8",
+    measurementId: "G-N8R379N17D"
 }
 
 export const app = initializeApp(firebaseConfig);

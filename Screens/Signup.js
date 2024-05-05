@@ -39,31 +39,36 @@ export function Signup({ navigation }) {
 
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [passwordCheck, setPasswordCheck] = useState();
 
 
 
   const handleSignUp = async () => {
 
-    try {
-      let response = await createUserWithEmailAndPassword(auth, email, password);
+    if (passwordCheck !== password) {
 
-      if (response) {
+      alert("Given Passwords are not same");
+    } else {
+      try {
 
-        navigation.navigate("PersonalInfo", { email: email, password: password });
+        let response = await createUserWithEmailAndPassword(auth, email, password);
 
-        await setDoc(doc(db,'User',response.user.uid),{
-          email:email
-        });
+        if (response) {
 
-        console.log(response)
+          navigation.navigate("PersonalInfo", { email: email, password: password });
 
+          await setDoc(doc(db, 'User', response.user.uid), {
+            email: email
+          });
+
+          console.log(response)
+
+        }
+      } catch (error) {
+        console.error("Error")
+        alert(error);
       }
-    } catch (error) {
-      console.error("Error")
-      alert(error);
     }
-
-
 
   };
 
@@ -103,8 +108,8 @@ export function Signup({ navigation }) {
 
           <TextInput
             label={"Password again"}
-            value={password}
-            onChangeText={password => setPassword(password)}
+            value={passwordCheck}
+            onChangeText={password => setPasswordCheck(password)}
             mode='outlined'
             secureTextEntry
             style={tw`w-80 h-15`}

@@ -53,6 +53,7 @@ export default function CreateNutrition({ navigation, route }) {
                         let totalCarb=0;
                         let totalProtein=0;
                         let totalFat=0;
+                        
     
                         tempNutritions.map((n)=>{
                             if(n.Tag==="Protein"){
@@ -60,14 +61,26 @@ export default function CreateNutrition({ navigation, route }) {
                                 setProtein(totalProtein);
                                 totalCalorie+=n.Calorie;
                                 setCalorie(totalCalorie);
+                                console.log(totalCalorie);
                             }else if(n.Tag==="Fat"){
                                 totalFat+=n.Gram;
                                 setFat(totalFat);
                                 totalCalorie+=n.Calorie;
                                 setCalorie(totalCalorie)
+                                console.log(totalCalorie);
                             }else if(n.Tag==="Carbohydrate"){
                                 totalCarb+=(n.Gram*n.Carb)/100;
                                 setCarb(totalCarb);
+                                totalCalorie+=n.Calorie;
+                                setCalorie(totalCalorie);
+                                console.log(totalCalorie);
+                            }else if(n.Tag==="Vegetable"){
+                                totalCalorie+=n.Calorie;
+                                setCalorie(totalCalorie);
+                            }else if(n.Tag==="Fruit"){
+                                totalCalorie+=n.Calorie;
+                                setCalorie(totalCalorie);
+                            }else if(n.Tag==="Snack"){
                                 totalCalorie+=n.Calorie;
                                 setCalorie(totalCalorie);
                             }

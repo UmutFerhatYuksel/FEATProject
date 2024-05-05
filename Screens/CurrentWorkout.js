@@ -747,6 +747,7 @@ const CurrentWorkout = ({ navigation, route }) => {
 
 
         const unsubscribe = navigation.addListener('focus', () => {
+            
             getInitialData().then(() => {
 
 
@@ -936,9 +937,10 @@ const CurrentWorkout = ({ navigation, route }) => {
 
                                         const exerciseDocRef = doc.ref;
 
-                                        updateDoc(exerciseDocRef, newItem);
+                                        updateDoc(exerciseDocRef, newItem).then(()=>{
+                                            navigation.replace('CurrentWorkout');
+                                        });
 
-                                        setModalVisible(false);
                                     })
                                 })
                             })

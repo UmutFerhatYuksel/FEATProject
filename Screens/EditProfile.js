@@ -725,6 +725,7 @@ export default function EditProfile() {
     }
   ]
   let Nutritions = [];
+  let selectedRecipe = [];
 
   const allNutritions = [
     {
@@ -1967,7 +1968,7 @@ export default function EditProfile() {
         setUserWeight(doc.data().weight);
         setUserDailyActivityLevel(doc.data().dailyActiviyLevel);
 
-        console.log("USER DATA",doc.data());
+        console.log("USER DATA", doc.data());
       })
     })
   }, [])
@@ -1979,6 +1980,7 @@ export default function EditProfile() {
     const userInfoRef = doc(db, "User", currentUser.uid);
     const newCollectionRef = collection(userInfoRef, "UserInfo");
     const nutritionCollectionRef = collection(userInfoRef, "Nutrition");
+    const mealCollection = collection(userInfoRef, "Meal");
 
 
 
@@ -2250,6 +2252,167 @@ export default function EditProfile() {
       })
     })
 
+    getDocs(mealCollection).then((querySnapshot) => {
+      querySnapshot.forEach((meal) => {
+        selectedRecipe = [];
+        const proteinRequirement = userWeight * 2.20462262185;
+        const BreakfastProtein = proteinRequirement * 0.4;
+        const DinnerProtein = proteinRequirement * 0.5;
+
+        const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
+        console.log(totalCalorieReq);
+        let remainingCalories = totalCalorieReq;
+        let remainingProtein = proteinRequirement * 0.6;
+
+        let breakfastFlag = 0;
+        let lunchFlag = 0;
+        let dinnerFlag = 0;
+
+        BreakfastMeal.sort(() => Math.random() - 0.5);
+
+        BreakfastMeal.map((item) => {
+
+          if (item.Tag === "Protein" && breakfastFlag !== 1) {
+
+            const grOfMainProtein = ((100 * BreakfastProtein) / item.Protein);
+            const calOfMainProtein = (item.Calories_per_100g * grOfMainProtein) / 100;
+
+            remainingCalories = totalCalorieReq - calOfMainProtein;
+
+            const dataOfProtein = {
+              Name: item.Name,
+              Carb: item.Carb,
+              Fat: item.Fat,
+              Protein: item.Protein,
+              Vitamin_C: item.Vitamin_C,
+              Calories_per_100g: item.Calories_per_100g,
+              Tag: item.Tag,
+              img_url: item.img_url,
+              recipe: item.recipe,
+              Ingredients: [],
+              Gram: grOfMainProtein,
+              Calorie: calOfMainProtein,
+            };
+
+            item["ingredients"].map((i) => {
+
+
+              let IngridientsString = "";
+
+              IngridientsString += Math.round(i.Percentage * grOfMainProtein) + " gr of " + i.Name;
+
+              dataOfProtein["Ingredients"].push(IngridientsString);
+            })
+            selectedRecipe.push(dataOfProtein);
+            console.log(selectedRecipe);
+            breakfastFlag++;
+          }
+        })
+
+        Meal.sort(() => Math.random() - 0.5);
+
+        Meal.map((item) => {
+
+          const dinnerCalorie = remainingCalories * 0.5;
+
+
+          if (item.Tag === "Protein" && dinnerFlag !== 1) {
+            // 3 e bölünüp bütün öğünlere bölünebilir?
+            const grOfDinner = (100 * dinnerCalorie) / item.Calories_per_100g;
+            const calOfDinner = (item.Calories_per_100g * grOfDinner) / 100;
+            remainingProtein -= (grOfDinner * item.Protein) / 100;
+
+
+            const dataOfProtein = {
+              Name: item.Name,
+              Carb: item.Carb,
+              Fat: item.Fat,
+              Protein: item.Protein,
+              Vitamin_C: item.Vitamin_C,
+              Calories_per_100g: item.Calories_per_100g,
+              Tag: item.Tag,
+              img_url: item.img_url,
+              recipe: item.recipe,
+              Ingredients: [],
+              Gram: grOfDinner,
+              Calorie: calOfDinner,
+            };
+
+            item["ingredients"].map((i) => {
+
+
+              let IngridientsString = "";
+
+              IngridientsString += Math.round(i.Percentage * grOfDinner) + " gr of " + i.Name;
+
+              dataOfProtein["Ingredients"].push(IngridientsString);
+            })
+            selectedRecipe.push(dataOfProtein);
+            console.log(selectedRecipe);
+            dinnerFlag++;
+          }
+
+
+
+        })
+
+        Meal.sort(() => Math.random() - 0.5);
+
+        Meal.map((item) => {
+
+          const carbCalorie = remainingCalories * 0.5;
+
+
+          if (item.Tag === "Carbohydrates" && lunchFlag !== 1) {
+            // 3 e bölünüp bütün öğünlere bölünebilir?
+            const grOfCarbohydrate = ((100 * carbCalorie) / item.Calories_per_100g);
+            const calOfCarbohydrate = (item.Calories_per_100g * grOfCarbohydrate) / 100;
+
+            remainingProtein -= (item.Protein * grOfCarbohydrate) / 100
+
+            remainingCalories -= calOfCarbohydrate;
+
+            const dataOfCarb = {
+              Name: item.Name,
+              Carb: item.Carb,
+              Fat: item.Fat,
+              Protein: item.Protein,
+              Vitamin_C: item.Vitamin_C,
+              Calories_per_100g: item.Calories_per_100g,
+              Tag: item.Tag,
+              img_url: item.img_url,
+              recipe: item.recipe,
+              Ingredients: [],
+              Calorie: calOfCarbohydrate,
+              Gram: grOfCarbohydrate,
+            };
+
+
+            item["ingredients"].map((i) => {
+
+
+              let IngridientsString = "";
+
+              IngridientsString += Math.round(i.Percentage * grOfCarbohydrate) + " gr of " + i.Name;
+
+              dataOfCarb["Ingredients"].push(IngridientsString);
+            })
+            selectedRecipe.push(dataOfCarb);
+            console.log(selectedRecipe);
+            lunchFlag++;
+          }
+
+        })
+
+        console.log(selectedRecipe);
+
+        updateDoc(meal.ref, { Meals: selectedRecipe }).catch((E)=>{
+          console.log("ERRROR",E)
+        });
+
+      })
+    })
+
 
 
   }
@@ -2297,7 +2460,7 @@ export default function EditProfile() {
   }
 
 
-  const calculateBMR = (weight,height,age,gender) => {
+  const calculateBMR = (weight, height, age, gender) => {
 
     if (gender == "male") {
       return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
@@ -2336,7 +2499,7 @@ export default function EditProfile() {
         <View style={tw`mx-auto mt-3 w-content`}>
           <TextInput
             label={"Age"}
-            onChangeText={(weight) => setUserWeight(weight.trim() ? parseInt(weight) : '')}
+            onChangeText={(age) => setUserAge(age.trim() ? parseInt(age) : '')}
             mode='outlined'
             style={tw`w-80 h-15`}
             value={String(userAge)}
@@ -2352,7 +2515,7 @@ export default function EditProfile() {
           <TextInput
             label={"Height(Cm)"}
             value={String(userHeight)}
-            onChangeText={(height) => setUserHeight(weight.trim() ? parseInt(height) : '')}
+            onChangeText={(height) => setUserHeight(height.trim() ? parseInt(height) : '')}
             mode='outlined'
             style={tw`w-80 h-15`}
             keyboardType='numeric'
@@ -2367,7 +2530,7 @@ export default function EditProfile() {
             value={String(userWeight)}
             onChangeText={(weight) => setUserWeight(weight.trim() ? parseInt(weight) : '')}
             keyboardType='numeric'
-            
+
           />
 
         </View>

@@ -25,7 +25,7 @@ const PersonalInfoScreen = ({ navigation, route }) => {
   const handleComplete = () => {
 
     if (!userName || !userSurname || !userAge || !userDailyActivityLevel) {
-      alert("Any fields cannot be empty");
+      alert("Please fill in all required fields");
 
     } else {
       if(userAge > 13 && userAge < 100 ){

@@ -1961,7 +1961,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
 
     if (!userHeight || !userWeight || !userGender || !userExperienceLevel || !selectedDays) {
 
-      alert("Fields cannot be empty");
+      alert("Please fill in all required fields");
     } else {
       if ( userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
 

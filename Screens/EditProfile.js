@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet, ToastAndroid } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import { TextInput,RadioButton } from 'react-native-paper'
+import { TextInput, RadioButton } from 'react-native-paper'
 import { Slider } from '@miblanchard/react-native-slider'
 import tw from 'twrnc';
 import { FIREBASE_AUTH, db } from '../firebase';
@@ -1978,6 +1978,440 @@ export default function EditProfile() {
 
     if (userAge > 13 && userAge < 100 && userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
 
+      if (!userName||!userSurname||!userHeight || !userWeight || !userGender || !userExperienceLevel || !userAge || !userDailyActivityLevel || !selectedDays) {
+        alert("Please fill in all required fields");
+      } else {
+        getDocs(newCollectionRef).then((querySnapshot) => {
+          querySnapshot.forEach((docRef) => {
+
+            updateDoc(docRef.ref, {
+              userName: userName, age: userAge, weight: userWeight, height: userHeight, userSurname: userSurname
+              , gender: docRef.data().gender, dailyActiviyLevel: userDailyActivityLevel, experienceLevel: userExperienceLevel
+            })
+
+            const dayCollectionRef = collection(docRef.ref, "Day");
+
+            getDocs(dayCollectionRef).then((daySnapshot) => {
+              daySnapshot.forEach((dayDoc) => {
+                deleteDoc(dayDoc.ref);
+              });
+            }).then(() => {
+              selectedDays.map((data) => {
+
+                addDoc(dayCollectionRef, { name: data, isComplete: false });
+              })
+
+              let userList = [];
+              getDocs(newCollectionRef)
+                .then((querySnapshot) => {
+                  querySnapshot.forEach((item) => {
+                    console.log(item.id, " => ", item.data());
+
+                    const dayCollectionRef = doc(newCollectionRef, item.id);
+                    const subCollectionRef = collection(dayCollectionRef, "Day");
+
+                    getDocs(subCollectionRef).then((querySnapshot) => {
+                      querySnapshot.forEach((day) => {
+                        console.log(day.id, " => ", day.data().name);
+
+
+                        if (days.indexOf(day.data().name) % 3 == 0) {
+                          userList = filterExercises(item.experienceLevel, "push");
+                        } else if (days.indexOf(day.data().name) % 3 == 1) {
+                          userList = filterExercises(item.experienceLevel, "pull");
+                        } else if (days.indexOf(day.data().name) % 3 == 2) {
+                          userList = filterExercises(item.experienceLevel, "push");
+                        }
+
+                        const exerciseRef = doc(subCollectionRef, day.id);
+                        const exerciseSubRef = collection(exerciseRef, "Exercise");
+
+                        userList.map((item) => {
+                          const tempExercise = {
+                            name: item.name,
+                            muscle: item.muscle,
+                            gif_url: item.gif_url,
+                            image_url: item.image_url,
+                            type: item.type,
+                            equipment: item.equipment,
+                            difficulty: item.difficulty,
+                            instructions: item.instructions,
+                            set: 4,
+                            rep: 6,
+                            isComplete: false
+
+                          }
+
+                          addDoc(exerciseSubRef, tempExercise)
+                            .then((subDocRef) => {
+                              console.log("Subdocument written with ID: ", subDocRef.id);
+                            })
+                            .catch((error) => {
+                              console.error("Error adding subdocument: ", error);
+                            });
+                        })
+
+                      })
+                    })
+
+                  });
+                })
+                .catch((error) => {
+                  console.error("Error getting documents: ", error);
+                });
+            })
+
+          })
+        })
+
+
+        getDocs(nutritionCollectionRef).then((querysnapshot) => {
+          querysnapshot.forEach((nutrition) => {
+
+            Nutritions = [];
+            const proteinRequirement = userWeight * 2.20462262185;
+            const mainProtein = proteinRequirement * 0.8;
+
+            const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
+            let remainingCalories = totalCalorieReq;
+            let remainingProtein = proteinRequirement * 0.2;
+            let carbFlag = 0;
+            let snackFlag = 0;
+            let fruitFlag = 0;
+            let vegetableFlag = 0;
+
+            allProteins.map((proteinItem) => {
+              if (proteinItem.Name === "Chicken Breast") {
+
+
+                const grOfMainProtein = (100 * mainProtein) / proteinItem.Protein;
+                const calOfMainProtein = (proteinItem.Calories_per_100g * grOfMainProtein) / 100;
+
+                remainingCalories = totalCalorieReq - calOfMainProtein;
+
+
+                const dataOfProtein = {
+                  ID: proteinItem.ID,
+                  Name: proteinItem.Name,
+                  Carb: proteinItem.Carb,
+                  Fat: proteinItem.Fat,
+                  Protein: proteinItem.Protein,
+                  Vitamin_C: proteinItem.Vitamin_C,
+                  Calcium: proteinItem.Calcium,
+                  Iron: proteinItem.Iron,
+                  Magnesium: proteinItem.Magnesium,
+                  Calories_per_100g: proteinItem.Calories_per_100g,
+                  Tag: proteinItem.Tag,
+                  Gram: grOfMainProtein,
+                  Calorie: calOfMainProtein,
+                  Image: proteinItem.img_url
+                };
+
+                Nutritions.push(dataOfProtein);
+              }
+            })
+
+
+            allNutritions.sort(() => Math.random() - 0.5);
+
+            allNutritions.map((nutrition) => {
+
+
+
+              const carbCalorie = (remainingCalories * 0.8) / 4;
+
+
+              if (nutrition.Tag === "Carbohydrate" && carbFlag !== 4) {
+                const grOfCarbohydrate = (100 * carbCalorie) / nutrition.Calories_per_100g;
+                remainingProtein -= (grOfCarbohydrate * nutrition.Protein) / 100;
+
+
+                const dataOfCarb = {
+                  ID: nutrition.ID,
+                  Name: nutrition.Name,
+                  Carb: nutrition.Carb,
+                  Fat: nutrition.Fat,
+                  Protein: nutrition.Protein,
+                  Vitamin_C: nutrition.Vitamin_C,
+                  Calcium: nutrition.Calcium,
+                  Iron: nutrition.Iron,
+                  Magnesium: nutrition.Magnesium,
+                  Calories_per_100g: nutrition.Calories_per_100g,
+                  Tag: nutrition.Tag,
+                  Gram: grOfCarbohydrate,
+                  Calorie: carbCalorie,
+                  Image: nutrition.img_url
+                };
+
+                carbFlag++;
+
+                Nutritions.push(dataOfCarb);
+
+              }
+
+              const snackCalorie = (remainingCalories * 0.06) / 2;
+
+
+              if (nutrition.Tag === "Snack" && snackFlag !== 2) {
+
+                const grOfSnack = (100 * snackCalorie) / nutrition.Calories_per_100g;
+                remainingProtein -= (grOfSnack * nutrition.Protein) / 100;
+
+                const dataOfSnack = {
+                  ID: nutrition.ID,
+                  Name: nutrition.Name,
+                  Carb: nutrition.Carb,
+                  Fat: nutrition.Fat,
+                  Protein: nutrition.Protein,
+                  Vitamin_C: nutrition.Vitamin_C,
+                  Calcium: nutrition.Calcium,
+                  Iron: nutrition.Iron,
+                  Magnesium: nutrition.Magnesium,
+                  Calories_per_100g: nutrition.Calories_per_100g,
+                  Tag: nutrition.Tag,
+                  Gram: grOfSnack,
+                  Calorie: snackCalorie,
+                  Image: nutrition.img_url
+                };
+
+                Nutritions.push(dataOfSnack);
+
+                snackFlag++;
+              }
+
+
+              const fruitCalorie = remainingCalories * 0.08;
+
+
+              if (nutrition.Tag === "Fruit" && fruitFlag !== 1) {
+
+                const grOfFruit = (100 * fruitCalorie) / nutrition.Calories_per_100g;
+                remainingProtein -= (grOfFruit * nutrition.Protein) / 100;
+
+                const dataOfFruit = {
+                  ID: nutrition.ID,
+                  Name: nutrition.Name,
+                  Carb: nutrition.Carb,
+                  Fat: nutrition.Fat,
+                  Protein: nutrition.Protein,
+                  Vitamin_C: nutrition.Vitamin_C,
+                  Calcium: nutrition.Calcium,
+                  Iron: nutrition.Iron,
+                  Magnesium: nutrition.Magnesium,
+                  Calories_per_100g: nutrition.Calories_per_100g,
+                  Tag: nutrition.Tag,
+                  Gram: grOfFruit,
+                  Calorie: fruitCalorie,
+                  Image: nutrition.img_url
+                };
+
+                Nutritions.push(dataOfFruit);
+
+                fruitFlag++;
+              }
+
+              const vegetableCalorie = remainingCalories * 0.06;
+
+
+              if (nutrition.Tag === "Vegetable" && vegetableFlag !== 1) {
+
+                const grOfVegetable = (100 * vegetableCalorie) / nutrition.Calories_per_100g;
+                remainingProtein -= (grOfVegetable * nutrition.Protein) / 100;
+
+                const dataOfVegetable = {
+                  ID: nutrition.ID,
+                  Name: nutrition.Name,
+                  Carb: nutrition.Carb,
+                  Fat: nutrition.Fat,
+                  Protein: nutrition.Protein,
+                  Vitamin_C: nutrition.Vitamin_C,
+                  Calcium: nutrition.Calcium,
+                  Iron: nutrition.Iron,
+                  Magnesium: nutrition.Magnesium,
+                  Calories_per_100g: nutrition.Calories_per_100g,
+                  Tag: nutrition.Tag,
+                  Gram: grOfVegetable,
+                  Calorie: vegetableCalorie,
+                  Image: nutrition.img_url
+                };
+
+                Nutritions.push(dataOfVegetable);
+
+                vegetableFlag++;
+              }
+
+
+
+            });
+
+            updateDoc(nutrition.ref, { Nutritions: Nutritions });
+          })
+        })
+
+        getDocs(mealCollection).then((querySnapshot) => {
+          querySnapshot.forEach((meal) => {
+            selectedRecipe = [];
+            const proteinRequirement = userWeight * 2.20462262185;
+            const BreakfastProtein = proteinRequirement * 0.4;
+            const DinnerProtein = proteinRequirement * 0.5;
+
+            const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
+            console.log(totalCalorieReq);
+            let remainingCalories = totalCalorieReq;
+            let remainingProtein = proteinRequirement * 0.6;
+
+            let breakfastFlag = 0;
+            let lunchFlag = 0;
+            let dinnerFlag = 0;
+
+            BreakfastMeal.sort(() => Math.random() - 0.5);
+
+            BreakfastMeal.map((item) => {
+
+              if (item.Tag === "Protein" && breakfastFlag !== 1) {
+
+                const grOfMainProtein = ((100 * BreakfastProtein) / item.Protein);
+                const calOfMainProtein = (item.Calories_per_100g * grOfMainProtein) / 100;
+
+                remainingCalories = totalCalorieReq - calOfMainProtein;
+
+                const dataOfProtein = {
+                  Name: item.Name,
+                  Carb: item.Carb,
+                  Fat: item.Fat,
+                  Protein: item.Protein,
+                  Vitamin_C: item.Vitamin_C,
+                  Calories_per_100g: item.Calories_per_100g,
+                  Tag: item.Tag,
+                  img_url: item.img_url,
+                  recipe: item.recipe,
+                  Ingredients: [],
+                  Gram: grOfMainProtein,
+                  Calorie: calOfMainProtein,
+                };
+
+                item["ingredients"].map((i) => {
+
+
+                  let IngridientsString = "";
+
+                  IngridientsString += Math.round(i.Percentage * grOfMainProtein) + " gr of " + i.Name;
+
+                  dataOfProtein["Ingredients"].push(IngridientsString);
+                })
+                selectedRecipe.push(dataOfProtein);
+                console.log(selectedRecipe);
+                breakfastFlag++;
+              }
+            })
+
+            Meal.sort(() => Math.random() - 0.5);
+
+            Meal.map((item) => {
+
+              const dinnerCalorie = remainingCalories * 0.5;
+
+
+              if (item.Tag === "Protein" && dinnerFlag !== 1) {
+                // 3 e bölünüp bütün öğünlere bölünebilir?
+                const grOfDinner = (100 * dinnerCalorie) / item.Calories_per_100g;
+                const calOfDinner = (item.Calories_per_100g * grOfDinner) / 100;
+                remainingProtein -= (grOfDinner * item.Protein) / 100;
+
+
+                const dataOfProtein = {
+                  Name: item.Name,
+                  Carb: item.Carb,
+                  Fat: item.Fat,
+                  Protein: item.Protein,
+                  Vitamin_C: item.Vitamin_C,
+                  Calories_per_100g: item.Calories_per_100g,
+                  Tag: item.Tag,
+                  img_url: item.img_url,
+                  recipe: item.recipe,
+                  Ingredients: [],
+                  Gram: grOfDinner,
+                  Calorie: calOfDinner,
+                };
+
+                item["ingredients"].map((i) => {
+
+
+                  let IngridientsString = "";
+
+                  IngridientsString += Math.round(i.Percentage * grOfDinner) + " gr of " + i.Name;
+
+                  dataOfProtein["Ingredients"].push(IngridientsString);
+                })
+                selectedRecipe.push(dataOfProtein);
+                console.log(selectedRecipe);
+                dinnerFlag++;
+              }
+
+
+
+            })
+
+            Meal.sort(() => Math.random() - 0.5);
+
+            Meal.map((item) => {
+
+              const carbCalorie = remainingCalories * 0.5;
+
+
+              if (item.Tag === "Carbohydrates" && lunchFlag !== 1) {
+                // 3 e bölünüp bütün öğünlere bölünebilir?
+                const grOfCarbohydrate = ((100 * carbCalorie) / item.Calories_per_100g);
+                const calOfCarbohydrate = (item.Calories_per_100g * grOfCarbohydrate) / 100;
+
+                remainingProtein -= (item.Protein * grOfCarbohydrate) / 100
+
+                remainingCalories -= calOfCarbohydrate;
+
+                const dataOfCarb = {
+                  Name: item.Name,
+                  Carb: item.Carb,
+                  Fat: item.Fat,
+                  Protein: item.Protein,
+                  Vitamin_C: item.Vitamin_C,
+                  Calories_per_100g: item.Calories_per_100g,
+                  Tag: item.Tag,
+                  img_url: item.img_url,
+                  recipe: item.recipe,
+                  Ingredients: [],
+                  Calorie: calOfCarbohydrate,
+                  Gram: grOfCarbohydrate,
+                };
+
+
+                item["ingredients"].map((i) => {
+
+
+                  let IngridientsString = "";
+
+                  IngridientsString += Math.round(i.Percentage * grOfCarbohydrate) + " gr of " + i.Name;
+
+                  dataOfCarb["Ingredients"].push(IngridientsString);
+                })
+                selectedRecipe.push(dataOfCarb);
+                console.log(selectedRecipe);
+                lunchFlag++;
+              }
+
+            })
+
+            console.log(selectedRecipe);
+
+            updateDoc(meal.ref, { Meals: selectedRecipe }).catch((E) => {
+              console.log("ERRROR", E)
+            });
+
+          })
+        })
+
+        ToastAndroid.show("Your profile updated successfully", ToastAndroid.LONG);
+      }
+
       const currentUser = FIREBASE_AUTH.currentUser;
       const userInfoRef = doc(db, "User", currentUser.uid);
       const newCollectionRef = collection(userInfoRef, "UserInfo");
@@ -1987,435 +2421,7 @@ export default function EditProfile() {
 
 
 
-      getDocs(newCollectionRef).then((querySnapshot) => {
-        querySnapshot.forEach((docRef) => {
 
-          updateDoc(docRef.ref, {
-            userName: userName, age: userAge, weight: userWeight, height: userHeight, userSurname: userSurname
-            , gender: docRef.data().gender, dailyActiviyLevel: userDailyActivityLevel, experienceLevel: userExperienceLevel
-          })
-
-          const dayCollectionRef = collection(docRef.ref, "Day");
-
-          getDocs(dayCollectionRef).then((daySnapshot) => {
-            daySnapshot.forEach((dayDoc) => {
-              deleteDoc(dayDoc.ref);
-            });
-          }).then(() => {
-            selectedDays.map((data) => {
-
-              addDoc(dayCollectionRef, { name: data, isComplete: false });
-            })
-
-            let userList = [];
-            getDocs(newCollectionRef)
-              .then((querySnapshot) => {
-                querySnapshot.forEach((item) => {
-                  console.log(item.id, " => ", item.data());
-
-                  const dayCollectionRef = doc(newCollectionRef, item.id);
-                  const subCollectionRef = collection(dayCollectionRef, "Day");
-
-                  getDocs(subCollectionRef).then((querySnapshot) => {
-                    querySnapshot.forEach((day) => {
-                      console.log(day.id, " => ", day.data().name);
-
-
-                      if (days.indexOf(day.data().name) % 3 == 0) {
-                        userList = filterExercises(item.experienceLevel, "push");
-                      } else if (days.indexOf(day.data().name) % 3 == 1) {
-                        userList = filterExercises(item.experienceLevel, "pull");
-                      } else if (days.indexOf(day.data().name) % 3 == 2) {
-                        userList = filterExercises(item.experienceLevel, "push");
-                      }
-
-                      const exerciseRef = doc(subCollectionRef, day.id);
-                      const exerciseSubRef = collection(exerciseRef, "Exercise");
-
-                      userList.map((item) => {
-                        const tempExercise = {
-                          name: item.name,
-                          muscle: item.muscle,
-                          gif_url: item.gif_url,
-                          image_url: item.image_url,
-                          type: item.type,
-                          equipment: item.equipment,
-                          difficulty: item.difficulty,
-                          instructions: item.instructions,
-                          set: 4,
-                          rep: 6,
-                          isComplete: false
-
-                        }
-
-                        addDoc(exerciseSubRef, tempExercise)
-                          .then((subDocRef) => {
-                            console.log("Subdocument written with ID: ", subDocRef.id);
-                          })
-                          .catch((error) => {
-                            console.error("Error adding subdocument: ", error);
-                          });
-                      })
-
-                    })
-                  })
-
-                });
-              })
-              .catch((error) => {
-                console.error("Error getting documents: ", error);
-              });
-          })
-
-        })
-      })
-
-
-      getDocs(nutritionCollectionRef).then((querysnapshot) => {
-        querysnapshot.forEach((nutrition) => {
-
-          Nutritions = [];
-          const proteinRequirement = userWeight * 2.20462262185;
-          const mainProtein = proteinRequirement * 0.8;
-
-          const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
-          let remainingCalories = totalCalorieReq;
-          let remainingProtein = proteinRequirement * 0.2;
-          let carbFlag = 0;
-          let snackFlag = 0;
-          let fruitFlag = 0;
-          let vegetableFlag = 0;
-
-          allProteins.map((proteinItem) => {
-            if (proteinItem.Name === "Chicken Breast") {
-
-
-              const grOfMainProtein = (100 * mainProtein) / proteinItem.Protein;
-              const calOfMainProtein = (proteinItem.Calories_per_100g * grOfMainProtein) / 100;
-
-              remainingCalories = totalCalorieReq - calOfMainProtein;
-
-
-              const dataOfProtein = {
-                ID: proteinItem.ID,
-                Name: proteinItem.Name,
-                Carb: proteinItem.Carb,
-                Fat: proteinItem.Fat,
-                Protein: proteinItem.Protein,
-                Vitamin_C: proteinItem.Vitamin_C,
-                Calcium: proteinItem.Calcium,
-                Iron: proteinItem.Iron,
-                Magnesium: proteinItem.Magnesium,
-                Calories_per_100g: proteinItem.Calories_per_100g,
-                Tag: proteinItem.Tag,
-                Gram: grOfMainProtein,
-                Calorie: calOfMainProtein,
-                Image: proteinItem.img_url
-              };
-
-              Nutritions.push(dataOfProtein);
-            }
-          })
-
-
-          allNutritions.sort(() => Math.random() - 0.5);
-
-          allNutritions.map((nutrition) => {
-
-
-
-            const carbCalorie = (remainingCalories * 0.8) / 4;
-
-
-            if (nutrition.Tag === "Carbohydrate" && carbFlag !== 4) {
-              const grOfCarbohydrate = (100 * carbCalorie) / nutrition.Calories_per_100g;
-              remainingProtein -= (grOfCarbohydrate * nutrition.Protein) / 100;
-
-
-              const dataOfCarb = {
-                ID: nutrition.ID,
-                Name: nutrition.Name,
-                Carb: nutrition.Carb,
-                Fat: nutrition.Fat,
-                Protein: nutrition.Protein,
-                Vitamin_C: nutrition.Vitamin_C,
-                Calcium: nutrition.Calcium,
-                Iron: nutrition.Iron,
-                Magnesium: nutrition.Magnesium,
-                Calories_per_100g: nutrition.Calories_per_100g,
-                Tag: nutrition.Tag,
-                Gram: grOfCarbohydrate,
-                Calorie: carbCalorie,
-                Image: nutrition.img_url
-              };
-
-              carbFlag++;
-
-              Nutritions.push(dataOfCarb);
-
-            }
-
-            const snackCalorie = (remainingCalories * 0.06) / 2;
-
-
-            if (nutrition.Tag === "Snack" && snackFlag !== 2) {
-
-              const grOfSnack = (100 * snackCalorie) / nutrition.Calories_per_100g;
-              remainingProtein -= (grOfSnack * nutrition.Protein) / 100;
-
-              const dataOfSnack = {
-                ID: nutrition.ID,
-                Name: nutrition.Name,
-                Carb: nutrition.Carb,
-                Fat: nutrition.Fat,
-                Protein: nutrition.Protein,
-                Vitamin_C: nutrition.Vitamin_C,
-                Calcium: nutrition.Calcium,
-                Iron: nutrition.Iron,
-                Magnesium: nutrition.Magnesium,
-                Calories_per_100g: nutrition.Calories_per_100g,
-                Tag: nutrition.Tag,
-                Gram: grOfSnack,
-                Calorie: snackCalorie,
-                Image: nutrition.img_url
-              };
-
-              Nutritions.push(dataOfSnack);
-
-              snackFlag++;
-            }
-
-
-            const fruitCalorie = remainingCalories * 0.08;
-
-
-            if (nutrition.Tag === "Fruit" && fruitFlag !== 1) {
-
-              const grOfFruit = (100 * fruitCalorie) / nutrition.Calories_per_100g;
-              remainingProtein -= (grOfFruit * nutrition.Protein) / 100;
-
-              const dataOfFruit = {
-                ID: nutrition.ID,
-                Name: nutrition.Name,
-                Carb: nutrition.Carb,
-                Fat: nutrition.Fat,
-                Protein: nutrition.Protein,
-                Vitamin_C: nutrition.Vitamin_C,
-                Calcium: nutrition.Calcium,
-                Iron: nutrition.Iron,
-                Magnesium: nutrition.Magnesium,
-                Calories_per_100g: nutrition.Calories_per_100g,
-                Tag: nutrition.Tag,
-                Gram: grOfFruit,
-                Calorie: fruitCalorie,
-                Image: nutrition.img_url
-              };
-
-              Nutritions.push(dataOfFruit);
-
-              fruitFlag++;
-            }
-
-            const vegetableCalorie = remainingCalories * 0.06;
-
-
-            if (nutrition.Tag === "Vegetable" && vegetableFlag !== 1) {
-
-              const grOfVegetable = (100 * vegetableCalorie) / nutrition.Calories_per_100g;
-              remainingProtein -= (grOfVegetable * nutrition.Protein) / 100;
-
-              const dataOfVegetable = {
-                ID: nutrition.ID,
-                Name: nutrition.Name,
-                Carb: nutrition.Carb,
-                Fat: nutrition.Fat,
-                Protein: nutrition.Protein,
-                Vitamin_C: nutrition.Vitamin_C,
-                Calcium: nutrition.Calcium,
-                Iron: nutrition.Iron,
-                Magnesium: nutrition.Magnesium,
-                Calories_per_100g: nutrition.Calories_per_100g,
-                Tag: nutrition.Tag,
-                Gram: grOfVegetable,
-                Calorie: vegetableCalorie,
-                Image: nutrition.img_url
-              };
-
-              Nutritions.push(dataOfVegetable);
-
-              vegetableFlag++;
-            }
-
-
-
-          });
-
-          updateDoc(nutrition.ref, { Nutritions: Nutritions });
-        })
-      })
-
-      getDocs(mealCollection).then((querySnapshot) => {
-        querySnapshot.forEach((meal) => {
-          selectedRecipe = [];
-          const proteinRequirement = userWeight * 2.20462262185;
-          const BreakfastProtein = proteinRequirement * 0.4;
-          const DinnerProtein = proteinRequirement * 0.5;
-
-          const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
-          console.log(totalCalorieReq);
-          let remainingCalories = totalCalorieReq;
-          let remainingProtein = proteinRequirement * 0.6;
-
-          let breakfastFlag = 0;
-          let lunchFlag = 0;
-          let dinnerFlag = 0;
-
-          BreakfastMeal.sort(() => Math.random() - 0.5);
-
-          BreakfastMeal.map((item) => {
-
-            if (item.Tag === "Protein" && breakfastFlag !== 1) {
-
-              const grOfMainProtein = ((100 * BreakfastProtein) / item.Protein);
-              const calOfMainProtein = (item.Calories_per_100g * grOfMainProtein) / 100;
-
-              remainingCalories = totalCalorieReq - calOfMainProtein;
-
-              const dataOfProtein = {
-                Name: item.Name,
-                Carb: item.Carb,
-                Fat: item.Fat,
-                Protein: item.Protein,
-                Vitamin_C: item.Vitamin_C,
-                Calories_per_100g: item.Calories_per_100g,
-                Tag: item.Tag,
-                img_url: item.img_url,
-                recipe: item.recipe,
-                Ingredients: [],
-                Gram: grOfMainProtein,
-                Calorie: calOfMainProtein,
-              };
-
-              item["ingredients"].map((i) => {
-
-
-                let IngridientsString = "";
-
-                IngridientsString += Math.round(i.Percentage * grOfMainProtein) + " gr of " + i.Name;
-
-                dataOfProtein["Ingredients"].push(IngridientsString);
-              })
-              selectedRecipe.push(dataOfProtein);
-              console.log(selectedRecipe);
-              breakfastFlag++;
-            }
-          })
-
-          Meal.sort(() => Math.random() - 0.5);
-
-          Meal.map((item) => {
-
-            const dinnerCalorie = remainingCalories * 0.5;
-
-
-            if (item.Tag === "Protein" && dinnerFlag !== 1) {
-              // 3 e bölünüp bütün öğünlere bölünebilir?
-              const grOfDinner = (100 * dinnerCalorie) / item.Calories_per_100g;
-              const calOfDinner = (item.Calories_per_100g * grOfDinner) / 100;
-              remainingProtein -= (grOfDinner * item.Protein) / 100;
-
-
-              const dataOfProtein = {
-                Name: item.Name,
-                Carb: item.Carb,
-                Fat: item.Fat,
-                Protein: item.Protein,
-                Vitamin_C: item.Vitamin_C,
-                Calories_per_100g: item.Calories_per_100g,
-                Tag: item.Tag,
-                img_url: item.img_url,
-                recipe: item.recipe,
-                Ingredients: [],
-                Gram: grOfDinner,
-                Calorie: calOfDinner,
-              };
-
-              item["ingredients"].map((i) => {
-
-
-                let IngridientsString = "";
-
-                IngridientsString += Math.round(i.Percentage * grOfDinner) + " gr of " + i.Name;
-
-                dataOfProtein["Ingredients"].push(IngridientsString);
-              })
-              selectedRecipe.push(dataOfProtein);
-              console.log(selectedRecipe);
-              dinnerFlag++;
-            }
-
-
-
-          })
-
-          Meal.sort(() => Math.random() - 0.5);
-
-          Meal.map((item) => {
-
-            const carbCalorie = remainingCalories * 0.5;
-
-
-            if (item.Tag === "Carbohydrates" && lunchFlag !== 1) {
-              // 3 e bölünüp bütün öğünlere bölünebilir?
-              const grOfCarbohydrate = ((100 * carbCalorie) / item.Calories_per_100g);
-              const calOfCarbohydrate = (item.Calories_per_100g * grOfCarbohydrate) / 100;
-
-              remainingProtein -= (item.Protein * grOfCarbohydrate) / 100
-
-              remainingCalories -= calOfCarbohydrate;
-
-              const dataOfCarb = {
-                Name: item.Name,
-                Carb: item.Carb,
-                Fat: item.Fat,
-                Protein: item.Protein,
-                Vitamin_C: item.Vitamin_C,
-                Calories_per_100g: item.Calories_per_100g,
-                Tag: item.Tag,
-                img_url: item.img_url,
-                recipe: item.recipe,
-                Ingredients: [],
-                Calorie: calOfCarbohydrate,
-                Gram: grOfCarbohydrate,
-              };
-
-
-              item["ingredients"].map((i) => {
-
-
-                let IngridientsString = "";
-
-                IngridientsString += Math.round(i.Percentage * grOfCarbohydrate) + " gr of " + i.Name;
-
-                dataOfCarb["Ingredients"].push(IngridientsString);
-              })
-              selectedRecipe.push(dataOfCarb);
-              console.log(selectedRecipe);
-              lunchFlag++;
-            }
-
-          })
-
-          console.log(selectedRecipe);
-
-          updateDoc(meal.ref, { Meals: selectedRecipe }).catch((E) => {
-            console.log("ERRROR", E)
-          });
-
-        })
-      })
-
-      ToastAndroid.show("Your profile updated successfully", ToastAndroid.LONG);
     } else {
       alert("Values should between the range");
     }
@@ -2561,7 +2567,7 @@ export default function EditProfile() {
             </View>
             <View style={tw`px-3`}>
               <Text style={tw`text-center`}>Intermediate</Text>
-              <RadioButton  value={"intermediate"} />
+              <RadioButton value={"intermediate"} />
             </View>
             <View style={tw`px-3`}>
               <Text style={tw`text-center`}>Advanced</Text>

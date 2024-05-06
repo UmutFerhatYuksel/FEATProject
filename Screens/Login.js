@@ -91,18 +91,15 @@ export function Login({ navigation }) {
         <View style={{ flexDirection: 'row', alignItems: 'center', width: "auto", marginTop: 40 }}>
           <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
           <View>
-            <Text style={{ width: "auto", textAlign: 'center' }}>Or Continue With</Text>
+            <Text style={{ width: "auto", textAlign: 'center' }}></Text>
           </View>
           <View style={{ flex: 1, height: 1, backgroundColor: 'black' }} />
         </View>
 
         <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-65 h-15 bg-white rounded-full mx-auto mt-8 flex flex-row`}>
+          <TouchableOpacity style={tw`w-65 h-15 bg-white rounded-full mx-auto mt-8 flex flex-row`} onPress={()=>navigation.navigate("ResetPassword")}>
             <View style={tw`my-5 mx-8 items-center`}>
-              <Text style={tw`text-center font-bold`}>Login with Google</Text>
-            </View>
-            <View style={tw`my-5 mx-8 items-center`}>
-              <Image style={{ width: 20, height: 20 }} source={require('../assets/google.png')} />
+              <Text style={tw`text-center font-bold`}>Forget Your Password?</Text>
             </View>
           </TouchableOpacity>
 

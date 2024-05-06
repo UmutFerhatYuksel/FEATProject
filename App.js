@@ -25,6 +25,11 @@ import NutritionList from './Screens/NutritionList';
 import NutritionDetail from './Screens/NutritionDetail';
 import RecipeList from './Screens/RecipeList';
 import MealDetail from './Screens/MealDetail';
+import { ResetPassword } from './Screens/ResetPassword';
+import AllExercises from './Screens/AllExercises';
+import MuscleGroup from './Screens/MuscleGroup';
+import ExerciseDetail from './Screens/ExerciseDetail';
+
 
 const newColorTheme = {
   brand: {
@@ -86,7 +91,12 @@ export default function App() {
               <Stack.Screen name='NutritionDetail' component={NutritionDetail} />
               <Stack.Screen name='RecipeList' component={RecipeList}/>
               <Stack.Screen name='MealDetail' component={MealDetail}/>
+              <Stack.Screen name='ResetPassword' component={ResetPassword}/>
+              <Stack.Screen name='AllExercises' component={AllExercises}/>
+              <Stack.Screen name='MuscleGroup' component={MuscleGroup}/>
+              <Stack.Screen name='ExerciseDetail' component={ExerciseDetail}/>
 
+              
             </Stack.Navigator>
           </NavigationContainer>
         </React.StrictMode>

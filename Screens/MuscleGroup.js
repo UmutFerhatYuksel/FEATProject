@@ -1,17 +1,9 @@
-import { View, Text, ImageBackground, Image, Modal } from 'react-native';
-import React, { useEffect, useState } from 'react';
-import Banner from '../assets/bannerWorkout.png';
-import tw from "twrnc";
-import { TouchableOpacity } from 'react-native';
-import { ScrollView } from 'react-native';
-import ExerciseImage from '../assets/Exercise.png';
-import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
-import { FIREBASE_AUTH, db } from '../firebase';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import { err } from 'react-native-svg';
+import { View, Text, Pressable, ScrollView } from 'react-native'
+import React from 'react'
 
-const CurrentWorkout = ({ navigation, route }) => {
-    // const { Exercises } = route.params;
+export default function MuscleGroup({ navigation, route }) {
+
+    const { MuscleGroup } = route.params;
 
     const mockExercises = [
         {
@@ -142,6 +134,7 @@ const CurrentWorkout = ({ navigation, route }) => {
             "image_url": "https://images.squarespace-cdn.com/content/v1/5ffcea9416aee143500ea103/1638260966540-876TFLNOQLTMNZG5QUGQ/Weighted%2BBench%2BTriceps%2BDips.png",
             "type": "strength",
             "muscle": "triceps",
+
             "equipment": "body_only",
             "difficulty": "intermediate",
             "instructions": "For this exercise you will need to place a bench behind your back and another one in front of you. With the benches perpendicular to your body, hold on to one bench on its edge with the hands close to your body, separated at shoulder width. Your arms should be fully extended. The legs will be extended forward on top of the other bench. Your legs should be parallel to the floor while your torso is to be perpendicular to the floor. Have your partner place the dumbbell on your lap. Note: This exercise is best performed with a partner as placing the weight on your lap can be challenging and cause injury without assistance. This will be your starting position. Slowly lower your body as you inhale by bending at the elbows until you lower yourself far enough to where there is an angle slightly smaller than 90 degrees between the upper arm and the forearm. Tip: Keep the elbows as close as possible throughout the movement. Forearms should always be pointing down. Using your triceps to bring your torso up again, lift yourself back to the starting position while exhaling. Repeat for the recommended amount of repetitions.  Caution: By placing your legs on top of another flat bench in front of you, the exercise becomes more challenging. It is best to attempt this exercise without any weights at first in order to get used to the movements required for good form. If that variation also becomes easy, then you can have a partner place plates on top of your lap. Make sure that in this case the partner ensures that the weights stay there throughout the movement."
@@ -431,7 +424,8 @@ const CurrentWorkout = ({ navigation, route }) => {
             "gif_url": "https://gymvisual.com/img/p/2/5/2/6/2/25262.gif",
             "image_url": "https://gymvisual.com/6780-large_default/barbell-romanian-deadlift-from-deficit.jpg",
             "type": "powerlifting",
-            "muscle": "lower_back",
+            "muscle": "back",
+            "muscle_target": "lower_back",
             "equipment": "barbell",
             "difficulty": "beginner",
             "instructions": "Begin by having a platform or weight plates that you can stand on, usually 1-3 inches in height. Approach the bar so that it is centered over your feet. You feet should be about hip width apart. Bend at the hip to grip the bar at shoulder width, allowing your shoulder blades to protract. Typically, you would use an overhand grip or an over/under grip on heavier sets. With your feet, and your grip set, take a big breath and then lower your hips and bend the knees until your shins contact the bar. Look forward with your head, keep your chest up and your back arched, and begin driving through the heels to move the weight upward. After the bar passes the knees, aggressively pull the bar back, pulling your shoulder blades together as you drive your hips forward into the bar. Lower the bar by bending at the hips and guiding it to the floor."
@@ -728,323 +722,30 @@ const CurrentWorkout = ({ navigation, route }) => {
         }
     ]
 
-    const [Exercises, setExercises] = useState([]);
-    const [alternativeExercises, setAlternativeExercises] = useState([]);
-    const [modalVisible, setModalVisible] = useState(false);
-    const [isEdit, setIsEdit] = useState(false);
-    const [oldItem, setOldItem] = useState();
-    let selectedExercises = [];
-
-    let Days = [];
-
-    const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-    const currentDate = new Date();
-    const options = { weekday: 'long' }
-    const currentDay = currentDate.toLocaleDateString('en-US', options);
-    const currentIndex = daysOfWeek.indexOf(currentDay);
-
-    useEffect(() => {
-
-
-        const unsubscribe = navigation.addListener('focus', () => {
-            
-            getInitialData().then(() => {
-
-
-            });
-        });
-
-        return unsubscribe;
-    }, [navigation, modalVisible])
-
-    console.log(Exercises);
-
-    const getInitialData = async () => {
-
-        var tempExercises = []
-
-        const currentUser = FIREBASE_AUTH.currentUser;
-        const userInfoRef = doc(db, "User", currentUser.uid);
-        const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-        getDocs(newCollectionRef).then((querySnapshot) => {
-            querySnapshot.forEach((item) => {
-
-                const dayCollectionRef = doc(newCollectionRef, item.id);
-                const subCollectionRef = collection(dayCollectionRef, "Day");
-
-                getDocs(subCollectionRef).then((querySnapshot) => {
-                    querySnapshot.forEach((day) => {
-                        console.log(day.id, " => ", day.data());
-
-                        // if (currentDay === "Monday") {
-                        //     const exerciseCollectionRef = doc(subCollectionRef, day.id);
-                        //     const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
-
-                        //     getDocs(ExercisesubCollectionRef)
-                        //         .then((querySnapshot) => {
-                        //             querySnapshot.forEach((doc) => {
-
-                        //                 const exerciseDocRef = doc.ref;
-
-                        //                 updateDoc(exerciseDocRef, { isComplete: false });
-                        //             });
-                        //         })
-                        //         .catch((error) => {
-
-                        //         });
-                        // }
-
-                        if (currentDay === day.data().name) {
-
-                            const exerciseCollectionRef = doc(subCollectionRef, day.id);
-                            const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
-
-
-                            // if (currentIndex % 3 == 0) {
-                            //     let alternativeExercises = filterExercises(item.difficulty, "push");
-                            //     setAlternativeExercises(alternativeExercises);
-                            // } else if (currentIndex % 3 == 1) {
-                            //     let alternativeExercises = filterExercises(item.difficulty, "pull");
-                            //     setAlternativeExercises(alternativeExercises);
-                            // } else if (currentIndex % 3 == 2) {
-                            //     let alternativeExercises = filterExercises(item.difficulty, "push");
-                            //     setAlternativeExercises(alternativeExercises);
-                            // }
-
-
-
-                            getDocs(ExercisesubCollectionRef).then((snapshot) => {
-                                snapshot.forEach((exercise) => {
-                                    console.log(exercise.id, " => ", exercise.data());
-
-
-
-                                    tempExercises.push(exercise.data());
-
-                                    setExercises(tempExercises);
-
-
-                                    console.log("EXERCISE DATA", exercise.data());
-
-
-                                })
-
-                                if (tempExercises.every(item => item.isComplete === true)) {
-
-
-                                    const currentUser = FIREBASE_AUTH.currentUser;
-                                    const userInfoRef = doc(db, "User", currentUser.uid);
-                                    const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-                                    getDocs(newCollectionRef).then((querySnapshot) => {
-                                        querySnapshot.forEach((i) => {
-
-                                            const dayCollectionRef = doc(newCollectionRef, i.id);
-                                            const daySubCollectionRef = collection(dayCollectionRef, "Day");
-
-                                            const dayQuery = query(daySubCollectionRef, where("name", "==", currentDay));
-
-                                            getDocs(dayQuery).then((querySnapshot) => {
-                                                querySnapshot.forEach((doc) => {
-
-                                                    const dayDocRef = doc.ref;
-
-                                                    updateDoc(dayDocRef, { isComplete: true }).catch((error) => {
-                                                        console.log(error);
-                                                    });
-
-
-                                                })
-                                            }).catch((error) => {
-                                                console.log(error);
-                                            })
-
-                                        })
-                                    })
-                                }
-
-
-                            })
-                        }
-
-
-                    })
-                })
-            })
-        })
-
-    }
-
-    const filterExercises = (difficulty, exercise, name) => {
-        mockExercises.filter(exercise => exercise.difficulty === difficulty);
-
-
-        mockExercises.map((item) => {
-            if (item.muscle === exercise && name !== item.name) {
-                selectedExercises.push(item);
-            }
-        })
-
-        return selectedExercises;
-    }
-
-    const handleEdit = (item) => {
-
-        setModalVisible(true);
-        setOldItem(item);
-
-        console.log(item);
-
-        let alternativeExercises = filterExercises(item.difficulty, item.muscle, item.name);
-        setAlternativeExercises(alternativeExercises);
-
-
-    }
-
-    const handleExerciseEdit = (newItem) => {
-
-        const currentUser = FIREBASE_AUTH.currentUser;
-
-        const userInfoRef = doc(db, "User", currentUser.uid);
-        const newCollectionRef = collection(userInfoRef, "UserInfo");
-
-        Exercises.map((exercise) => {
-            if (newItem.name === exercise.name) {
-                console.log("Exercise already Exist");
-            } else {
-
-                getDocs(newCollectionRef).then((querySnapshot) => {
-                    querySnapshot.forEach((i) => {
-                        const dayCollectionRef = doc(newCollectionRef, i.id);
-                        const subCollectionRef = collection(dayCollectionRef, "Day");
-
-                        getDocs(subCollectionRef).then((querySnapshot) => {
-                            querySnapshot.forEach((day) => {
-
-
-
-
-                                const exerciseCollectionRef = doc(subCollectionRef, day.id);
-                                const ExercisesubCollectionRef = collection(exerciseCollectionRef, "Exercise");
-
-                                const ExerciseQuery = query(ExercisesubCollectionRef, where("name", "==", oldItem.name));
-
-
-
-                                getDocs(ExerciseQuery).then((querySnapshot) => {
-                                    querySnapshot.forEach((doc) => {
-
-                                        const exerciseDocRef = doc.ref;
-
-                                        updateDoc(exerciseDocRef, newItem).then(()=>{
-                                            navigation.replace('CurrentWorkout');
-                                        });
-
-                                    })
-                                })
-                            })
-                        })
-                    })
-                })
-            }
-        })
-
-    }
-
-
-    console.log(Exercises);
-    console.log("Alternatives", alternativeExercises)
+    const categorizedExercises = mockExercises.filter(item => item.muscle === MuscleGroup);
 
     return (
-        <View>
-            <ImageBackground source={Banner} style={tw`w-full h-60 rounded-full mx-auto `} imageStyle={tw`opacity-50`}>
-                <View style={tw`my-40 p-3`}><Text style={tw`text-2xl  font-bold text-left text-indigo-700`}>The Program Prepared for You is Here</Text></View>
+        <ScrollView style={{ padding: 24, flex: 1, backgroundColor: 'white' }}>
+            <Text style={{ textTransform:"capitalize",fontSize: 24, textAlign: 'center', fontWeight: 'bold', marginTop: 12, color: '#25064C' }}>{MuscleGroup} Exercises</Text>
+            <Text style={{ fontSize: 16, textAlign: 'left', fontWeight: 'bold', marginTop: 36, color: '#7B61FF' }}>Click on the Exercise to See Details </Text>
+            {categorizedExercises.map((item) => (
+                <>
 
-            </ImageBackground>
-            <View style={tw`w-90 h-50 bg-green-400 rounded mx-auto my-5`}>
-                <Text style={tw`text-3xl px-3 font-semibold text-indigo-700 `}>Customize as You Wish</Text>
-                <View style={tw`my-auto`}>
-                    <Text style={tw`text-sm font-thin px-3 text-justify text-indigo-700`}>You can customize the exercise program prepared for you below!
-                    </Text>
-                </View>
-                {/* Özelleştirme Butonu */}
-                <TouchableOpacity style={tw`mx-auto my-8  w-30 h-10 bg-indigo-700 rounded`} onPress={() => setIsEdit(!isEdit)}>
-                    <View style={tw`m-auto`}>
-                        <Text style={tw`text-white text-md`}>Customize</Text>
+                    <View style={{ marginTop: 30 }}>
+                        <View style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 6, marginTop: 14 }}>
+                            <Pressable style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 4, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} onPress={() => navigation.navigate('ExerciseDetail',{item:item})}>
+                                <View>
+                                    <Text style={{ fontSize: 18, fontWeight: 'bold', padding: 10 }}>{item.name}</Text>
+                                </View>
+                            </Pressable>
+                        </View>
                     </View>
-                </TouchableOpacity>
+                </>
 
+            )
 
-            </View>
+            )}
 
-            <Modal
-                animationType="slide"
-                visible={modalVisible}
-            >
-                <ScrollView style={tw`w-full h-full`}>
-                    {alternativeExercises.map((item) => (
-                        <TouchableOpacity style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => handleExerciseEdit(item)}>
-                            <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
-                                <Image style={{ width: 45, height: 45 }} source={{ uri: item.image_url }} />
-                            </View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
-                            <View></View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.set}Set</Text></View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.rep}Rep</Text></View>
-                        </TouchableOpacity>
-                    ))}
-
-                </ScrollView>
-
-
-            </Modal>
-
-            <ScrollView style={tw`h-70`}>
-
-                <Text>dsfdsjıodjfdıor</Text>
-                {Exercises.map((item) => (
-                    <>
-                        <TouchableOpacity activeOpacity={1} disabled={item.isComplete ? true : false} style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => isEdit ? null : navigation.navigate("WorkoutComplete", { item: item })}>
-                            <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
-
-                                {item.isComplete ? (
-                                    <View style={[tw`bg-green-400 w-6 h-6 rounded-full my-auto mr-2`]}>
-                                        {/* Icon or indicator for completed item */}
-                                    </View>
-                                ) : (
-                                    <View style={[tw`bg-slate-400 w-6 h-6 rounded-full my-auto mr-2`]}>
-                                        {/*else if yazılacak (eğer receivedItem.completed false ise) */}
-                                    </View>
-                                )}
-                                <Image style={{ width: 45, height: 45 }} source={{ uri: item.image_url }} />
-
-                            </View>
-                            <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
-                            <View></View>
-                            {isEdit ? (
-                                <TouchableOpacity style={tw`mx-auto my-auto w-5 h-5 bg-green-400 rounded`} onPress={() => handleEdit(item)}>
-
-                                    <Icon name='edit' style={tw`mx-auto my-auto`}></Icon>
-                                </TouchableOpacity>
-                            ) : (
-                                <>
-                                    <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.set}Set</Text></View>
-                                    <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700 text-center`}>{item.rep}Rep</Text></View>
-                                </>
-                            )}
-
-                        </TouchableOpacity>
-                    </>
-
-                ))}
-
-
-
-            </ScrollView>
-
-        </View>
-    );
-};
-
-export default CurrentWorkout;
+        </ScrollView>
+    )
+}

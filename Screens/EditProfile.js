@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, Text, TouchableOpacity, StyleSheet, ToastAndroid } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { TextInput } from 'react-native-paper'
 import { Slider } from '@miblanchard/react-native-slider'
@@ -2413,7 +2413,7 @@ export default function EditProfile() {
       })
     })
 
-
+    ToastAndroid.show("Your profile updated successfully",ToastAndroid.LONG);
 
   }
 

@@ -10,7 +10,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { Button, TextInput } from 'react-native-paper';
 import { FIREBASE_AUTH } from '../firebase';
 import { db } from '../firebase';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, onAuthStateChanged, sendEmailVerification, signInWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 
 
@@ -42,6 +42,24 @@ export function Signup({ navigation }) {
   const [passwordCheck, setPasswordCheck] = useState();
 
 
+  useEffect(() => {
+    const interval = setInterval(async () => {
+      if (auth.currentUser) {
+        await auth.currentUser.reload();
+        if (auth.currentUser.emailVerified) {
+          clearInterval(interval);
+          setDoc(doc(db, 'User', auth.currentUser.uid), {
+            email: auth.currentUser.email
+          }).catch((e)=>{
+            console.log(e);
+          });
+          navigation.navigate("PersonalInfo", { email: email, password: password });
+        }
+      }
+    }, 5000); // checks every 5 seconds
+  
+    return () => clearInterval(interval);
+  }, []);
 
   const handleSignUp = async () => {
 
@@ -55,11 +73,10 @@ export function Signup({ navigation }) {
 
         if (response) {
 
-          navigation.navigate("PersonalInfo", { email: email, password: password });
+          await sendEmailVerification(response.user);
 
-          await setDoc(doc(db, 'User', response.user.uid), {
-            email: email
-          });
+          alert("Email verification has been send to your mail adress please verify");
+
 
           console.log(response)
 

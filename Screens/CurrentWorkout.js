@@ -1022,7 +1022,7 @@ const CurrentWorkout = ({ navigation, route }) => {
                             </View>
                             <View style={tw`mx-auto my-auto p-3 basis-1/4`}><Text style={tw`text-indigo-700`}>{item.name}</Text></View>
                             <View></View>
-                            {isEdit ? (
+                            {isEdit && !item.isComplete ? (
                                 <TouchableOpacity style={tw`mx-auto my-auto w-5 h-5 bg-green-400 rounded`} onPress={() => handleEdit(item)}>
 
                                     <Icon name='edit' style={tw`mx-auto my-auto`}></Icon>

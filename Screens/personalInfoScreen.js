@@ -28,15 +28,20 @@ const PersonalInfoScreen = ({ navigation, route }) => {
       alert("Any fields cannot be empty");
 
     } else {
-      navigation.navigate("PhysicalInfo", {
-        userName: userName,
-        userSurname: userSurname,
-        userAge: userAge,
-        userDailyActivityLevel: userDailyActivityLevel,
-        email: email,
-        password: password
-      })
-      console.log(userAge);
+      if(userAge > 13 && userAge < 100 ){
+
+        navigation.navigate("PhysicalInfo", {
+          userName: userName,
+          userSurname: userSurname,
+          userAge: userAge,
+          userDailyActivityLevel: userDailyActivityLevel,
+          email: email,
+          password: password
+        })
+        console.log(userAge);
+      }else{
+        alert("Values Should between the range")
+      }
 
     }
   }
@@ -64,7 +69,7 @@ const PersonalInfoScreen = ({ navigation, route }) => {
 
 
       <TextInput
-        label={"Age"}
+        label={"Age (13-100)"}
         value={userAge}
         onChangeText={name => setUserAge(parseInt(name))}
         mode='outlined'

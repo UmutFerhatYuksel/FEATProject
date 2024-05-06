@@ -4,18 +4,15 @@ import { StyleSheet, Text, View } from 'react-native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Login } from './Screens/Login';
 import { Signup } from './Screens/Signup';
-import welcomeScreen from './Screens/welcomeScreen';
 import PersonalInfoScreen from './Screens/personalInfoScreen';
 import PhysicalInfoScreen from './Screens/physicalInfoScreen';
 import CreateWorkoutScreen from './Screens/CreateWorkoutScreen';
-import ChooseDayScreen from './Screens/ChooseDayScreen';
 import { PaperProvider } from "react-native-paper"
 import CurrentWorkout from './Screens/CurrentWorkout';
 import CurrentProgress from './Screens/CurrentProgress';
 import WorkoutComplete from './Screens/WorkoutComplete';
 import { NativeBaseProvider, extendTheme } from "native-base";
 import CustomizeScreen from './Screens/CustomizeScreen';
-import example from './Screens/example';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import EditProfile from './Screens/EditProfile';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -83,7 +80,6 @@ export default function App() {
               <Stack.Screen name='CurrentWorkout' component={CurrentWorkout} />
               <Stack.Screen name='WorkoutComplete' component={WorkoutComplete} />
               <Stack.Screen name="CustomizeScreen" component={CustomizeScreen} />
-              <Stack.Screen name="example" component={example} />
               <Stack.Screen name="Edit Profile" component={EditProfile} />
               <Stack.Screen name="CreateRecipe" component={CreateRecipes} />
               <Stack.Screen name='MainNutrition' component={MainNutritionScreen} />

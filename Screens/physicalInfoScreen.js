@@ -750,7 +750,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 164,
       "Calories_per_100g": 342,
       "Tag": "Carbohydrate",
-      "img_url":"https://www.mardinsepet.com/Images/Urun/17022021031859.jpeg"
+      "img_url": "https://www.mardinsepet.com/Images/Urun/17022021031859.jpeg"
     },
     {
       "ID": 7,
@@ -764,7 +764,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 0,
       "Calories_per_100g": 247,
       "Tag": "Carbohydrate",
-      "img_url":"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/9/11/0/HE_whole-wheat-bread_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371609761646.jpeg"
+      "img_url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2012/9/11/0/HE_whole-wheat-bread_s4x3.jpg.rend.hgtvcom.1280.960.suffix/1371609761646.jpeg"
     },
     {
       "ID": 11,
@@ -778,7 +778,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 25,
       "Calories_per_100g": 86,
       "Tag": "Carbohydrate",
-      "img_url":"https://www.thespruceeats.com/thmb/bWWEsT1LCjYRnHg9pO-nTxNOYx4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sweetpotatoes_getty2400-56a4975c5f9b58b7d0d7b790.jpg"
+      "img_url": "https://www.thespruceeats.com/thmb/bWWEsT1LCjYRnHg9pO-nTxNOYx4=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/sweetpotatoes_getty2400-56a4975c5f9b58b7d0d7b790.jpg"
     },
     {
       "ID": 8,
@@ -792,7 +792,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 43,
       "Calories_per_100g": 123,
       "Tag": "Carbohydrate",
-      "img_url":"https://assets-jpcust.jwpsrv.com/thumbnails/k98gi2ri-720.jpg"
+      "img_url": "https://assets-jpcust.jwpsrv.com/thumbnails/k98gi2ri-720.jpg"
     },
     {
       "ID": 9,
@@ -806,7 +806,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 64,
       "Calories_per_100g": 120,
       "Tag": "Carbohydrate",
-      "img_url":"https://media-cdn2.greatbritishchefs.com/media/in1o4glq/img23323.whqc_1426x713q80.jpg"
+      "img_url": "https://media-cdn2.greatbritishchefs.com/media/in1o4glq/img23323.whqc_1426x713q80.jpg"
     },
     {
       "ID": 8,
@@ -820,7 +820,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 32,
       "Calories_per_100g": 73.4,
       "Tag": "Carbohydrate",
-      "img_url":"https://static.independent.co.uk/2021/05/21/16/iStock-909550520.jpg"
+      "img_url": "https://static.independent.co.uk/2021/05/21/16/iStock-909550520.jpg"
     },
     {
       "ID": 9,
@@ -834,7 +834,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 16,
       "Calories_per_100g": 64,
       "Tag": "Carbohydrate",
-      "img_url":"https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/6/28/fresh-corn-on-the-cob-partially-shucked-on-dark-background.jpg.rend.hgtvcom.1280.1280.suffix/1687987003387.jpeg"
+      "img_url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2023/6/28/fresh-corn-on-the-cob-partially-shucked-on-dark-background.jpg.rend.hgtvcom.1280.1280.suffix/1687987003387.jpeg"
     },
     {
       "ID": 10,
@@ -848,7 +848,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 0,
       "Calories_per_100g": 124,
       "Tag": "Carbohydrate",
-      "img_url":"https://hips.hearstapps.com/hmg-prod/images/whole-wheat-pasta-gettyimages-488392474-64359d6e6fa92.jpg"
+      "img_url": "https://hips.hearstapps.com/hmg-prod/images/whole-wheat-pasta-gettyimages-488392474-64359d6e6fa92.jpg"
     },
     {
       "ID": 11,
@@ -862,7 +862,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 279,
       "Calories_per_100g": 598,
       "Tag": "Snack",
-      "img_url":"https://www.uraaw.ca/image/cache/catalog/NUTS/organic-almonds-500x500.jpg"
+      "img_url": "https://www.uraaw.ca/image/cache/catalog/NUTS/organic-almonds-500x500.jpg"
     },
     {
       "ID": 12,
@@ -876,7 +876,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 158,
       "Calories_per_100g": 654,
       "Tag": "Snack",
-      "img_url":"https://domf5oio6qrcr.cloudfront.net/medialibrary/9531/iStock-481114390.jpg"
+      "img_url": "https://domf5oio6qrcr.cloudfront.net/medialibrary/9531/iStock-481114390.jpg"
     },
     {
       "ID": 13,
@@ -890,7 +890,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 154,
       "Calories_per_100g": 588,
       "Tag": "Fats",
-      "img_url":"https://pinchofyum.com/wp-content/uploads/Homemade-Peanut-Butter-Square.png"
+      "img_url": "https://pinchofyum.com/wp-content/uploads/Homemade-Peanut-Butter-Square.png"
     },
     {
       "ID": 14,
@@ -904,7 +904,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 0,
       "Calories_per_100g": 884,
       "Tag": "Fats",
-      "img_url":"https://domf5oio6qrcr.cloudfront.net/medialibrary/11832/46d9dde1-3d7c-46d4-a05a-206f793afa66.jpg"
+      "img_url": "https://domf5oio6qrcr.cloudfront.net/medialibrary/11832/46d9dde1-3d7c-46d4-a05a-206f793afa66.jpg"
     },
     {
       "ID": 15,
@@ -918,7 +918,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 2,
       "Calories_per_100g": 716,
       "Tag": "Fats",
-      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2020/08/AN451-Butter-732x549-thumb-732x549.jpg"
+      "img_url": "https://media.post.rvohealth.io/wp-content/uploads/2020/08/AN451-Butter-732x549-thumb-732x549.jpg"
     },
     {
       "ID": 16,
@@ -932,7 +932,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 0,
       "Calories_per_100g": 88,
       "Tag": "Fruit",
-      "img_url":"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/01/30152155/shutterstock_518328943-1.jpg"
+      "img_url": "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/01/30152155/shutterstock_518328943-1.jpg"
     },
     {
       "ID": 17,
@@ -946,7 +946,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 5,
       "Calories_per_100g": 52,
       "Tag": "Fruit",
-      "img_url":"https://subzfresh.com/wp-content/uploads/2022/04/apple_158989157.jpg"
+      "img_url": "https://subzfresh.com/wp-content/uploads/2022/04/apple_158989157.jpg"
     },
     {
       "ID": 18,
@@ -960,7 +960,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 13,
       "Calories_per_100g": 32,
       "Tag": "Fruit",
-      "img_url":"https://foodal.com/wp-content/uploads/2015/03/Make-Strawberry-Season-Last-All-Year.jpg"
+      "img_url": "https://foodal.com/wp-content/uploads/2015/03/Make-Strawberry-Season-Last-All-Year.jpg"
     },
     {
       "ID": 19,
@@ -974,7 +974,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 10,
       "Calories_per_100g": 47,
       "Tag": "Fruit",
-      "img_url":"https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg"
+      "img_url": "https://cdn.britannica.com/24/174524-050-A851D3F2/Oranges.jpg"
     },
     {
       "ID": 20,
@@ -988,7 +988,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 17,
       "Calories_per_100g": 60,
       "Tag": "Fruit",
-      "img_url":"https://www.health.com/thmb/YjD1m861zN2cGF4q9bbeu6now64=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Kiwi-a2e9888bfab6474f8d12d2ae0287b356.jpg"
+      "img_url": "https://www.health.com/thmb/YjD1m861zN2cGF4q9bbeu6now64=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Kiwi-a2e9888bfab6474f8d12d2ae0287b356.jpg"
     },
     {
       "ID": 1,
@@ -1002,7 +1002,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 12,
       "Calories_per_100g": 41,
       "Tag": "Vegetable",
-      "img_url":"https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/23175719/shutterstock_440493100-1.jpg"
+      "img_url": "https://blog-images-1.pharmeasy.in/blog/production/wp-content/uploads/2021/04/23175719/shutterstock_440493100-1.jpg"
     },
     {
       "ID": 2,
@@ -1016,7 +1016,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 21,
       "Calories_per_100g": 34,
       "Tag": "Vegetable",
-      "img_url":"https://www.southernliving.com/thmb/I1hA4Zpl1bhw_b2tWWnx5UXajvY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Roasted_Broccoli_012-632f5bb05b49406a8d301bd733ff4686.jpg"
+      "img_url": "https://www.southernliving.com/thmb/I1hA4Zpl1bhw_b2tWWnx5UXajvY=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Roasted_Broccoli_012-632f5bb05b49406a8d301bd733ff4686.jpg"
     },
     {
       "ID": 3,
@@ -1030,7 +1030,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 79,
       "Calories_per_100g": 23,
       "Tag": "Vegetable",
-      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2019/05/spinach-732x549-thumbnail.jpg"
+      "img_url": "https://media.post.rvohealth.io/wp-content/uploads/2019/05/spinach-732x549-thumbnail.jpg"
     },
     {
       "ID": 4,
@@ -1044,7 +1044,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 11,
       "Calories_per_100g": 18,
       "Tag": "Vegetable",
-      "img_url":"https://www.healthifyme.com/blog/wp-content/uploads/2022/01/Benefits-of-Tomatoes.jpeg"
+      "img_url": "https://www.healthifyme.com/blog/wp-content/uploads/2022/01/Benefits-of-Tomatoes.jpeg"
     },
     {
       "ID": 5,
@@ -1058,7 +1058,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 10,
       "Calories_per_100g": 31,
       "Tag": "Vegetable",
-      "img_url":"https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg"
+      "img_url": "https://upload.wikimedia.org/wikipedia/commons/8/85/Green-Yellow-Red-Pepper-2009.jpg"
     }
   ];
 
@@ -1075,7 +1075,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 29,
       "Calories_per_100g": 164,
       "Tag": "Protein",
-      "img_url":"https://www.licious.in/blog/wp-content/uploads/2022/01/Thinly-Sliced-Chicken-Breast-Fillet-.jpg"
+      "img_url": "https://www.licious.in/blog/wp-content/uploads/2022/01/Thinly-Sliced-Chicken-Breast-Fillet-.jpg"
     },
     {
       "ID": 2,
@@ -1089,7 +1089,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 26,
       "Calories_per_100g": 67,
       "Tag": "Protein",
-      "img_url":"https://asset.kompas.com/crops/EeaZLACNP7a8UeNnMCcmXI5DqHM=/0x1501:3648x3933/1200x800/data/photo/2021/05/21/60a7927a0ddb6.jpg"
+      "img_url": "https://asset.kompas.com/crops/EeaZLACNP7a8UeNnMCcmXI5DqHM=/0x1501:3648x3933/1200x800/data/photo/2021/05/21/60a7927a0ddb6.jpg"
     },
     {
       "ID": 3,
@@ -1103,7 +1103,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 27,
       "Calories_per_100g": 208,
       "Tag": "Protein",
-      "img_url":"https://img.rasset.ie/000ebc3f-500.jpg"
+      "img_url": "https://img.rasset.ie/000ebc3f-500.jpg"
     },
     {
       "ID": 4,
@@ -1117,7 +1117,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 36,
       "Calories_per_100g": 116,
       "Tag": "Protein",
-      "img_url":"https://www.hataytadinda.com/wp-content/uploads/2019/12/k%C4%B1rm%C4%B1z%C4%B1-mercimek.jpg"
+      "img_url": "https://www.hataytadinda.com/wp-content/uploads/2019/12/k%C4%B1rm%C4%B1z%C4%B1-mercimek.jpg"
     },
     {
       "ID": 5,
@@ -1131,798 +1131,798 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
       "Magnesium": 10,
       "Calories_per_100g": 155,
       "Tag": "Protein",
-      "img_url":"https://media.post.rvohealth.io/wp-content/uploads/2020/09/health-benefits-of-eggs-1200x628-facebook-1200x628.jpg"
+      "img_url": "https://media.post.rvohealth.io/wp-content/uploads/2020/09/health-benefits-of-eggs-1200x628-facebook-1200x628.jpg"
     },
   ];
 
 
   const Meal =
-  [
+    [
       {
-          "Name": "Grilled Chicken Caesar Salad",
-          "Carb": 6.5,
-          "Fat": 12.8,
-          "Protein": 26.3,
-          "Vitamin_C": 9.7,
-          "Calcium": 21.4,
-          "Iron": 1.9,
-          "Magnesium": 29,
-          "Calories_per_100g": 233.6,
-          "Tag": "Protein",
-          "img_url": "https://example.com/grilled_chicken_caesar_salad.jpg",
-          "recipe": "To make grilled chicken caesar salad, start by marinating chicken breasts in a mixture of olive oil, lemon juice, garlic, and Italian seasoning. Preheat your grill to medium-high heat, and grill the chicken for 6-8 minutes per side, or until cooked through. Let the chicken rest for a few minutes, then slice it thinly. In a large bowl, toss together romaine lettuce, croutons, and grated Parmesan cheese. Add the sliced grilled chicken on top, and drizzle with Caesar dressing. Toss the salad until everything is evenly coated with dressing. Serve your delicious grilled chicken caesar salad immediately.",
-          "ingredients": [
-              {
-                  "Name": "Chicken Breast",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Romaine Lettuce",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Croutons",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Parmesan Cheese",
-                  "Percentage": 0.1
-              }
-          ]
+        "Name": "Grilled Chicken Caesar Salad",
+        "Carb": 6.5,
+        "Fat": 12.8,
+        "Protein": 26.3,
+        "Vitamin_C": 9.7,
+        "Calcium": 21.4,
+        "Iron": 1.9,
+        "Magnesium": 29,
+        "Calories_per_100g": 233.6,
+        "Tag": "Protein",
+        "img_url": "https://example.com/grilled_chicken_caesar_salad.jpg",
+        "recipe": "To make grilled chicken caesar salad, start by marinating chicken breasts in a mixture of olive oil, lemon juice, garlic, and Italian seasoning. Preheat your grill to medium-high heat, and grill the chicken for 6-8 minutes per side, or until cooked through. Let the chicken rest for a few minutes, then slice it thinly. In a large bowl, toss together romaine lettuce, croutons, and grated Parmesan cheese. Add the sliced grilled chicken on top, and drizzle with Caesar dressing. Toss the salad until everything is evenly coated with dressing. Serve your delicious grilled chicken caesar salad immediately.",
+        "ingredients": [
+          {
+            "Name": "Chicken Breast",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Romaine Lettuce",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Croutons",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Parmesan Cheese",
+            "Percentage": 0.1
+          }
+        ]
       },
       {
-          "Name": "Whole Wheat Pasta",
-          "Carb": 25.0,
-          "Fat": 1.3,
-          "Protein": 12.5,
-          "Vitamin_C": 0.0,
-          "Calcium": 1.0,
-          "Iron": 1.8,
-          "Magnesium": 43,
-          "Calories_per_100g": 131.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/whole_wheat_pasta.jpg",
-          "recipe": "To cook whole wheat pasta, bring a large pot of salted water to a boil. Add the pasta to the boiling water and cook according to the package instructions, usually around 9-11 minutes for al dente pasta. Drain the cooked pasta and toss with your favorite sauce, such as marinara, pesto, or Alfredo. Serve the whole wheat pasta hot as a nutritious and filling meal.",
-          "ingredients": [
-              {
-                  "Name": "Whole Wheat Pasta",
-                  "Percentage": 1.0
-              }
-          ]
+        "Name": "Whole Wheat Pasta",
+        "Carb": 25.0,
+        "Fat": 1.3,
+        "Protein": 12.5,
+        "Vitamin_C": 0.0,
+        "Calcium": 1.0,
+        "Iron": 1.8,
+        "Magnesium": 43,
+        "Calories_per_100g": 131.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/whole_wheat_pasta.jpg",
+        "recipe": "To cook whole wheat pasta, bring a large pot of salted water to a boil. Add the pasta to the boiling water and cook according to the package instructions, usually around 9-11 minutes for al dente pasta. Drain the cooked pasta and toss with your favorite sauce, such as marinara, pesto, or Alfredo. Serve the whole wheat pasta hot as a nutritious and filling meal.",
+        "ingredients": [
+          {
+            "Name": "Whole Wheat Pasta",
+            "Percentage": 1.0
+          }
+        ]
       },
       {
-          "Name": "Brown Rice",
-          "Carb": 77.2,
-          "Fat": 1.6,
-          "Protein": 7.5,
-          "Vitamin_C": 0.0,
-          "Calcium": 2.0,
-          "Iron": 0.8,
-          "Magnesium": 43,
-          "Calories_per_100g": 362.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/brown_rice.jpg",
-          "recipe": "To cook brown rice, rinse the rice under cold water until the water runs clear. In a saucepan, bring water to a boil and add the rice. Reduce the heat to low, cover, and simmer for 45-50 minutes, or until the rice is tender and the water is absorbed. Fluff the rice with a fork and let it sit for a few minutes before serving. Enjoy the nutty flavor and chewy texture of brown rice as a versatile side dish or base for bowls.",
-          "ingredients": [
-              {
-                  "Name": "Brown Rice",
-                  "Percentage": 1.0
-              }
-          ]
+        "Name": "Brown Rice",
+        "Carb": 77.2,
+        "Fat": 1.6,
+        "Protein": 7.5,
+        "Vitamin_C": 0.0,
+        "Calcium": 2.0,
+        "Iron": 0.8,
+        "Magnesium": 43,
+        "Calories_per_100g": 362.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/brown_rice.jpg",
+        "recipe": "To cook brown rice, rinse the rice under cold water until the water runs clear. In a saucepan, bring water to a boil and add the rice. Reduce the heat to low, cover, and simmer for 45-50 minutes, or until the rice is tender and the water is absorbed. Fluff the rice with a fork and let it sit for a few minutes before serving. Enjoy the nutty flavor and chewy texture of brown rice as a versatile side dish or base for bowls.",
+        "ingredients": [
+          {
+            "Name": "Brown Rice",
+            "Percentage": 1.0
+          }
+        ]
       },
       {
-          "Name": "Quinoa Salad",
-          "Carb": 21.3,
-          "Fat": 4.9,
-          "Protein": 4.4,
-          "Vitamin_C": 4.2,
-          "Calcium": 2.0,
-          "Iron": 1.5,
-          "Magnesium": 64,
-          "Calories_per_100g": 143.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/quinoa_salad.jpg",
-          "recipe": "To make quinoa salad, rinse the quinoa under cold water and drain well. In a saucepan, combine the quinoa with water or broth and bring to a boil. Reduce the heat to low, cover, and simmer for 15-20 minutes, or until the quinoa is tender and the liquid is absorbed. Let the quinoa cool completely, then fluff it with a fork. In a large bowl, combine the cooked quinoa with chopped vegetables, such as bell peppers, cucumbers, and tomatoes. Drizzle with olive oil and lemon juice, and season with salt and pepper to taste. Toss the salad until everything is evenly coated and serve chilled or at room temperature.",
-          "ingredients": [
-              {
-                  "Name": "Quinoa",
-                  "Percentage": 0.5
-              },
-              {
-                  "Name": "Vegetables",
-                  "Percentage": 0.5
-              }
-          ]
+        "Name": "Quinoa Salad",
+        "Carb": 21.3,
+        "Fat": 4.9,
+        "Protein": 4.4,
+        "Vitamin_C": 4.2,
+        "Calcium": 2.0,
+        "Iron": 1.5,
+        "Magnesium": 64,
+        "Calories_per_100g": 143.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/quinoa_salad.jpg",
+        "recipe": "To make quinoa salad, rinse the quinoa under cold water and drain well. In a saucepan, combine the quinoa with water or broth and bring to a boil. Reduce the heat to low, cover, and simmer for 15-20 minutes, or until the quinoa is tender and the liquid is absorbed. Let the quinoa cool completely, then fluff it with a fork. In a large bowl, combine the cooked quinoa with chopped vegetables, such as bell peppers, cucumbers, and tomatoes. Drizzle with olive oil and lemon juice, and season with salt and pepper to taste. Toss the salad until everything is evenly coated and serve chilled or at room temperature.",
+        "ingredients": [
+          {
+            "Name": "Quinoa",
+            "Percentage": 0.5
+          },
+          {
+            "Name": "Vegetables",
+            "Percentage": 0.5
+          }
+        ]
       },
       {
-          "Name": "Sweet Potato Mash",
-          "Carb": 20.1,
-          "Fat": 0.1,
-          "Protein": 1.6,
-          "Vitamin_C": 2.4,
-          "Calcium": 2.0,
-          "Iron": 0.4,
-          "Magnesium": 21,
-          "Calories_per_100g": 86.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/sweet_potato_mash.jpg",
-          "recipe": "To make sweet potato mash, peel and dice sweet potatoes into small cubes. In a pot of boiling water, cook the sweet potatoes until tender, about 15-20 minutes. Drain the sweet potatoes and mash them with a fork or potato masher until smooth. Add a splash of milk or cream, a knob of butter, and season with salt and pepper to taste. Stir until everything is well combined and serve hot as a comforting side dish.",
-          "ingredients": [
-              {
-                  "Name": "Sweet Potatoes",
-                  "Percentage": 1.0
-              }
-          ]
+        "Name": "Sweet Potato Mash",
+        "Carb": 20.1,
+        "Fat": 0.1,
+        "Protein": 1.6,
+        "Vitamin_C": 2.4,
+        "Calcium": 2.0,
+        "Iron": 0.4,
+        "Magnesium": 21,
+        "Calories_per_100g": 86.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/sweet_potato_mash.jpg",
+        "recipe": "To make sweet potato mash, peel and dice sweet potatoes into small cubes. In a pot of boiling water, cook the sweet potatoes until tender, about 15-20 minutes. Drain the sweet potatoes and mash them with a fork or potato masher until smooth. Add a splash of milk or cream, a knob of butter, and season with salt and pepper to taste. Stir until everything is well combined and serve hot as a comforting side dish.",
+        "ingredients": [
+          {
+            "Name": "Sweet Potatoes",
+            "Percentage": 1.0
+          }
+        ]
       },
       {
-          "Name": "Oatmeal",
-          "Carb": 66.3,
-          "Fat": 6.9,
-          "Protein": 16.9,
-          "Vitamin_C": 0.0,
-          "Calcium": 5.0,
-          "Iron": 4.7,
-          "Magnesium": 177,
-          "Calories_per_100g": 389.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/oatmeal.jpg",
-          "recipe": "To make oatmeal, bring water or milk to a boil in a saucepan. Stir in rolled oats and reduce heat to medium-low. Cook for 5 minutes, stirring occasionally, until the oats are tender and creamy. Remove from heat and let stand for 2 minutes. Serve hot with your favorite toppings, such as fresh fruit, nuts, seeds, or a drizzle of honey. Enjoy oatmeal as a hearty and nutritious breakfast or snack.",
-          "ingredients": [
-              {
-                  "Name": "Rolled Oats",
-                  "Percentage": 1.0
-              }
-          ]
+        "Name": "Oatmeal",
+        "Carb": 66.3,
+        "Fat": 6.9,
+        "Protein": 16.9,
+        "Vitamin_C": 0.0,
+        "Calcium": 5.0,
+        "Iron": 4.7,
+        "Magnesium": 177,
+        "Calories_per_100g": 389.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/oatmeal.jpg",
+        "recipe": "To make oatmeal, bring water or milk to a boil in a saucepan. Stir in rolled oats and reduce heat to medium-low. Cook for 5 minutes, stirring occasionally, until the oats are tender and creamy. Remove from heat and let stand for 2 minutes. Serve hot with your favorite toppings, such as fresh fruit, nuts, seeds, or a drizzle of honey. Enjoy oatmeal as a hearty and nutritious breakfast or snack.",
+        "ingredients": [
+          {
+            "Name": "Rolled Oats",
+            "Percentage": 1.0
+          }
+        ]
       },
       {
-          "Name": "Banana Bread",
-          "Carb": 52.1,
-          "Fat": 10.0,
-          "Protein": 4.3,
-          "Vitamin_C": 3.1,
-          "Calcium": 2.0,
-          "Iron": 1.8,
-          "Magnesium": 27,
-          "Calories_per_100g": 325.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/banana_bread.jpg",
-          "recipe": "To make banana bread, preheat your oven to 350°F (175°C). Grease a loaf pan with butter or cooking spray. In a large bowl, mash ripe bananas with a fork until smooth. Stir in melted butter, sugar, eggs, and vanilla extract until well combined. In a separate bowl, whisk together flour, baking powder, baking soda, salt, and cinnamon. Gradually add the dry ingredients to the wet ingredients, stirring until just combined. Pour the batter into the prepared loaf pan and smooth the top. Bake for 50-60 minutes, or until a toothpick inserted into the center comes out clean. Let the banana bread cool in the pan for 10 minutes, then transfer to a wire rack to cool completely. Slice and serve warm or at room temperature.",
-          "ingredients": [
-              {
-                  "Name": "Ripe Bananas",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Flour",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Butter",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Sugar",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Banana Bread",
+        "Carb": 52.1,
+        "Fat": 10.0,
+        "Protein": 4.3,
+        "Vitamin_C": 3.1,
+        "Calcium": 2.0,
+        "Iron": 1.8,
+        "Magnesium": 27,
+        "Calories_per_100g": 325.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/banana_bread.jpg",
+        "recipe": "To make banana bread, preheat your oven to 350°F (175°C). Grease a loaf pan with butter or cooking spray. In a large bowl, mash ripe bananas with a fork until smooth. Stir in melted butter, sugar, eggs, and vanilla extract until well combined. In a separate bowl, whisk together flour, baking powder, baking soda, salt, and cinnamon. Gradually add the dry ingredients to the wet ingredients, stirring until just combined. Pour the batter into the prepared loaf pan and smooth the top. Bake for 50-60 minutes, or until a toothpick inserted into the center comes out clean. Let the banana bread cool in the pan for 10 minutes, then transfer to a wire rack to cool completely. Slice and serve warm or at room temperature.",
+        "ingredients": [
+          {
+            "Name": "Ripe Bananas",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Flour",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Butter",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Sugar",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Mango Smoothie",
-          "Carb": 40.0,
-          "Fat": 0.6,
-          "Protein": 1.8,
-          "Vitamin_C": 60.1,
-          "Calcium": 2.0,
-          "Iron": 0.6,
-          "Magnesium": 19,
-          "Calories_per_100g": 171.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/mango_smoothie.jpg",
-          "recipe": "To make a mango smoothie, combine ripe mango chunks, Greek yogurt, milk, honey, and ice cubes in a blender. Blend until smooth and creamy. Taste and adjust sweetness if needed by adding more honey. Pour the mango smoothie into glasses and serve immediately. Enjoy the tropical flavors of mango in this refreshing and nutritious smoothie.",
-          "ingredients": [
-              {
-                  "Name": "Ripe Mango Chunks",
-                  "Percentage": 0.5
-              },
-              {
-                  "Name": "Greek Yogurt",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Milk",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Honey",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Ice Cubes",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Mango Smoothie",
+        "Carb": 40.0,
+        "Fat": 0.6,
+        "Protein": 1.8,
+        "Vitamin_C": 60.1,
+        "Calcium": 2.0,
+        "Iron": 0.6,
+        "Magnesium": 19,
+        "Calories_per_100g": 171.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/mango_smoothie.jpg",
+        "recipe": "To make a mango smoothie, combine ripe mango chunks, Greek yogurt, milk, honey, and ice cubes in a blender. Blend until smooth and creamy. Taste and adjust sweetness if needed by adding more honey. Pour the mango smoothie into glasses and serve immediately. Enjoy the tropical flavors of mango in this refreshing and nutritious smoothie.",
+        "ingredients": [
+          {
+            "Name": "Ripe Mango Chunks",
+            "Percentage": 0.5
+          },
+          {
+            "Name": "Greek Yogurt",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Milk",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Honey",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Ice Cubes",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Potato Salad",
-          "Carb": 13.1,
-          "Fat": 9.9,
-          "Protein": 2.4,
-          "Vitamin_C": 19.6,
-          "Calcium": 2.0,
-          "Iron": 0.9,
-          "Magnesium": 23,
-          "Calories_per_100g": 169.0,
-          "Tag": "Carbohydrates",
-          "img_url": "https://example.com/potato_salad.jpg",
-          "recipe": "To make potato salad, start by boiling potatoes until tender. Drain and cool slightly before cutting them into bite-sized pieces. In a bowl, mix together mayonnaise, mustard, vinegar, salt, and pepper to make the dressing. Add chopped celery, onions, and hard-boiled eggs to the potatoes, then pour the dressing over the top. Gently toss everything together until well combined. Cover and refrigerate for at least 1 hour before serving to allow the flavors to meld. Potato salad is a classic side dish perfect for picnics, barbecues, and potlucks.",
-          "ingredients": [
-              {
-                  "Name": "Potatoes",
-                  "Percentage": 0.6
-              },
-              {
-                  "Name": "Mayonnaise",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Mustard",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Vinegar",
-                  "Percentage": 0.1
-              }
-          ]
+        "Name": "Potato Salad",
+        "Carb": 13.1,
+        "Fat": 9.9,
+        "Protein": 2.4,
+        "Vitamin_C": 19.6,
+        "Calcium": 2.0,
+        "Iron": 0.9,
+        "Magnesium": 23,
+        "Calories_per_100g": 169.0,
+        "Tag": "Carbohydrates",
+        "img_url": "https://example.com/potato_salad.jpg",
+        "recipe": "To make potato salad, start by boiling potatoes until tender. Drain and cool slightly before cutting them into bite-sized pieces. In a bowl, mix together mayonnaise, mustard, vinegar, salt, and pepper to make the dressing. Add chopped celery, onions, and hard-boiled eggs to the potatoes, then pour the dressing over the top. Gently toss everything together until well combined. Cover and refrigerate for at least 1 hour before serving to allow the flavors to meld. Potato salad is a classic side dish perfect for picnics, barbecues, and potlucks.",
+        "ingredients": [
+          {
+            "Name": "Potatoes",
+            "Percentage": 0.6
+          },
+          {
+            "Name": "Mayonnaise",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Mustard",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Vinegar",
+            "Percentage": 0.1
+          }
+        ]
       },
       {
-          "Name": "Turkey Avocado Wrap",
-          "Carb": 20.1,
-          "Fat": 14.5,
-          "Protein": 17.9,
-          "Vitamin_C": 10.8,
-          "Calcium": 10.3,
-          "Iron": 1.7,
-          "Magnesium": 22,
-          "Calories_per_100g": 278.4,
-          "Tag": "Protein",
-          "img_url": "https://example.com/turkey_avocado_wrap.jpg",
-          "recipe": "To make a turkey avocado wrap, start by spreading mashed avocado onto a whole wheat tortilla. Layer sliced turkey breast, lettuce, tomato, and thinly sliced red onion on top of the avocado. Drizzle with ranch dressing or your favorite condiment. Roll up the tortilla tightly, tucking in the sides as you go. Slice the wrap in half diagonally, and serve immediately. Enjoy your tasty and nutritious turkey avocado wrap for lunch!",
-          "ingredients": [
-              {
-                  "Name": "Whole Wheat Tortilla",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Turkey Breast",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Avocado",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Lettuce",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Tomato",
-                  "Percentage": 0.05
-              },
-              {
-                  "Name": "Red Onion",
-                  "Percentage": 0.05
-              }
-          ]
+        "Name": "Turkey Avocado Wrap",
+        "Carb": 20.1,
+        "Fat": 14.5,
+        "Protein": 17.9,
+        "Vitamin_C": 10.8,
+        "Calcium": 10.3,
+        "Iron": 1.7,
+        "Magnesium": 22,
+        "Calories_per_100g": 278.4,
+        "Tag": "Protein",
+        "img_url": "https://example.com/turkey_avocado_wrap.jpg",
+        "recipe": "To make a turkey avocado wrap, start by spreading mashed avocado onto a whole wheat tortilla. Layer sliced turkey breast, lettuce, tomato, and thinly sliced red onion on top of the avocado. Drizzle with ranch dressing or your favorite condiment. Roll up the tortilla tightly, tucking in the sides as you go. Slice the wrap in half diagonally, and serve immediately. Enjoy your tasty and nutritious turkey avocado wrap for lunch!",
+        "ingredients": [
+          {
+            "Name": "Whole Wheat Tortilla",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Turkey Breast",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Avocado",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Lettuce",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Tomato",
+            "Percentage": 0.05
+          },
+          {
+            "Name": "Red Onion",
+            "Percentage": 0.05
+          }
+        ]
       },
       {
-          "Name": "Quinoa Salad with Roasted Vegetables",
-          "Carb": 28.4,
-          "Fat": 8.9,
-          "Protein": 8.1,
-          "Vitamin_C": 17.6,
-          "Calcium": 5.2,
-          "Iron": 2.3,
-          "Magnesium": 62,
-          "Calories_per_100g": 215.7,
-          "Tag": "Protein",
-          "img_url": "https://example.com/quinoa_salad_roasted_vegetables.jpg",
-          "recipe": "To make quinoa salad with roasted vegetables, start by cooking quinoa according to package instructions and letting it cool. Meanwhile, chop your favorite vegetables such as bell peppers, zucchini, cherry tomatoes, and red onion. Toss the vegetables with olive oil, salt, pepper, and your favorite herbs, then spread them out on a baking sheet. Roast the vegetables in a preheated oven at 400°F (200°C) for 20-25 minutes, or until tender and slightly caramelized. In a large bowl, combine the cooked quinoa with the roasted vegetables. Add chopped fresh herbs like parsley or basil, and drizzle with balsamic vinaigrette. Toss everything together until well combined. Serve your flavorful quinoa salad with roasted vegetables warm or chilled.",
-          "ingredients": [
-              {
-                  "Name": "Quinoa",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Mixed Vegetables",
-                  "Percentage": 0.6
-              }
-          ]
+        "Name": "Quinoa Salad with Roasted Vegetables",
+        "Carb": 28.4,
+        "Fat": 8.9,
+        "Protein": 8.1,
+        "Vitamin_C": 17.6,
+        "Calcium": 5.2,
+        "Iron": 2.3,
+        "Magnesium": 62,
+        "Calories_per_100g": 215.7,
+        "Tag": "Protein",
+        "img_url": "https://example.com/quinoa_salad_roasted_vegetables.jpg",
+        "recipe": "To make quinoa salad with roasted vegetables, start by cooking quinoa according to package instructions and letting it cool. Meanwhile, chop your favorite vegetables such as bell peppers, zucchini, cherry tomatoes, and red onion. Toss the vegetables with olive oil, salt, pepper, and your favorite herbs, then spread them out on a baking sheet. Roast the vegetables in a preheated oven at 400°F (200°C) for 20-25 minutes, or until tender and slightly caramelized. In a large bowl, combine the cooked quinoa with the roasted vegetables. Add chopped fresh herbs like parsley or basil, and drizzle with balsamic vinaigrette. Toss everything together until well combined. Serve your flavorful quinoa salad with roasted vegetables warm or chilled.",
+        "ingredients": [
+          {
+            "Name": "Quinoa",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Mixed Vegetables",
+            "Percentage": 0.6
+          }
+        ]
       },
       {
-          "Name": "Salmon and Asparagus Foil Packets",
-          "Carb": 3.7,
-          "Fat": 15.2,
-          "Protein": 25.6,
-          "Vitamin_C": 5.4,
-          "Calcium": 3.8,
-          "Iron": 1.6,
-          "Magnesium": 33,
-          "Calories_per_100g": 247.1,
-          "Tag": "Protein",
-          "img_url": "https://example.com/salmon_asparagus_foil_packets.jpg",
-          "recipe": "To make salmon and asparagus foil packets, start by preheating your oven to 400°F (200°C). Place salmon fillets on sheets of aluminum foil, and season with salt, pepper, and lemon slices. Trim asparagus spears and place them alongside the salmon. Drizzle everything with olive oil and sprinkle with minced garlic and fresh dill. Fold the edges of the foil to create packets, sealing tightly. Place the packets on a baking sheet and bake for 15-20 minutes, or until the salmon is cooked through and the asparagus is tender. Carefully open the packets and serve your delicious salmon and asparagus straight from the foil.",
-          "ingredients": [
-              {
-                  "Name": "Salmon Fillet",
-                  "Percentage": 0.5
-              },
-              {
-                  "Name": "Asparagus",
-                  "Percentage": 0.5
-              }
-          ]
+        "Name": "Salmon and Asparagus Foil Packets",
+        "Carb": 3.7,
+        "Fat": 15.2,
+        "Protein": 25.6,
+        "Vitamin_C": 5.4,
+        "Calcium": 3.8,
+        "Iron": 1.6,
+        "Magnesium": 33,
+        "Calories_per_100g": 247.1,
+        "Tag": "Protein",
+        "img_url": "https://example.com/salmon_asparagus_foil_packets.jpg",
+        "recipe": "To make salmon and asparagus foil packets, start by preheating your oven to 400°F (200°C). Place salmon fillets on sheets of aluminum foil, and season with salt, pepper, and lemon slices. Trim asparagus spears and place them alongside the salmon. Drizzle everything with olive oil and sprinkle with minced garlic and fresh dill. Fold the edges of the foil to create packets, sealing tightly. Place the packets on a baking sheet and bake for 15-20 minutes, or until the salmon is cooked through and the asparagus is tender. Carefully open the packets and serve your delicious salmon and asparagus straight from the foil.",
+        "ingredients": [
+          {
+            "Name": "Salmon Fillet",
+            "Percentage": 0.5
+          },
+          {
+            "Name": "Asparagus",
+            "Percentage": 0.5
+          }
+        ]
       },
       {
-          "Name": "Caprese Sandwich",
-          "Carb": 33.9,
-          "Fat": 14.6,
-          "Protein": 14.2,
-          "Vitamin_C": 7.8,
-          "Calcium": 26.9,
-          "Iron": 2.1,
-          "Magnesium": 35,
-          "Calories_per_100g": 301.2,
-          "Tag": "Protein",
-          "img_url": "https://example.com/caprese_sandwich.jpg",
-          "recipe": "To make a Caprese sandwich, start by slicing a baguette or ciabatta roll in half lengthwise. Spread pesto sauce on one half of the bread, and layer sliced fresh mozzarella cheese, ripe tomato slices, and fresh basil leaves on top. Drizzle with balsamic glaze or vinegar, and season with salt and pepper to taste. Place the other half of the bread on top to form a sandwich. Press down gently, then slice the sandwich into individual portions. Serve your delicious Caprese sandwich with a side of mixed greens or chips.",
-          "ingredients": [
-              {
-                  "Name": "Baguette or Ciabatta Roll",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Fresh Mozzarella Cheese",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Tomato",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Fresh Basil",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Pesto Sauce",
-                  "Percentage": 0.05
-              },
-              {
-                  "Name": "Balsamic Glaze",
-                  "Percentage": 0.05
-              }
-          ]
+        "Name": "Caprese Sandwich",
+        "Carb": 33.9,
+        "Fat": 14.6,
+        "Protein": 14.2,
+        "Vitamin_C": 7.8,
+        "Calcium": 26.9,
+        "Iron": 2.1,
+        "Magnesium": 35,
+        "Calories_per_100g": 301.2,
+        "Tag": "Protein",
+        "img_url": "https://example.com/caprese_sandwich.jpg",
+        "recipe": "To make a Caprese sandwich, start by slicing a baguette or ciabatta roll in half lengthwise. Spread pesto sauce on one half of the bread, and layer sliced fresh mozzarella cheese, ripe tomato slices, and fresh basil leaves on top. Drizzle with balsamic glaze or vinegar, and season with salt and pepper to taste. Place the other half of the bread on top to form a sandwich. Press down gently, then slice the sandwich into individual portions. Serve your delicious Caprese sandwich with a side of mixed greens or chips.",
+        "ingredients": [
+          {
+            "Name": "Baguette or Ciabatta Roll",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Fresh Mozzarella Cheese",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Tomato",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Fresh Basil",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Pesto Sauce",
+            "Percentage": 0.05
+          },
+          {
+            "Name": "Balsamic Glaze",
+            "Percentage": 0.05
+          }
+        ]
       },
       {
-          "Name": "Greek Salad with Grilled Shrimp",
-          "Carb": 9.7,
-          "Fat": 15.5,
-          "Protein": 21.4,
-          "Vitamin_C": 26.9,
-          "Calcium": 14.7,
-          "Iron": 2.2,
-          "Magnesium": 42,
-          "Calories_per_100g": 267.8,
-          "Tag": "Protein",
-          "img_url": "https://example.com/greek_salad_grilled_shrimp.jpg",
-          "recipe": "To make Greek salad with grilled shrimp, start by marinating shrimp in olive oil, lemon juice, garlic, and oregano. Preheat your grill to medium-high heat, and grill the shrimp for 2-3 minutes per side, or until pink and opaque. In a large bowl, combine chopped romaine lettuce, sliced cucumber, cherry tomatoes, red onion, and Kalamata olives. Crumble feta cheese over the top. Add the grilled shrimp on top of the salad, and drizzle with Greek dressing. Toss everything together until well combined. Serve your flavorful Greek salad with grilled shrimp immediately.",
-          "ingredients": [
-              {
-                  "Name": "Shrimp",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Romaine Lettuce",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Cucumber",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Cherry Tomatoes",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Red Onion",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Feta Cheese",
-                  "Percentage": 0.05
-              },
-              {
-                  "Name": "Kalamata Olives",
-                  "Percentage": 0.05
-              }
-          ]
+        "Name": "Greek Salad with Grilled Shrimp",
+        "Carb": 9.7,
+        "Fat": 15.5,
+        "Protein": 21.4,
+        "Vitamin_C": 26.9,
+        "Calcium": 14.7,
+        "Iron": 2.2,
+        "Magnesium": 42,
+        "Calories_per_100g": 267.8,
+        "Tag": "Protein",
+        "img_url": "https://example.com/greek_salad_grilled_shrimp.jpg",
+        "recipe": "To make Greek salad with grilled shrimp, start by marinating shrimp in olive oil, lemon juice, garlic, and oregano. Preheat your grill to medium-high heat, and grill the shrimp for 2-3 minutes per side, or until pink and opaque. In a large bowl, combine chopped romaine lettuce, sliced cucumber, cherry tomatoes, red onion, and Kalamata olives. Crumble feta cheese over the top. Add the grilled shrimp on top of the salad, and drizzle with Greek dressing. Toss everything together until well combined. Serve your flavorful Greek salad with grilled shrimp immediately.",
+        "ingredients": [
+          {
+            "Name": "Shrimp",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Romaine Lettuce",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Cucumber",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Cherry Tomatoes",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Red Onion",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Feta Cheese",
+            "Percentage": 0.05
+          },
+          {
+            "Name": "Kalamata Olives",
+            "Percentage": 0.05
+          }
+        ]
       },
       {
-          "Name": "Vegetable and Hummus Wrap",
-          "Carb": 31.2,
-          "Fat": 11.5,
-          "Protein": 11.8,
-          "Vitamin_C": 19.4,
-          "Calcium": 8.1,
-          "Iron": 2.0,
-          "Magnesium": 33,
-          "Calories_per_100g": 254.6,
-          "Tag": "Protein",
-          "img_url": "https://example.com/vegetable_hummus_wrap.jpg",
-          "recipe": "To make a vegetable and hummus wrap, start by spreading hummus onto a whole wheat tortilla. Layer thinly sliced vegetables such as cucumber, bell peppers, carrots, and spinach leaves on top of the hummus. Sprinkle with crumbled feta cheese and a dash of black pepper. Roll up the tortilla tightly, tucking in the sides as you go. Slice the wrap in half diagonally, and serve immediately. Enjoy your nutritious and flavorful vegetable and hummus wrap for lunch!",
-          "ingredients": [
-              {
-                  "Name": "Whole Wheat Tortilla",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Hummus",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Mixed Vegetables",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Feta Cheese",
-                  "Percentage": 0.05
-              },
-              {
-                  "Name": "Black Pepper",
-                  "Percentage": 0.05
-              }
-          ]
+        "Name": "Vegetable and Hummus Wrap",
+        "Carb": 31.2,
+        "Fat": 11.5,
+        "Protein": 11.8,
+        "Vitamin_C": 19.4,
+        "Calcium": 8.1,
+        "Iron": 2.0,
+        "Magnesium": 33,
+        "Calories_per_100g": 254.6,
+        "Tag": "Protein",
+        "img_url": "https://example.com/vegetable_hummus_wrap.jpg",
+        "recipe": "To make a vegetable and hummus wrap, start by spreading hummus onto a whole wheat tortilla. Layer thinly sliced vegetables such as cucumber, bell peppers, carrots, and spinach leaves on top of the hummus. Sprinkle with crumbled feta cheese and a dash of black pepper. Roll up the tortilla tightly, tucking in the sides as you go. Slice the wrap in half diagonally, and serve immediately. Enjoy your nutritious and flavorful vegetable and hummus wrap for lunch!",
+        "ingredients": [
+          {
+            "Name": "Whole Wheat Tortilla",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Hummus",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Mixed Vegetables",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Feta Cheese",
+            "Percentage": 0.05
+          },
+          {
+            "Name": "Black Pepper",
+            "Percentage": 0.05
+          }
+        ]
       },
       {
-          "Name": "Egg Salad Sandwich",
-          "Carb": 21.8,
-          "Fat": 16.3,
-          "Protein": 15.7,
-          "Vitamin_C": 4.9,
-          "Calcium": 9.6,
-          "Iron": 2.0,
-          "Magnesium": 20,
-          "Calories_per_100g": 292.5,
-          "Tag": "Protein",
-          "img_url": "https://example.com/egg_salad_sandwich.jpg",
-          "recipe": "To make an egg salad sandwich, start by hard-boiling eggs and chopping them into small pieces. In a bowl, mix together chopped eggs, mayonnaise, mustard, diced celery, and chopped chives. Season with salt and pepper to taste. Spread the egg salad onto slices of whole wheat bread, and top with lettuce leaves and tomato slices. Place another slice of bread on top to form a sandwich. Press down gently, then slice the sandwich in half. Serve your delicious egg salad sandwich with a side of pickles or chips.",
-          "ingredients": [
-              {
-                  "Name": "Whole Wheat Bread",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Hard-boiled Eggs",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Mayonnaise",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Mustard",
-                  "Percentage": 0.05
-              },
-              {
-                  "Name": "Celery",
-                  "Percentage": 0.025
-              },
-              {
-                  "Name": "Chives",
-                  "Percentage": 0.025
-              }
-          ]
+        "Name": "Egg Salad Sandwich",
+        "Carb": 21.8,
+        "Fat": 16.3,
+        "Protein": 15.7,
+        "Vitamin_C": 4.9,
+        "Calcium": 9.6,
+        "Iron": 2.0,
+        "Magnesium": 20,
+        "Calories_per_100g": 292.5,
+        "Tag": "Protein",
+        "img_url": "https://example.com/egg_salad_sandwich.jpg",
+        "recipe": "To make an egg salad sandwich, start by hard-boiling eggs and chopping them into small pieces. In a bowl, mix together chopped eggs, mayonnaise, mustard, diced celery, and chopped chives. Season with salt and pepper to taste. Spread the egg salad onto slices of whole wheat bread, and top with lettuce leaves and tomato slices. Place another slice of bread on top to form a sandwich. Press down gently, then slice the sandwich in half. Serve your delicious egg salad sandwich with a side of pickles or chips.",
+        "ingredients": [
+          {
+            "Name": "Whole Wheat Bread",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Hard-boiled Eggs",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Mayonnaise",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Mustard",
+            "Percentage": 0.05
+          },
+          {
+            "Name": "Celery",
+            "Percentage": 0.025
+          },
+          {
+            "Name": "Chives",
+            "Percentage": 0.025
+          }
+        ]
       },
       {
-          "Name": "Mushroom and Spinach Quesadillas",
-          "Carb": 33.5,
-          "Fat": 12.4,
-          "Protein": 17.9,
-          "Vitamin_C": 6.7,
-          "Calcium": 22.8,
-          "Iron": 3.1,
-          "Magnesium": 42,
-          "Calories_per_100g": 283.2,
-          "Tag": "Protein",
-          "img_url": "https://example.com/mushroom_spinach_quesadillas.jpg",
-          "recipe": "To make mushroom and spinach quesadillas, start by sautéing sliced mushrooms and chopped spinach in a skillet with olive oil, garlic, and diced onion. Cook until the mushrooms are golden brown and the spinach is wilted. Remove the vegetables from the skillet and set aside. Place a large flour tortilla in the skillet, and sprinkle grated cheese over one half of the tortilla. Spoon the cooked mushroom and spinach mixture over the cheese, then fold the other half of the tortilla over the filling to form a half-moon shape. Cook the quesadilla for 2-3 minutes on each side, or until golden and crispy. Remove from the skillet and slice into wedges. Serve your delicious mushroom and spinach quesadillas with salsa and sour cream.",
-          "ingredients": [
-              {
-                  "Name": "Flour Tortilla",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Mushrooms",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Spinach",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Cheese",
-                  "Percentage": 0.1
-              }
-          ]
+        "Name": "Mushroom and Spinach Quesadillas",
+        "Carb": 33.5,
+        "Fat": 12.4,
+        "Protein": 17.9,
+        "Vitamin_C": 6.7,
+        "Calcium": 22.8,
+        "Iron": 3.1,
+        "Magnesium": 42,
+        "Calories_per_100g": 283.2,
+        "Tag": "Protein",
+        "img_url": "https://example.com/mushroom_spinach_quesadillas.jpg",
+        "recipe": "To make mushroom and spinach quesadillas, start by sautéing sliced mushrooms and chopped spinach in a skillet with olive oil, garlic, and diced onion. Cook until the mushrooms are golden brown and the spinach is wilted. Remove the vegetables from the skillet and set aside. Place a large flour tortilla in the skillet, and sprinkle grated cheese over one half of the tortilla. Spoon the cooked mushroom and spinach mixture over the cheese, then fold the other half of the tortilla over the filling to form a half-moon shape. Cook the quesadilla for 2-3 minutes on each side, or until golden and crispy. Remove from the skillet and slice into wedges. Serve your delicious mushroom and spinach quesadillas with salsa and sour cream.",
+        "ingredients": [
+          {
+            "Name": "Flour Tortilla",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Mushrooms",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Spinach",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Cheese",
+            "Percentage": 0.1
+          }
+        ]
       }
-  ]
+    ]
 
-const BreakfastMeal =
-  [
+  const BreakfastMeal =
+    [
       {
-          "Name": "Scrambled Eggs with Avocado Toast",
-          "Carb": 25.7,
-          "Fat": 18.3,
-          "Protein": 21.5,
-          "Vitamin_C": 10.8,
-          "Calcium": 7.6,
-          "Iron": 2.3,
-          "Magnesium": 21,
-          "Calories_per_100g": 310.2,
-          "Tag": "Protein",
-          "img_url": "https://example.com/scrambled_eggs_avocado_toast.jpg",
-          "recipe": "To make scrambled eggs with avocado toast, start by cracking eggs into a bowl and whisking them until smooth. Heat a non-stick skillet over medium heat and add the beaten eggs. Cook the eggs, stirring occasionally, until they are just set. In the meantime, toast slices of whole-grain bread until golden brown. Mash ripe avocado onto the toasted bread slices and season with salt and pepper. Serve the scrambled eggs alongside the avocado toast for a delicious and protein-packed breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Eggs",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Avocado",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Whole-Grain Bread",
-                  "Percentage": 0.3
-              }
-          ]
+        "Name": "Scrambled Eggs with Avocado Toast",
+        "Carb": 25.7,
+        "Fat": 18.3,
+        "Protein": 21.5,
+        "Vitamin_C": 10.8,
+        "Calcium": 7.6,
+        "Iron": 2.3,
+        "Magnesium": 21,
+        "Calories_per_100g": 310.2,
+        "Tag": "Protein",
+        "img_url": "https://example.com/scrambled_eggs_avocado_toast.jpg",
+        "recipe": "To make scrambled eggs with avocado toast, start by cracking eggs into a bowl and whisking them until smooth. Heat a non-stick skillet over medium heat and add the beaten eggs. Cook the eggs, stirring occasionally, until they are just set. In the meantime, toast slices of whole-grain bread until golden brown. Mash ripe avocado onto the toasted bread slices and season with salt and pepper. Serve the scrambled eggs alongside the avocado toast for a delicious and protein-packed breakfast.",
+        "ingredients": [
+          {
+            "Name": "Eggs",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Avocado",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Whole-Grain Bread",
+            "Percentage": 0.3
+          }
+        ]
       },
       {
-          "Name": "Greek Yogurt Parfait",
-          "Carb": 25.6,
-          "Fat": 6.8,
-          "Protein": 15.2,
-          "Vitamin_C": 7.4,
-          "Calcium": 18.9,
-          "Iron": 0.9,
-          "Magnesium": 24,
-          "Calories_per_100g": 189.3,
-          "Tag": "Protein",
-          "img_url": "https://example.com/greek_yogurt_parfait.jpg",
-          "recipe": "To make a Greek yogurt parfait, start by layering Greek yogurt, granola, and fresh fruit in a glass or bowl. Repeat the layers until the glass or bowl is filled. You can use any combination of fruit and granola that you like, such as strawberries, blueberries, raspberries, or bananas. Serve the parfait immediately for a delicious and nutritious breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Greek Yogurt",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Granola",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Fresh Fruit",
-                  "Percentage": 0.3
-              }
-          ]
+        "Name": "Greek Yogurt Parfait",
+        "Carb": 25.6,
+        "Fat": 6.8,
+        "Protein": 15.2,
+        "Vitamin_C": 7.4,
+        "Calcium": 18.9,
+        "Iron": 0.9,
+        "Magnesium": 24,
+        "Calories_per_100g": 189.3,
+        "Tag": "Protein",
+        "img_url": "https://example.com/greek_yogurt_parfait.jpg",
+        "recipe": "To make a Greek yogurt parfait, start by layering Greek yogurt, granola, and fresh fruit in a glass or bowl. Repeat the layers until the glass or bowl is filled. You can use any combination of fruit and granola that you like, such as strawberries, blueberries, raspberries, or bananas. Serve the parfait immediately for a delicious and nutritious breakfast.",
+        "ingredients": [
+          {
+            "Name": "Greek Yogurt",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Granola",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Fresh Fruit",
+            "Percentage": 0.3
+          }
+        ]
       },
       {
-          "Name": "Oatmeal with Berries and Nuts",
-          "Carb": 28.7,
-          "Fat": 10.1,
-          "Protein": 8.9,
-          "Vitamin_C": 5.6,
-          "Calcium": 4.2,
-          "Iron": 1.7,
-          "Magnesium": 32,
-          "Calories_per_100g": 218.6,
-          "Tag": "Protein",
-          "img_url": "https://example.com/oatmeal_with_berries_nuts.jpg",
-          "recipe": "To make oatmeal with berries and nuts, start by cooking rolled oats according to package instructions. Once the oatmeal is cooked, top it with fresh berries such as strawberries, blueberries, or raspberries, and sprinkle with chopped nuts such as almonds, walnuts, or pecans. You can also drizzle honey or maple syrup over the oatmeal for added sweetness if desired. Serve the oatmeal hot for a comforting and nutritious breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Rolled Oats",
-                  "Percentage": 0.5
-              },
-              {
-                  "Name": "Fresh Berries",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Chopped Nuts",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Oatmeal with Berries and Nuts",
+        "Carb": 28.7,
+        "Fat": 10.1,
+        "Protein": 8.9,
+        "Vitamin_C": 5.6,
+        "Calcium": 4.2,
+        "Iron": 1.7,
+        "Magnesium": 32,
+        "Calories_per_100g": 218.6,
+        "Tag": "Protein",
+        "img_url": "https://example.com/oatmeal_with_berries_nuts.jpg",
+        "recipe": "To make oatmeal with berries and nuts, start by cooking rolled oats according to package instructions. Once the oatmeal is cooked, top it with fresh berries such as strawberries, blueberries, or raspberries, and sprinkle with chopped nuts such as almonds, walnuts, or pecans. You can also drizzle honey or maple syrup over the oatmeal for added sweetness if desired. Serve the oatmeal hot for a comforting and nutritious breakfast.",
+        "ingredients": [
+          {
+            "Name": "Rolled Oats",
+            "Percentage": 0.5
+          },
+          {
+            "Name": "Fresh Berries",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Chopped Nuts",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Vegetable Frittata",
-          "Carb": 9.4,
-          "Fat": 14.7,
-          "Protein": 12.5,
-          "Vitamin_C": 14.3,
-          "Calcium": 9.1,
-          "Iron": 1.6,
-          "Magnesium": 27,
-          "Calories_per_100g": 202.8,
-          "Tag": "Protein",
-          "img_url": "https://example.com/vegetable_frittata.jpg",
-          "recipe": "To make a vegetable frittata, start by sautéing your favorite vegetables such as bell peppers, onions, spinach, and tomatoes in an oven-safe skillet until they are tender. In a bowl, whisk together eggs, milk, salt, and pepper, then pour the egg mixture over the sautéed vegetables in the skillet. Cook the frittata over medium heat until the edges are set, then transfer the skillet to a preheated oven and bake until the frittata is cooked through and golden brown on top. Slice the frittata into wedges and serve hot or at room temperature for a satisfying breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Eggs",
-                  "Percentage": 0.6
-              },
-              {
-                  "Name": "Milk",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Mixed Vegetables",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Vegetable Frittata",
+        "Carb": 9.4,
+        "Fat": 14.7,
+        "Protein": 12.5,
+        "Vitamin_C": 14.3,
+        "Calcium": 9.1,
+        "Iron": 1.6,
+        "Magnesium": 27,
+        "Calories_per_100g": 202.8,
+        "Tag": "Protein",
+        "img_url": "https://example.com/vegetable_frittata.jpg",
+        "recipe": "To make a vegetable frittata, start by sautéing your favorite vegetables such as bell peppers, onions, spinach, and tomatoes in an oven-safe skillet until they are tender. In a bowl, whisk together eggs, milk, salt, and pepper, then pour the egg mixture over the sautéed vegetables in the skillet. Cook the frittata over medium heat until the edges are set, then transfer the skillet to a preheated oven and bake until the frittata is cooked through and golden brown on top. Slice the frittata into wedges and serve hot or at room temperature for a satisfying breakfast.",
+        "ingredients": [
+          {
+            "Name": "Eggs",
+            "Percentage": 0.6
+          },
+          {
+            "Name": "Milk",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Mixed Vegetables",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Whole Wheat Pancakes with Maple Syrup",
-          "Carb": 43.5,
-          "Fat": 3.6,
-          "Protein": 7.9,
-          "Vitamin_C": 0.8,
-          "Calcium": 6.4,
-          "Iron": 1.5,
-          "Magnesium": 18,
-          "Calories_per_100g": 235.7,
-          "Tag": "Carbohydrate",
-          "img_url": "https://example.com/whole_wheat_pancakes_maple_syrup.jpg",
-          "recipe": "To make whole wheat pancakes, start by whisking together whole wheat flour, baking powder, salt, and milk in a bowl until smooth. Heat a non-stick skillet over medium heat and lightly grease it with oil or cooking spray. Pour the pancake batter onto the skillet, using about 1/4 cup of batter for each pancake. Cook the pancakes for 2-3 minutes on each side, or until they are golden brown and cooked through. Serve the pancakes hot with maple syrup and butter for a classic and delicious breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Whole Wheat Flour",
-                  "Percentage": 0.4
-              },
-              {
-                  "Name": "Milk",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Maple Syrup",
-                  "Percentage": 0.3
-              }
-          ]
+        "Name": "Whole Wheat Pancakes with Maple Syrup",
+        "Carb": 43.5,
+        "Fat": 3.6,
+        "Protein": 7.9,
+        "Vitamin_C": 0.8,
+        "Calcium": 6.4,
+        "Iron": 1.5,
+        "Magnesium": 18,
+        "Calories_per_100g": 235.7,
+        "Tag": "Carbohydrate",
+        "img_url": "https://example.com/whole_wheat_pancakes_maple_syrup.jpg",
+        "recipe": "To make whole wheat pancakes, start by whisking together whole wheat flour, baking powder, salt, and milk in a bowl until smooth. Heat a non-stick skillet over medium heat and lightly grease it with oil or cooking spray. Pour the pancake batter onto the skillet, using about 1/4 cup of batter for each pancake. Cook the pancakes for 2-3 minutes on each side, or until they are golden brown and cooked through. Serve the pancakes hot with maple syrup and butter for a classic and delicious breakfast.",
+        "ingredients": [
+          {
+            "Name": "Whole Wheat Flour",
+            "Percentage": 0.4
+          },
+          {
+            "Name": "Milk",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Maple Syrup",
+            "Percentage": 0.3
+          }
+        ]
       },
       {
-          "Name": "Smoothie Bowl",
-          "Carb": 34.2,
-          "Fat": 6.8,
-          "Protein": 8.5,
-          "Vitamin_C": 42.6,
-          "Calcium": 16.3,
-          "Iron": 1.9,
-          "Magnesium": 39,
-          "Calories_per_100g": 248.9,
-          "Tag": "Carbohydrate",
-          "img_url": "https://example.com/smoothie_bowl.jpg",
-          "recipe": "To make a smoothie bowl, blend together frozen fruits such as bananas, berries, and mango with Greek yogurt and a splash of milk until smooth and creamy. Pour the smoothie into a bowl and top it with your favorite toppings such as granola, sliced fruit, nuts, seeds, or coconut flakes. Serve the smoothie bowl immediately for a refreshing and nutritious breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Frozen Fruit",
-                  "Percentage": 0.5
-              },
-              {
-                  "Name": "Greek Yogurt",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Toppings (Granola, Fruit, Nuts, Seeds, Coconut Flakes)",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Smoothie Bowl",
+        "Carb": 34.2,
+        "Fat": 6.8,
+        "Protein": 8.5,
+        "Vitamin_C": 42.6,
+        "Calcium": 16.3,
+        "Iron": 1.9,
+        "Magnesium": 39,
+        "Calories_per_100g": 248.9,
+        "Tag": "Carbohydrate",
+        "img_url": "https://example.com/smoothie_bowl.jpg",
+        "recipe": "To make a smoothie bowl, blend together frozen fruits such as bananas, berries, and mango with Greek yogurt and a splash of milk until smooth and creamy. Pour the smoothie into a bowl and top it with your favorite toppings such as granola, sliced fruit, nuts, seeds, or coconut flakes. Serve the smoothie bowl immediately for a refreshing and nutritious breakfast.",
+        "ingredients": [
+          {
+            "Name": "Frozen Fruit",
+            "Percentage": 0.5
+          },
+          {
+            "Name": "Greek Yogurt",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Toppings (Granola, Fruit, Nuts, Seeds, Coconut Flakes)",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Egg Muffins",
-          "Carb": 4.8,
-          "Fat": 11.2,
-          "Protein": 14.6,
-          "Vitamin_C": 8.1,
-          "Calcium": 9.7,
-          "Iron": 2.1,
-          "Magnesium": 19,
-          "Calories_per_100g": 180.4,
-          "Tag": "Protein",
-          "img_url": "https://example.com/egg_muffins.jpg",
-          "recipe": "To make egg muffins, start by whisking together eggs, milk, salt, and pepper in a bowl until well combined. Stir in cooked and chopped vegetables such as bell peppers, spinach, onions, and tomatoes, as well as cooked and crumbled breakfast sausage or bacon if desired. Pour the egg mixture into greased muffin tins, filling each tin about 3/4 full. Bake the egg muffins in a preheated oven at 375°F (190°C) for 20-25 minutes, or until they are set and golden brown on top. Let the egg muffins cool slightly before removing them from the muffin tins. Serve the egg muffins warm or at room temperature for a convenient and protein-rich breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Eggs",
-                  "Percentage": 0.6
-              },
-              {
-                  "Name": "Milk",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Mixed Vegetables and/or Cooked Breakfast Sausage/Bacon",
-                  "Percentage": 0.2
-              }
-          ]
+        "Name": "Egg Muffins",
+        "Carb": 4.8,
+        "Fat": 11.2,
+        "Protein": 14.6,
+        "Vitamin_C": 8.1,
+        "Calcium": 9.7,
+        "Iron": 2.1,
+        "Magnesium": 19,
+        "Calories_per_100g": 180.4,
+        "Tag": "Protein",
+        "img_url": "https://example.com/egg_muffins.jpg",
+        "recipe": "To make egg muffins, start by whisking together eggs, milk, salt, and pepper in a bowl until well combined. Stir in cooked and chopped vegetables such as bell peppers, spinach, onions, and tomatoes, as well as cooked and crumbled breakfast sausage or bacon if desired. Pour the egg mixture into greased muffin tins, filling each tin about 3/4 full. Bake the egg muffins in a preheated oven at 375°F (190°C) for 20-25 minutes, or until they are set and golden brown on top. Let the egg muffins cool slightly before removing them from the muffin tins. Serve the egg muffins warm or at room temperature for a convenient and protein-rich breakfast.",
+        "ingredients": [
+          {
+            "Name": "Eggs",
+            "Percentage": 0.6
+          },
+          {
+            "Name": "Milk",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Mixed Vegetables and/or Cooked Breakfast Sausage/Bacon",
+            "Percentage": 0.2
+          }
+        ]
       },
       {
-          "Name": "Banana Nut Muffins",
-          "Carb": 37.9,
-          "Fat": 12.4,
-          "Protein": 5.6,
-          "Vitamin_C": 3.2,
-          "Calcium": 8.1,
-          "Iron": 1.8,
-          "Magnesium": 26,
-          "Calories_per_100g": 272.5,
-          "Tag": "Carbohydrate",
-          "img_url": "https://example.com/banana_nut_muffins.jpg",
-          "recipe": "To make banana nut muffins, start by mashing ripe bananas in a bowl until smooth. Add melted butter, eggs, vanilla extract, and sugar to the mashed bananas and mix until well combined. In a separate bowl, whisk together flour, baking powder, baking soda, salt, and chopped nuts such as walnuts or pecans. Gradually add the dry ingredients to the wet ingredients, stirring until just combined. Pour the muffin batter into greased muffin tins, filling each tin about 3/4 full. Bake the muffins in a preheated oven at 350°F (175°C) for 18-20 minutes, or until they are golden brown and a toothpick inserted into the center comes out clean. Let the muffins cool slightly before removing them from the muffin tins. Serve the banana nut muffins warm or at room temperature for a delicious breakfast or snack.",
-          "ingredients": [
-              {
-                  "Name": "Ripe Bananas",
-                  "Percentage": 0.3
-              },
-              {
-                  "Name": "Butter",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Eggs",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Flour",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Chopped Nuts",
-                  "Percentage": 0.1
-              }
-          ]
+        "Name": "Banana Nut Muffins",
+        "Carb": 37.9,
+        "Fat": 12.4,
+        "Protein": 5.6,
+        "Vitamin_C": 3.2,
+        "Calcium": 8.1,
+        "Iron": 1.8,
+        "Magnesium": 26,
+        "Calories_per_100g": 272.5,
+        "Tag": "Carbohydrate",
+        "img_url": "https://example.com/banana_nut_muffins.jpg",
+        "recipe": "To make banana nut muffins, start by mashing ripe bananas in a bowl until smooth. Add melted butter, eggs, vanilla extract, and sugar to the mashed bananas and mix until well combined. In a separate bowl, whisk together flour, baking powder, baking soda, salt, and chopped nuts such as walnuts or pecans. Gradually add the dry ingredients to the wet ingredients, stirring until just combined. Pour the muffin batter into greased muffin tins, filling each tin about 3/4 full. Bake the muffins in a preheated oven at 350°F (175°C) for 18-20 minutes, or until they are golden brown and a toothpick inserted into the center comes out clean. Let the muffins cool slightly before removing them from the muffin tins. Serve the banana nut muffins warm or at room temperature for a delicious breakfast or snack.",
+        "ingredients": [
+          {
+            "Name": "Ripe Bananas",
+            "Percentage": 0.3
+          },
+          {
+            "Name": "Butter",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Eggs",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Flour",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Chopped Nuts",
+            "Percentage": 0.1
+          }
+        ]
       },
       {
-          "Name": "Vegetable Omelette",
-          "Carb": 5.7,
-          "Fat": 12.8,
-          "Protein": 16.3,
-          "Vitamin_C": 9.6,
-          "Calcium": 10.4,
-          "Iron": 2.2,
-          "Magnesium": 25,
-          "Calories_per_100g": 206.9,
-          "Tag": "Protein",
-          "img_url": "https://example.com/vegetable_omelette.jpg",
-          "recipe": "To make a vegetable omelette, start by whisking together eggs, milk, salt, and pepper in a bowl until well combined. Heat butter or oil in a non-stick skillet over medium heat, then pour the egg mixture into the skillet. As the eggs begin to set, gently lift the edges with a spatula and tilt the skillet to allow the uncooked eggs to flow underneath. Once the omelette is mostly set but still slightly runny on top, add cooked and chopped vegetables such as bell peppers, onions, spinach, and mushrooms to one half of the omelette. Fold the other half of the omelette over the vegetables and cook for another minute or until the vegetables are heated through. Slide the omelette onto a plate and serve hot for a satisfying and protein-rich breakfast.",
-          "ingredients": [
-              {
-                  "Name": "Eggs",
-                  "Percentage": 0.6
-              },
-              {
-                  "Name": "Milk",
-                  "Percentage": 0.2
-              },
-              {
-                  "Name": "Butter or Oil",
-                  "Percentage": 0.1
-              },
-              {
-                  "Name": "Mixed Vegetables",
-                  "Percentage": 0.1
-              }
-          ]
+        "Name": "Vegetable Omelette",
+        "Carb": 5.7,
+        "Fat": 12.8,
+        "Protein": 16.3,
+        "Vitamin_C": 9.6,
+        "Calcium": 10.4,
+        "Iron": 2.2,
+        "Magnesium": 25,
+        "Calories_per_100g": 206.9,
+        "Tag": "Protein",
+        "img_url": "https://example.com/vegetable_omelette.jpg",
+        "recipe": "To make a vegetable omelette, start by whisking together eggs, milk, salt, and pepper in a bowl until well combined. Heat butter or oil in a non-stick skillet over medium heat, then pour the egg mixture into the skillet. As the eggs begin to set, gently lift the edges with a spatula and tilt the skillet to allow the uncooked eggs to flow underneath. Once the omelette is mostly set but still slightly runny on top, add cooked and chopped vegetables such as bell peppers, onions, spinach, and mushrooms to one half of the omelette. Fold the other half of the omelette over the vegetables and cook for another minute or until the vegetables are heated through. Slide the omelette onto a plate and serve hot for a satisfying and protein-rich breakfast.",
+        "ingredients": [
+          {
+            "Name": "Eggs",
+            "Percentage": 0.6
+          },
+          {
+            "Name": "Milk",
+            "Percentage": 0.2
+          },
+          {
+            "Name": "Butter or Oil",
+            "Percentage": 0.1
+          },
+          {
+            "Name": "Mixed Vegetables",
+            "Percentage": 0.1
+          }
+        ]
       }
-  ]
+    ]
 
 
   const [userHeight, setUserHeight] = useState();
@@ -1959,361 +1959,364 @@ const BreakfastMeal =
 
     const currentUser = FIREBASE_AUTH.currentUser;
 
-  if(!userHeight||!userWeight||!userGender||!userExperienceLevel||!selectedDays){
-    alert("Fields cannot be empty");
-  }else{
-    const userInfoData = {
-      userName: userName,
-      age: userAge, // string
-      weight: userWeight, // int
-      height: userHeight, // float
-      userSurname: userSurname, //string
-      gender: userGender,
-      dailyActiviyLevel: userDailyActivityLevel, // int
-      experienceLevel: userExperienceLevel,
-    };
-    const userInfoRef = doc(db, "User", currentUser.uid);
+    if (!userHeight || !userWeight || !userGender || !userExperienceLevel || !selectedDays) {
 
-    const newCollectionRef = collection(userInfoRef, "UserInfo");
+      alert("Fields cannot be empty");
+    } else {
+      if ( userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
 
-    addDoc(newCollectionRef, userInfoData)
-      .then((docRef) => {
-        console.log("Document written with ID: ", docRef.id);
+        const userInfoData = {
+          userName: userName,
+          age: userAge, // string
+          weight: userWeight, // int
+          height: userHeight, // float
+          userSurname: userSurname, //string
+          gender: userGender,
+          dailyActiviyLevel: userDailyActivityLevel, // int
+          experienceLevel: userExperienceLevel,
+        };
+        const userInfoRef = doc(db, "User", currentUser.uid);
 
-        // Reference to the newly created document
-        const newDocumentRef = doc(newCollectionRef, docRef.id);
-        // Add a new collection under the newly created document
-        const subCollectionRef = collection(newDocumentRef, "Day");
+        const newCollectionRef = collection(userInfoRef, "UserInfo");
 
-        selectedDays.map((data) => {
+        addDoc(newCollectionRef, userInfoData)
+          .then((docRef) => {
+            console.log("Document written with ID: ", docRef.id);
 
-          addDoc(subCollectionRef, { name: data, isComplete: false })
-            .then((subDocRef) => {
-              console.log("Subdocument written with ID: ", subDocRef.id);
+            // Reference to the newly created document
+            const newDocumentRef = doc(newCollectionRef, docRef.id);
+            // Add a new collection under the newly created document
+            const subCollectionRef = collection(newDocumentRef, "Day");
+
+            selectedDays.map((data) => {
+
+              addDoc(subCollectionRef, { name: data, isComplete: false })
+                .then((subDocRef) => {
+                  console.log("Subdocument written with ID: ", subDocRef.id);
+                })
+                .catch((error) => {
+                  console.error("Error adding subdocument: ", error);
+                });
+
             })
-            .catch((error) => {
-              console.error("Error adding subdocument: ", error);
-            });
-
-        })
 
 
-      })
-      .catch((error) => {
-        console.error("Error adding document: ", error);
-      });
+          })
+          .catch((error) => {
+            console.error("Error adding document: ", error);
+          });
 
-    // DAY EKLEME KISMI
+        // DAY EKLEME KISMI
 
-    let userList = [];
-    getDocs(newCollectionRef)
-      .then((querySnapshot) => {
-        querySnapshot.forEach((item) => {
-          console.log(item.id, " => ", item.data());
+        let userList = [];
+        getDocs(newCollectionRef)
+          .then((querySnapshot) => {
+            querySnapshot.forEach((item) => {
+              console.log(item.id, " => ", item.data());
 
-          const dayCollectionRef = doc(newCollectionRef, item.id);
-          const subCollectionRef = collection(dayCollectionRef, "Day");
+              const dayCollectionRef = doc(newCollectionRef, item.id);
+              const subCollectionRef = collection(dayCollectionRef, "Day");
 
-          getDocs(subCollectionRef).then((querySnapshot) => {
-            querySnapshot.forEach((day) => {
-              console.log(day.id, " => ", day.data().name);
+              getDocs(subCollectionRef).then((querySnapshot) => {
+                querySnapshot.forEach((day) => {
+                  console.log(day.id, " => ", day.data().name);
 
 
-              if (days.indexOf(day.data().name) % 3 == 0) {
-                userList = filterExercises(item.experienceLevel, "push");
-              } else if (days.indexOf(day.data().name) % 3 == 1) {
-                userList = filterExercises(item.experienceLevel, "pull");
-              } else if (days.indexOf(day.data().name) % 3 == 2) {
-                userList = filterExercises(item.experienceLevel, "push");
-              }
+                  if (days.indexOf(day.data().name) % 3 == 0) {
+                    userList = filterExercises(item.experienceLevel, "push");
+                  } else if (days.indexOf(day.data().name) % 3 == 1) {
+                    userList = filterExercises(item.experienceLevel, "pull");
+                  } else if (days.indexOf(day.data().name) % 3 == 2) {
+                    userList = filterExercises(item.experienceLevel, "push");
+                  }
 
-              const exerciseRef = doc(subCollectionRef, day.id);
-              const exerciseSubRef = collection(exerciseRef, "Exercise");
+                  const exerciseRef = doc(subCollectionRef, day.id);
+                  const exerciseSubRef = collection(exerciseRef, "Exercise");
 
-              userList.map((item) => {
-                const tempExercise = {
-                  name: item.name,
-                  muscle: item.muscle,
-                  gif_url: item.gif_url,
-                  image_url: item.image_url,
-                  type: item.type,
-                  equipment: item.equipment,
-                  difficulty: item.difficulty,
-                  instructions: item.instructions,
-                  set: 4,
-                  rep: 6,
-                  isComplete: false
+                  userList.map((item) => {
+                    const tempExercise = {
+                      name: item.name,
+                      muscle: item.muscle,
+                      gif_url: item.gif_url,
+                      image_url: item.image_url,
+                      type: item.type,
+                      equipment: item.equipment,
+                      difficulty: item.difficulty,
+                      instructions: item.instructions,
+                      set: 4,
+                      rep: 6,
+                      isComplete: false
 
-                }
+                    }
 
-                addDoc(exerciseSubRef, tempExercise)
-                  .then((subDocRef) => {
-                    console.log("Subdocument written with ID: ", subDocRef.id);
+                    addDoc(exerciseSubRef, tempExercise)
+                      .then((subDocRef) => {
+                        console.log("Subdocument written with ID: ", subDocRef.id);
+                      })
+                      .catch((error) => {
+                        console.error("Error adding subdocument: ", error);
+                      });
                   })
-                  .catch((error) => {
-                    console.error("Error adding subdocument: ", error);
-                  });
+
+                })
               })
 
-            })
+            });
+          })
+          .catch((error) => {
+            console.error("Error getting documents: ", error);
+          });
+
+        navigation.navigate("CurrentProgress");
+
+        // NUTRITION EKLEME
+
+        const nutritionCollectionRef = collection(userInfoRef, "Nutrition");
+        days.map((day) => {
+          Nutritions = [];
+          const proteinRequirement = userWeight * 2.20462262185;
+          const mainProtein = proteinRequirement * 0.8;
+
+          const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
+          let remainingCalories = totalCalorieReq;
+          let remainingProtein = proteinRequirement * 0.2;
+          let carbFlag = 0;
+          let snackFlag = 0;
+          let fruitFlag = 0;
+          let vegetableFlag = 0;
+
+          allProteins.map((proteinItem) => {
+            if (proteinItem.Name === "Chicken Breast") {
+
+
+              const grOfMainProtein = (100 * mainProtein) / proteinItem.Protein;
+              const calOfMainProtein = (proteinItem.Calories_per_100g * grOfMainProtein) / 100;
+
+              remainingCalories = totalCalorieReq - calOfMainProtein;
+
+
+              const dataOfProtein = {
+                ID: proteinItem.ID,
+                Name: proteinItem.Name,
+                Carb: proteinItem.Carb,
+                Fat: proteinItem.Fat,
+                Protein: proteinItem.Protein,
+                Vitamin_C: proteinItem.Vitamin_C,
+                Calcium: proteinItem.Calcium,
+                Iron: proteinItem.Iron,
+                Magnesium: proteinItem.Magnesium,
+                Calories_per_100g: proteinItem.Calories_per_100g,
+                Tag: proteinItem.Tag,
+                Gram: grOfMainProtein,
+                Calorie: calOfMainProtein,
+                Image: proteinItem.img_url
+              };
+
+              Nutritions.push(dataOfProtein);
+            }
           })
 
-        });
-      })
-      .catch((error) => {
-        console.error("Error getting documents: ", error);
-      });
 
-    navigation.navigate("CurrentProgress");
+          allNutritions.sort(() => Math.random() - 0.5);
 
-    // NUTRITION EKLEME
-
-    const nutritionCollectionRef = collection(userInfoRef, "Nutrition");
-    days.map((day) => {
-      Nutritions=[];
-      const proteinRequirement = userWeight * 2.20462262185;
-      const mainProtein = proteinRequirement * 0.8;
-  
-      const totalCalorieReq = calculateBMR(userWeight,userHeight,userAge,userGender);
-      let remainingCalories = totalCalorieReq;
-      let remainingProtein = proteinRequirement * 0.2;
-      let carbFlag = 0;
-      let snackFlag = 0;
-      let fruitFlag = 0;
-      let vegetableFlag = 0;
-      
-      allProteins.map((proteinItem) => {
-        if (proteinItem.Name === "Chicken Breast") {
-
-
-          const grOfMainProtein = (100 * mainProtein) / proteinItem.Protein;
-          const calOfMainProtein = (proteinItem.Calories_per_100g * grOfMainProtein) / 100;
-
-          remainingCalories = totalCalorieReq - calOfMainProtein;
-
-
-          const dataOfProtein = {
-            ID: proteinItem.ID,
-            Name: proteinItem.Name,
-            Carb: proteinItem.Carb,
-            Fat: proteinItem.Fat,
-            Protein: proteinItem.Protein,
-            Vitamin_C: proteinItem.Vitamin_C,
-            Calcium: proteinItem.Calcium,
-            Iron: proteinItem.Iron,
-            Magnesium: proteinItem.Magnesium,
-            Calories_per_100g: proteinItem.Calories_per_100g,
-            Tag: proteinItem.Tag,
-            Gram: grOfMainProtein,
-            Calorie: calOfMainProtein,
-            Image:proteinItem.img_url
-          };
-
-          Nutritions.push(dataOfProtein);
-        }
-      })
-
-
-      allNutritions.sort(() => Math.random() - 0.5);
-
-      allNutritions.map((nutrition) => {
+          allNutritions.map((nutrition) => {
 
 
 
-        const carbCalorie = (remainingCalories * 0.8) / 4;
+            const carbCalorie = (remainingCalories * 0.8) / 4;
 
 
-        if (nutrition.Tag === "Carbohydrate" && carbFlag !== 4) {
-          const grOfCarbohydrate = (100 * carbCalorie) / nutrition.Calories_per_100g;
-          remainingProtein -= (grOfCarbohydrate * nutrition.Protein) / 100;
+            if (nutrition.Tag === "Carbohydrate" && carbFlag !== 4) {
+              const grOfCarbohydrate = (100 * carbCalorie) / nutrition.Calories_per_100g;
+              remainingProtein -= (grOfCarbohydrate * nutrition.Protein) / 100;
 
 
-          const dataOfCarb = {
-            ID: nutrition.ID,
-            Name: nutrition.Name,
-            Carb: nutrition.Carb,
-            Fat: nutrition.Fat,
-            Protein: nutrition.Protein,
-            Vitamin_C: nutrition.Vitamin_C,
-            Calcium: nutrition.Calcium,
-            Iron: nutrition.Iron,
-            Magnesium: nutrition.Magnesium,
-            Calories_per_100g: nutrition.Calories_per_100g,
-            Tag: nutrition.Tag,
-            Gram: grOfCarbohydrate,
-            Calorie: carbCalorie,
-            Image:nutrition.img_url
-          };
+              const dataOfCarb = {
+                ID: nutrition.ID,
+                Name: nutrition.Name,
+                Carb: nutrition.Carb,
+                Fat: nutrition.Fat,
+                Protein: nutrition.Protein,
+                Vitamin_C: nutrition.Vitamin_C,
+                Calcium: nutrition.Calcium,
+                Iron: nutrition.Iron,
+                Magnesium: nutrition.Magnesium,
+                Calories_per_100g: nutrition.Calories_per_100g,
+                Tag: nutrition.Tag,
+                Gram: grOfCarbohydrate,
+                Calorie: carbCalorie,
+                Image: nutrition.img_url
+              };
 
-          carbFlag++;
+              carbFlag++;
 
-          Nutritions.push(dataOfCarb);
+              Nutritions.push(dataOfCarb);
 
-        }
+            }
 
-        const snackCalorie = (remainingCalories * 0.06) / 2;
-
-
-        if (nutrition.Tag === "Snack" && snackFlag !== 2) {
-
-          const grOfSnack = (100 * snackCalorie) / nutrition.Calories_per_100g;
-          remainingProtein -= (grOfSnack * nutrition.Protein) / 100;
-
-          const dataOfSnack = {
-            ID: nutrition.ID,
-            Name: nutrition.Name,
-            Carb: nutrition.Carb,
-            Fat: nutrition.Fat,
-            Protein: nutrition.Protein,
-            Vitamin_C: nutrition.Vitamin_C,
-            Calcium: nutrition.Calcium,
-            Iron: nutrition.Iron,
-            Magnesium: nutrition.Magnesium,
-            Calories_per_100g: nutrition.Calories_per_100g,
-            Tag: nutrition.Tag,
-            Gram: grOfSnack,
-            Calorie: snackCalorie,
-            Image:nutrition.img_url
-          };
-
-          Nutritions.push(dataOfSnack);
-
-          snackFlag++;
-        }
+            const snackCalorie = (remainingCalories * 0.06) / 2;
 
 
-        const fruitCalorie = remainingCalories * 0.08;
+            if (nutrition.Tag === "Snack" && snackFlag !== 2) {
+
+              const grOfSnack = (100 * snackCalorie) / nutrition.Calories_per_100g;
+              remainingProtein -= (grOfSnack * nutrition.Protein) / 100;
+
+              const dataOfSnack = {
+                ID: nutrition.ID,
+                Name: nutrition.Name,
+                Carb: nutrition.Carb,
+                Fat: nutrition.Fat,
+                Protein: nutrition.Protein,
+                Vitamin_C: nutrition.Vitamin_C,
+                Calcium: nutrition.Calcium,
+                Iron: nutrition.Iron,
+                Magnesium: nutrition.Magnesium,
+                Calories_per_100g: nutrition.Calories_per_100g,
+                Tag: nutrition.Tag,
+                Gram: grOfSnack,
+                Calorie: snackCalorie,
+                Image: nutrition.img_url
+              };
+
+              Nutritions.push(dataOfSnack);
+
+              snackFlag++;
+            }
 
 
-        if (nutrition.Tag === "Fruit" && fruitFlag !== 1) {
-
-          const grOfFruit = (100 * fruitCalorie) / nutrition.Calories_per_100g;
-          remainingProtein -= (grOfFruit * nutrition.Protein) / 100;
-
-          const dataOfFruit = {
-            ID: nutrition.ID,
-            Name: nutrition.Name,
-            Carb: nutrition.Carb,
-            Fat: nutrition.Fat,
-            Protein: nutrition.Protein,
-            Vitamin_C: nutrition.Vitamin_C,
-            Calcium: nutrition.Calcium,
-            Iron: nutrition.Iron,
-            Magnesium: nutrition.Magnesium,
-            Calories_per_100g: nutrition.Calories_per_100g,
-            Tag: nutrition.Tag,
-            Gram: grOfFruit,
-            Calorie: fruitCalorie,
-            Image:nutrition.img_url
-          };
-
-          Nutritions.push(dataOfFruit);
-
-          fruitFlag++;
-        }
-
-        const vegetableCalorie = remainingCalories * 0.06;
+            const fruitCalorie = remainingCalories * 0.08;
 
 
-        if (nutrition.Tag === "Vegetable" && vegetableFlag !== 1) {
+            if (nutrition.Tag === "Fruit" && fruitFlag !== 1) {
 
-          const grOfVegetable = (100 * vegetableCalorie) / nutrition.Calories_per_100g;
-          remainingProtein -= (grOfVegetable * nutrition.Protein) / 100;
+              const grOfFruit = (100 * fruitCalorie) / nutrition.Calories_per_100g;
+              remainingProtein -= (grOfFruit * nutrition.Protein) / 100;
 
-          const dataOfVegetable = {
-            ID: nutrition.ID,
-            Name: nutrition.Name,
-            Carb: nutrition.Carb,
-            Fat: nutrition.Fat,
-            Protein: nutrition.Protein,
-            Vitamin_C: nutrition.Vitamin_C,
-            Calcium: nutrition.Calcium,
-            Iron: nutrition.Iron,
-            Magnesium: nutrition.Magnesium,
-            Calories_per_100g: nutrition.Calories_per_100g,
-            Tag: nutrition.Tag,
-            Gram: grOfVegetable,
-            Calorie: vegetableCalorie,
-            Image:nutrition.img_url
-          };
+              const dataOfFruit = {
+                ID: nutrition.ID,
+                Name: nutrition.Name,
+                Carb: nutrition.Carb,
+                Fat: nutrition.Fat,
+                Protein: nutrition.Protein,
+                Vitamin_C: nutrition.Vitamin_C,
+                Calcium: nutrition.Calcium,
+                Iron: nutrition.Iron,
+                Magnesium: nutrition.Magnesium,
+                Calories_per_100g: nutrition.Calories_per_100g,
+                Tag: nutrition.Tag,
+                Gram: grOfFruit,
+                Calorie: fruitCalorie,
+                Image: nutrition.img_url
+              };
 
-          Nutritions.push(dataOfVegetable);
+              Nutritions.push(dataOfFruit);
 
-          vegetableFlag++;
-        }
+              fruitFlag++;
+            }
+
+            const vegetableCalorie = remainingCalories * 0.06;
+
+
+            if (nutrition.Tag === "Vegetable" && vegetableFlag !== 1) {
+
+              const grOfVegetable = (100 * vegetableCalorie) / nutrition.Calories_per_100g;
+              remainingProtein -= (grOfVegetable * nutrition.Protein) / 100;
+
+              const dataOfVegetable = {
+                ID: nutrition.ID,
+                Name: nutrition.Name,
+                Carb: nutrition.Carb,
+                Fat: nutrition.Fat,
+                Protein: nutrition.Protein,
+                Vitamin_C: nutrition.Vitamin_C,
+                Calcium: nutrition.Calcium,
+                Iron: nutrition.Iron,
+                Magnesium: nutrition.Magnesium,
+                Calories_per_100g: nutrition.Calories_per_100g,
+                Tag: nutrition.Tag,
+                Gram: grOfVegetable,
+                Calorie: vegetableCalorie,
+                Image: nutrition.img_url
+              };
+
+              Nutritions.push(dataOfVegetable);
+
+              vegetableFlag++;
+            }
 
 
 
-      });
+          });
 
-      addDoc(nutritionCollectionRef, { dayName: day, Nutritions: Nutritions });
-    })
+          addDoc(nutritionCollectionRef, { dayName: day, Nutritions: Nutritions });
+        })
 
-    const mealCollectionRef=collection(userInfoRef,"Meal");
+        const mealCollectionRef = collection(userInfoRef, "Meal");
 
-    days.map((day)=>{
-      selectedRecipe=[];
-      const proteinRequirement = userWeight * 2.20462262185;
-      const BreakfastProtein = proteinRequirement * 0.4;
-      const DinnerProtein = proteinRequirement * 0.5;
+        days.map((day) => {
+          selectedRecipe = [];
+          const proteinRequirement = userWeight * 2.20462262185;
+          const BreakfastProtein = proteinRequirement * 0.4;
+          const DinnerProtein = proteinRequirement * 0.5;
 
-      const totalCalorieReq = calculateBMR(userWeight,userHeight,userAge,userGender);
-      let remainingCalories = totalCalorieReq;
-      let remainingProtein = proteinRequirement * 0.6;
+          const totalCalorieReq = calculateBMR(userWeight, userHeight, userAge, userGender);
+          let remainingCalories = totalCalorieReq;
+          let remainingProtein = proteinRequirement * 0.6;
 
-      let breakfastFlag = 0;
-      let lunchFlag = 0;
-      let dinnerFlag = 0;
+          let breakfastFlag = 0;
+          let lunchFlag = 0;
+          let dinnerFlag = 0;
 
-      BreakfastMeal.sort(() => Math.random() - 0.5);
+          BreakfastMeal.sort(() => Math.random() - 0.5);
 
-      BreakfastMeal.map((item) => {
+          BreakfastMeal.map((item) => {
 
-          if (item.Tag === "Protein" && breakfastFlag !== 1) {
-              
+            if (item.Tag === "Protein" && breakfastFlag !== 1) {
+
               const grOfMainProtein = ((100 * BreakfastProtein) / item.Protein);
               const calOfMainProtein = (item.Calories_per_100g * grOfMainProtein) / 100;
 
               remainingCalories = totalCalorieReq - calOfMainProtein;
 
               const dataOfProtein = {
-                  Name: item.Name,
-                  Carb: item.Carb,
-                  Fat: item.Fat,
-                  Protein: item.Protein,
-                  Vitamin_C: item.Vitamin_C,
-                  Calories_per_100g: item.Calories_per_100g,
-                  Tag: item.Tag,
-                  img_url: item.img_url,
-                  recipe: item.recipe,
-                  Ingredients: [],
-                  Gram:grOfMainProtein,
-                  Calorie:calOfMainProtein,
+                Name: item.Name,
+                Carb: item.Carb,
+                Fat: item.Fat,
+                Protein: item.Protein,
+                Vitamin_C: item.Vitamin_C,
+                Calories_per_100g: item.Calories_per_100g,
+                Tag: item.Tag,
+                img_url: item.img_url,
+                recipe: item.recipe,
+                Ingredients: [],
+                Gram: grOfMainProtein,
+                Calorie: calOfMainProtein,
               };
 
               item["ingredients"].map((i) => {
 
 
-                  let IngridientsString = "";
+                let IngridientsString = "";
 
-                  IngridientsString += Math.round(i.Percentage * grOfMainProtein) + " gr of " + i.Name;
+                IngridientsString += Math.round(i.Percentage * grOfMainProtein) + " gr of " + i.Name;
 
-                  dataOfProtein["Ingredients"].push(IngridientsString);
+                dataOfProtein["Ingredients"].push(IngridientsString);
               })
               selectedRecipe.push(dataOfProtein);
               console.log(selectedRecipe);
               breakfastFlag++;
-          }
-      })
+            }
+          })
 
-      Meal.sort(() => Math.random() - 0.5);
+          Meal.sort(() => Math.random() - 0.5);
 
-      Meal.map((item) => {
+          Meal.map((item) => {
 
-        const dinnerCalorie=remainingCalories*0.5;
+            const dinnerCalorie = remainingCalories * 0.5;
 
 
-          if (item.Tag === "Protein" && dinnerFlag !== 1) {
+            if (item.Tag === "Protein" && dinnerFlag !== 1) {
               // 3 e bölünüp bütün öğünlere bölünebilir?
               const grOfDinner = (100 * dinnerCalorie) / item.Calories_per_100g;
               const calOfDinner = (item.Calories_per_100g * grOfDinner) / 100;
@@ -2321,46 +2324,46 @@ const BreakfastMeal =
 
 
               const dataOfProtein = {
-                  Name: item.Name,
-                  Carb: item.Carb,
-                  Fat: item.Fat,
-                  Protein: item.Protein,
-                  Vitamin_C: item.Vitamin_C,
-                  Calories_per_100g: item.Calories_per_100g,
-                  Tag: item.Tag,
-                  img_url: item.img_url,
-                  recipe: item.recipe,
-                  Ingredients: [],
-                  Gram:grOfDinner,
-                  Calorie:calOfDinner,
+                Name: item.Name,
+                Carb: item.Carb,
+                Fat: item.Fat,
+                Protein: item.Protein,
+                Vitamin_C: item.Vitamin_C,
+                Calories_per_100g: item.Calories_per_100g,
+                Tag: item.Tag,
+                img_url: item.img_url,
+                recipe: item.recipe,
+                Ingredients: [],
+                Gram: grOfDinner,
+                Calorie: calOfDinner,
               };
 
               item["ingredients"].map((i) => {
 
 
-                  let IngridientsString = "";
+                let IngridientsString = "";
 
-                  IngridientsString += Math.round(i.Percentage * grOfDinner) + " gr of " + i.Name;
+                IngridientsString += Math.round(i.Percentage * grOfDinner) + " gr of " + i.Name;
 
-                  dataOfProtein["Ingredients"].push(IngridientsString);
+                dataOfProtein["Ingredients"].push(IngridientsString);
               })
               selectedRecipe.push(dataOfProtein);
               console.log(selectedRecipe);
               dinnerFlag++;
-          }
+            }
 
 
 
-      })
+          })
 
-      Meal.sort(() => Math.random() - 0.5);
+          Meal.sort(() => Math.random() - 0.5);
 
-      Meal.map((item) => {
+          Meal.map((item) => {
 
-          const carbCalorie = remainingCalories*0.5;
+            const carbCalorie = remainingCalories * 0.5;
 
 
-          if (item.Tag === "Carbohydrates" && lunchFlag !== 1) {
+            if (item.Tag === "Carbohydrates" && lunchFlag !== 1) {
               // 3 e bölünüp bütün öğünlere bölünebilir?
               const grOfCarbohydrate = ((100 * carbCalorie) / item.Calories_per_100g);
               const calOfCarbohydrate = (item.Calories_per_100g * grOfCarbohydrate) / 100;
@@ -2370,42 +2373,45 @@ const BreakfastMeal =
               remainingCalories -= calOfCarbohydrate;
 
               const dataOfCarb = {
-                  Name: item.Name,
-                  Carb: item.Carb,
-                  Fat: item.Fat,
-                  Protein: item.Protein,
-                  Vitamin_C: item.Vitamin_C,
-                  Calories_per_100g: item.Calories_per_100g,
-                  Tag: item.Tag,
-                  img_url: item.img_url,
-                  recipe: item.recipe,
-                  Ingredients: [],
-                  Calorie:calOfCarbohydrate,
-                  Gram:grOfCarbohydrate,
+                Name: item.Name,
+                Carb: item.Carb,
+                Fat: item.Fat,
+                Protein: item.Protein,
+                Vitamin_C: item.Vitamin_C,
+                Calories_per_100g: item.Calories_per_100g,
+                Tag: item.Tag,
+                img_url: item.img_url,
+                recipe: item.recipe,
+                Ingredients: [],
+                Calorie: calOfCarbohydrate,
+                Gram: grOfCarbohydrate,
               };
 
 
               item["ingredients"].map((i) => {
 
 
-                  let IngridientsString = "";
+                let IngridientsString = "";
 
-                  IngridientsString += Math.round(i.Percentage * grOfCarbohydrate) + " gr of " + i.Name;
+                IngridientsString += Math.round(i.Percentage * grOfCarbohydrate) + " gr of " + i.Name;
 
-                  dataOfCarb["Ingredients"].push(IngridientsString);
+                dataOfCarb["Ingredients"].push(IngridientsString);
               })
               selectedRecipe.push(dataOfCarb);
               console.log(selectedRecipe);
               lunchFlag++;
-          }
+            }
 
-      })
+          })
 
-      addDoc(mealCollectionRef,{ dayName: day, Meals: selectedRecipe });
+          addDoc(mealCollectionRef, { dayName: day, Meals: selectedRecipe });
 
-    })
+        })
+      }else{
+        alert("Values should be between the range");
+      }
 
-  }
+    }
 
 
   };
@@ -2452,7 +2458,7 @@ const BreakfastMeal =
     return firstExercises;
   }
 
-  const calculateBMR = (weight,height,age,gender) => {
+  const calculateBMR = (weight, height, age, gender) => {
 
     if (gender == "male") {
       return 88.362 + (13.397 * weight) + (4.799 * height) - (5.677 * age);
@@ -2468,7 +2474,7 @@ const BreakfastMeal =
         <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Physical Information</Text>
 
         <TextInput
-          label={"Height(Cm)"}
+          label={"Height(Cm) (140cm-250cm)"}
           value={userHeight}
           onChangeText={height => setUserHeight(parseInt(height))}
           mode='outlined'
@@ -2477,7 +2483,7 @@ const BreakfastMeal =
         />
 
         <TextInput
-          label={"Weight(Kg)"}
+          label={"Weight(Kg) (40kg-300kg)"}
           value={userWeight}
           onChangeText={weight => setUserWeight(parseFloat(weight))}
           mode='outlined'

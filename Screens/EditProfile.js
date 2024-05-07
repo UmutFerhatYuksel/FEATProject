@@ -1978,9 +1978,15 @@ export default function EditProfile() {
 
     if (userAge > 13 && userAge < 100 && userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
 
-      if (!userName||!userSurname||!userHeight || !userWeight || !userGender || !userExperienceLevel || !userAge || !userDailyActivityLevel || !selectedDays) {
+      if (!userName || !userSurname || !userHeight || !userWeight || !userExperienceLevel || !userAge || !userDailyActivityLevel || !selectedDays) {
         alert("Please fill in all required fields");
       } else {
+
+        const currentUser = FIREBASE_AUTH.currentUser;
+        const userInfoRef = doc(db, "User", currentUser.uid);
+        const newCollectionRef = collection(userInfoRef, "UserInfo");
+        const nutritionCollectionRef = collection(userInfoRef, "Nutrition");
+        const mealCollection = collection(userInfoRef, "Meal");
         getDocs(newCollectionRef).then((querySnapshot) => {
           querySnapshot.forEach((docRef) => {
 
@@ -2495,7 +2501,7 @@ export default function EditProfile() {
             value={userName}
           />
         </View>
-        <View style={tw`mx-auto mt-3`}>
+        <View style={tw`mx-auto mt-2`}>
 
           <TextInput
             label={"Surname"}
@@ -2507,7 +2513,7 @@ export default function EditProfile() {
 
         </View>
 
-        <View style={tw`mx-auto mt-3 w-content`}>
+        <View style={tw`mx-auto mt-2 w-content`}>
           <TextInput
             label={"Age (13-100)"}
             onChangeText={(age) => setUserAge(age.trim() ? parseInt(age) : '')}
@@ -2522,7 +2528,7 @@ export default function EditProfile() {
 
 
 
-        <View style={tw`mx-auto mt-3 w-content`}>
+        <View style={tw`mx-auto mt-2 w-content`}>
           <TextInput
             label={"Height(Cm) (140cm-250cm)"}
             value={String(userHeight)}
@@ -2533,7 +2539,7 @@ export default function EditProfile() {
           />
 
         </View>
-        <View style={tw`mx-auto mt-3 w-content`}>
+        <View style={tw`mx-auto mt-2 w-content`}>
           <TextInput
             label={"Weight(Kg) (40kg-300kg)"}
             mode='outlined'
@@ -2547,8 +2553,8 @@ export default function EditProfile() {
         </View>
 
 
-        <View style={tw`w-60 mt-3 mx-auto`}>
-          <Text style={tw`text-center font-bold text-indifo-700`}>Your Activity Level{userDailyActivityLevel}</Text>
+        <View style={tw`w-60 mt-2 mx-auto`}>
+          <Text style={tw`text-center font-bold text-indifo-700`}>Your Activity Level : {userDailyActivityLevel}</Text>
           <Slider
             value={userDailyActivityLevel}
             onValueChange={value => setUserDailyActivityLevel(parseInt(value))}
@@ -2561,69 +2567,73 @@ export default function EditProfile() {
 
         <RadioButton.Group onValueChange={level => setuserExperienceLevel(level)} value={userExperienceLevel}>
           <View style={tw`flex flex-row mt-3 mx-auto`}>
-            <View style={tw`px-3`}>
+            <View style={tw`px-3 mx-auto`}>
               <Text style={tw`text-center`}>Beginner</Text>
               <RadioButton value={"beginner"} />
             </View>
-            <View style={tw`px-3`}>
+            <View style={tw`px-3 mx-auto`}>
               <Text style={tw`text-center`}>Intermediate</Text>
-              <RadioButton value={"intermediate"} />
+              <RadioButton  value={"intermediate"} />
             </View>
-            <View style={tw`px-3`}>
+            <View style={tw`px-3 mx-auto`}>
               <Text style={tw`text-center`}>Advanced</Text>
-              <RadioButton value={"advanced"} />
+              <View style={tw`my-auto`}>
+
+                <RadioButton st value={"advanced"} />
+              </View>
             </View>
           </View>
         </RadioButton.Group>
 
-        <MultiSelect
-          style={styles.dropdown}
-          placeholderStyle={styles.placeholderStyle}
-          selectedTextStyle={styles.selectedTextStyle}
-          inputSearchStyle={styles.inputSearchStyle}
-          iconStyle={styles.iconStyle}
-          data={data}
-          labelField="label"
-          valueField="value"
-          placeholder="Select workout days"
-          value={selectedDays}
-          search
-          searchPlaceholder="Search..."
-          onChange={item => {
-            setSelectedDays(item);
-          }}
-          renderLeftIcon={() => (
-            <AntDesign
-              style={styles.icon}
-              color="black"
-              name="Safety"
-              size={20}
-            />
-          )}
-          renderItem={renderItem}
-          renderSelectedItem={(item, unSelect) => (
-            <TouchableOpacity onPress={() => unSelect && unSelect(item)}>
-              <View style={styles.selectedStyle}>
-                <Text style={styles.textSelectedStyle}>{item.label}</Text>
-                <AntDesign color="black" name="delete" size={17} />
+        <View style={tw`h-30`}>
+
+          <MultiSelect
+            style={styles.dropdown}
+            placeholderStyle={styles.placeholderStyle}
+            selectedTextStyle={styles.selectedTextStyle}
+            inputSearchStyle={styles.inputSearchStyle}
+            iconStyle={styles.iconStyle}
+            data={data}
+            labelField="label"
+            valueField="value"
+            placeholder="Select workout days"
+            value={selectedDays}
+            search
+            searchPlaceholder="Search..."
+            onChange={item => {
+              setSelectedDays(item);
+            }}
+            renderLeftIcon={() => (
+              <AntDesign
+                style={styles.icon}
+                color="black"
+                name="Safety"
+                size={20}
+              />
+            )}
+            renderItem={renderItem}
+            renderSelectedItem={(item, unSelect) => (
+              <TouchableOpacity onPress={() => unSelect && unSelect(item)}>
+                <View style={styles.selectedStyle}>
+                  <Text style={styles.textSelectedStyle}>{item.label}</Text>
+                  <AntDesign color="black" name="delete" size={17} />
+                </View>
+              </TouchableOpacity>
+            )}
+          />
+
+          <View style={tw`rounded inline`}>
+            <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-2`} onPress={handleEditProfile}>
+              <View style={tw`my-auto items-center`}>
+                <Text style={tw`text-center text-white font-bold`} >Save</Text>
               </View>
             </TouchableOpacity>
-          )}
-        />
+          </View>
 
-
-
-
-
-        <View style={tw`rounded inline`}>
-          <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto mt-8`} onPress={handleEditProfile}>
-            <View style={tw`my-auto items-center`}>
-              <Text style={tw`text-center text-white font-bold`} >Save</Text>
-            </View>
-          </TouchableOpacity>
         </View>
 
       </View>
+
     </View>
   )
 
@@ -2692,7 +2702,7 @@ const styles = StyleSheet.create({
   },
   textSelectedStyle: {
     marginRight: 5,
-    fontSize: 16,
+    fontSize: 12,
   },
 })
 

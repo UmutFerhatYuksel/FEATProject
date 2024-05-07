@@ -732,8 +732,8 @@ export default function MuscleGroup({ navigation, route }) {
                 <>
 
                     <View style={{ marginTop: 30 }}>
-                        <View style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 6, marginTop: 14 }}>
-                            <Pressable style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 4, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} onPress={() => navigation.navigate('ExerciseDetail',{item:item})}>
+                        <View style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 20, marginTop: 14 }}>
+                            <Pressable style={{ backgroundColor: '#F6F7F7', padding: 5, borderRadius: 20, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }} onPress={() => navigation.navigate('ExerciseDetail',{item:item})}>
                                 <View>
                                     <Text style={{ fontSize: 18, fontWeight: 'bold', padding: 10 }}>{item.name}</Text>
                                 </View>

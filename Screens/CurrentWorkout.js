@@ -822,14 +822,14 @@ const CurrentWorkout = ({ navigation, route }) => {
 
                                     tempExercises.push(exercise.data());
 
-                                    setExercises(tempExercises);
-
-
+                                    
+                                    
                                     console.log("EXERCISE DATA", exercise.data());
-
-
+                                    
+                                    
                                 })
-
+                                
+                                setExercises(tempExercises);
                                 if (tempExercises.every(item => item.isComplete === true)) {
 
 
@@ -962,10 +962,10 @@ const CurrentWorkout = ({ navigation, route }) => {
                 <View style={tw`my-40 p-3`}><Text style={tw`text-2xl  font-bold text-left text-indigo-700`}>The Program Prepared for You is Here</Text></View>
 
             </ImageBackground>
-            <View style={tw`w-90 h-50 bg-green-400 rounded mx-auto my-5`}>
-                <Text style={tw`text-3xl px-3 font-semibold text-indigo-700 `}>Customize as You Wish</Text>
+            <View style={tw`w-90 h-50 bg-lime-500 rounded- mx-auto my-5`}>
+                <Text style={tw`text-3xl px-3 font-semibold text-indigo-700 text-center`}>Customize as You Wish</Text>
                 <View style={tw`my-auto`}>
-                    <Text style={tw`text-sm font-thin px-3 text-justify text-indigo-700`}>You can customize the exercise program prepared for you below!
+                    <Text style={tw`text-base font-light px-3 text-justify text-indigo-700`}>You can customize the exercise program prepared for you below!
                     </Text>
                 </View>
                 {/* Özelleştirme Butonu */}
@@ -1001,10 +1001,8 @@ const CurrentWorkout = ({ navigation, route }) => {
             </Modal>
 
             <ScrollView style={tw`h-70`}>
-
-                <Text>dsfdsjıodjfdıor</Text>
                 {Exercises.map((item) => (
-                    <>
+                    
                         <TouchableOpacity activeOpacity={1} disabled={item.isComplete ? true : false} style={tw`mx-auto mt-3 w-90 h-fit bg-slate-200 rounded-lg flex flex-row`} onPress={() => isEdit ? null : navigation.navigate("WorkoutComplete", { item: item })}>
                             <View style={tw`nx-auto my-auto p-3 basis-1/4 flex flex-row`}>
 
@@ -1035,8 +1033,7 @@ const CurrentWorkout = ({ navigation, route }) => {
                             )}
 
                         </TouchableOpacity>
-                    </>
-
+                    
                 ))}
 
 

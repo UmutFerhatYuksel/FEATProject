@@ -23,7 +23,7 @@ export default function ExerciseDetail({ navigation,route }) {
             </View>
 
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 12 }}>Information</Text>
-            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 6 }}>
+            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
                 <View style={{ marginTop: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <View>
                         <Text style={{ fontSize: 16, marginTop: 6, marginBottom: 6, fontWeight: 'bold' }}>Muscle Group</Text>
@@ -43,7 +43,7 @@ export default function ExerciseDetail({ navigation,route }) {
             </View>
 
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 12 }}>Instructions</Text>
-            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 6 }}>
+            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
                 <View style={{ marginTop: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <View>
                         <Text style={{ fontSize: 16, marginTop: 6, marginBottom: 6, textAlign: 'center' }}>{item.instructions}</Text>

@@ -2,6 +2,7 @@ import { View, Text, Pressable, TouchableOpacity } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import { collection, doc, getDocs, query, updateDoc, where } from 'firebase/firestore';
 import { FIREBASE_AUTH, db } from '../firebase';
+import tw from 'twrnc';
 
 export default function CreateNutrition({ navigation, route }) {
 
@@ -96,7 +97,10 @@ export default function CreateNutrition({ navigation, route }) {
 
     return (
         <View style={{ padding: 24, flex: 1, backgroundColor: 'white' }}>
-            <Text style={{ fontSize: 32, textAlign: 'center' }}>Daily Nutrition Intake</Text>
+            <View style={tw`mx-auto mt-5`}>
+
+                <Text style={[tw`text-indigo-700`, { fontSize: 32, textAlign: 'center' }]}>Daily Nutrition Intake</Text>
+            </View>
             <View style={{ marginTop: 36 }}>
                 <Text style={{ fontSize: 18, marginBottom: 16, fontWeight: 'bold' }}>Today</Text>
                 <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
@@ -134,11 +138,11 @@ export default function CreateNutrition({ navigation, route }) {
                     </View>
                 </View>
             </View>
-            <TouchableOpacity style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 4, marginTop: 16 }} onPress={() => navigation.navigate('RecipeList', { todaysRecipe: todaysRecipe })}>
+            <TouchableOpacity style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20, marginTop: 16 }} onPress={() => navigation.navigate('RecipeList', { todaysRecipe: todaysRecipe })}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#7B61FF', padding: 18, alignContent: 'center' }}>See Your Meal Plan</Text>
             </TouchableOpacity>
 
-            <TouchableOpacity style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 4, marginTop: 16 }} onPress={() => navigation.navigate('NutritionList', { todaysNutrition: todaysNutrition })}>
+            <TouchableOpacity style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20, marginTop: 16 }} onPress={() => navigation.navigate('NutritionList', { todaysNutrition: todaysNutrition })}>
                 <Text style={{ fontSize: 18, fontWeight: 'bold', color: '#7B61FF', padding: 18, alignContent: 'center' }}>Nutrition Recommendations</Text>
             </TouchableOpacity>
         </View>

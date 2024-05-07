@@ -24,7 +24,7 @@ export default function MealDetail({ navigation, route }) {
        </View>
        */}
                 <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 12 }}>Ingredients</Text>
-                <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 6 }}>
+                <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
 
                     {Recipe.Ingredients.map((item) => (
                         <View style={{ marginTop: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
@@ -39,7 +39,7 @@ export default function MealDetail({ navigation, route }) {
             </View>
 
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 12 }}>Nutrition</Text>
-            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 6 }}>
+            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
                 <View style={{ marginTop: 8, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
                     <View>
                         <Text style={{ fontSize: 16, marginTop: 6, marginBottom: 6, fontWeight: 'bold' }}>Calorie</Text>
@@ -75,7 +75,7 @@ export default function MealDetail({ navigation, route }) {
             </View>
 
             <Text style={{ fontSize: 18, fontWeight: 'bold', marginTop: 12, marginBottom: 12 }}>Recipe</Text>
-            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 6 }}>
+            <View style={{ backgroundColor: '#F6F7F7', padding: 16, borderRadius: 20 }}>
                 <ScrollView style={tw`w-full h-full`}>
                         <Text style={{ fontSize: 16, marginTop: 6, marginBottom: 6, textAlign: 'center' }}>{Recipe.recipe}</Text>
                 </ScrollView>

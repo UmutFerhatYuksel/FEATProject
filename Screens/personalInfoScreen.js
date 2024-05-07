@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, TouchableOpacity, BackHandler } from 'react-native';
 import { SafeAreaView } from 'react-native';
 import { useState } from 'react';
 import tw from 'twrnc';
@@ -20,6 +20,19 @@ const PersonalInfoScreen = ({ navigation, route }) => {
 
 
 
+  useEffect(() => {
+
+    const backAction = () => {
+
+      return true;
+    };
+
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+  }, [])
 
 
   const handleComplete = () => {

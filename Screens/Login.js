@@ -99,7 +99,7 @@ export function Login({ navigation }) {
         <View style={tw`rounded inline`}>
           <TouchableOpacity style={tw`w-65 h-15 bg-white rounded-full mx-auto mt-8 flex flex-row`} onPress={()=>navigation.navigate("ResetPassword")}>
             <View style={tw`my-5 mx-8 items-center`}>
-              <Text style={tw`text-center font-bold`}>Forget Your Password?</Text>
+              <Text style={{textAlign:'center'}}>Forget Your Password ?</Text>
             </View>
           </TouchableOpacity>
 

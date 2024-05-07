@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { StyleSheet, View, Text, StatusBar, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, Text, StatusBar, TouchableOpacity, BackHandler } from 'react-native';
 import { useState } from 'react';
 import { SafeAreaView } from 'react-native';
 import tw from 'twrnc';
@@ -1954,6 +1954,21 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
     );
   };
 
+  useEffect(() => {
+
+    const backAction = () => {
+
+      return true;
+    };
+
+    BackHandler.addEventListener(
+      'hardwareBackPress',
+      backAction,
+    );
+
+  }, [])
+
+
   const handleUserData = async () => {
 
 
@@ -1963,7 +1978,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
 
       alert("Please fill in all required fields");
     } else {
-      if ( userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
+      if (userHeight > 140 && userHeight < 250 && userWeight > 40 && userWeight < 300) {
 
         const userInfoData = {
           userName: userName,
@@ -2407,7 +2422,7 @@ const PhysicalInfoScreen = ({ navigation, route }) => {
           addDoc(mealCollectionRef, { dayName: day, Meals: selectedRecipe });
 
         })
-      }else{
+      } else {
         alert("Values should be between the range");
       }
 

@@ -137,7 +137,7 @@ const WorkoutComplete = ({ navigation, route }) => {
 
         <View style={tw``}>
             <Modal animationType='slide' visible={modalVisible} onRequestClose={() => setModalVisible(!modalVisible)}>
-                <ScrollView style={tw`w-full h-full`}>
+                <ScrollView style={tw`w-full h-full p-5`}>
                     <Text style={tw`text-3xl font-bold text-indigo-700 text-center leading-loose`}>Description of the Exercise</Text>
                     <Text style={tw`text-xl leading-loose`}>{item.instructions}</Text>
                     <TouchableOpacity style={tw`w-65 h-15 bg-indigo-700 rounded-full mx-auto my-auto`} onPress={() => setModalVisible(false)}>
@@ -154,7 +154,7 @@ const WorkoutComplete = ({ navigation, route }) => {
                     <IonIcon style={tw`mx-auto my-auto`} name='information-outline' size={30} />
                 </TouchableOpacity>
 
-                <TouchableOpacity style={tw`w-10 h-10 bg-white rounded-full mr-5 mt-5`}>
+                <TouchableOpacity style={tw`w-10 h-10 bg-white rounded-full mr-5 mt-5`} onPress={()=>navigation.navigate("CurrentWorkout")}>
                     <IonIcon style={tw`mx-auto my-auto`} name='exit-outline' size={30} />
                 </TouchableOpacity>
             </ImageBackground>
